@@ -1,5 +1,14 @@
 function BottomInputComponent() {
-  return <div>BottomInputComponent</div>
+  return (
+    <div>
+      <input 
+        type="text"
+        placeholder='type something'
+        >
+        </input>
+      <button>Submit</button>
+    </div>
+    )
 }
 
 export default BottomInputComponent
