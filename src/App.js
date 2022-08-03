@@ -26,6 +26,27 @@ function App() {
                   <button>Sign In</button>
                 </Link>
               </nav>
+              <section>
+                <div>
+                  <h2>
+                    Get to chatting
+                    <br />
+                    and reconnect
+                  </h2>
+                  <p>
+                    A serene chat experience for you and your friends
+                  </p>
+                  <Link to="/chat">
+                    <button>Sign In</button>
+                  </Link>
+                </div>
+                <div>
+                  <img 
+                    src="https://via.placeholder.com/200"
+                    alt="placeholder"
+                  />
+                </div>
+              </section>
             </>
           }
         />
