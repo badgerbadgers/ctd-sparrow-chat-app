@@ -5,6 +5,7 @@ import BottomInputComponent from "./components/BottomInputComponent"
 import RightSideComponent from "./components/RightSideComponent"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import logo from "./assets/sparrow-logo.svg"
+import landingImg from "./assets/landing-image.png"
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
                 </div>
                 <div>
                   <img 
-                    src="https://via.placeholder.com/200"
+                    src={landingImg}
                     alt="placeholder"
                   />
                 </div>
