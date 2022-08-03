@@ -44,7 +44,7 @@ function App() {
                 <div>
                   <img 
                     src={landingImg}
-                    alt="placeholder"
+                    alt="landing image for sparrow chat"
                   />
                 </div>
               </section>
