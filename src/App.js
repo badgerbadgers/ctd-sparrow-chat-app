@@ -5,7 +5,6 @@ import BottomInputComponent from "./components/BottomInputComponent"
 import RightSideComponent from "./components/RightSideComponent"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import logo from "./assets/sparrow-logo.svg"
-import landingImg from "./assets/landing-image.png"
 
 function App() {
   return (
@@ -15,39 +14,18 @@ function App() {
           path="/"
           element={
             <>
-              <nav>
+              <div>
                 <img 
                   src={logo}
-                  // temporary styling until we handle CSS styling
-                  style={{ height: 50, width: 50 }} 
-                  alt="website sparrow logo" 
+                  // temporary inline styling until we handle CSS
+                  style={{ height: 75, width: 75 }} 
+                  alt="Sparrow Logo" 
                 />
-                <h1>sparrow</h1>
+                <h3>sparrow</h3>
                 <Link to="/chat">
-                  <button>Sign In</button>
+                  <button>Sign in with G</button>
                 </Link>
-              </nav>
-              <section>
-                <div>
-                  <h2>
-                    Get to chatting
-                    <br />
-                    and reconnect
-                  </h2>
-                  <p>
-                    A serene chat experience for you and your friends
-                  </p>
-                  <Link to="/chat">
-                    <button>Sign In</button>
-                  </Link>
-                </div>
-                <div>
-                  <img 
-                    src={landingImg}
-                    alt="landing pic for sparrow chat"
-                  />
-                </div>
-              </section>
+              </div>
             </>
           }
         />
