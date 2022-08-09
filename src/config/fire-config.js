@@ -17,10 +17,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// auth variable represents everything related to the user currently...
+// ...authenticated in Firebase inside our project.
 export const auth = getAuth(app);
 
 export const db = getFirestore(app);
 
+// provider represents everything related to Google authentication
 const provider = new GoogleAuthProvider();
 
 export const signInWithGoogle = () => {
