@@ -17,9 +17,9 @@ function BottomInputComponent() {
     // Add a new message entry to the Firebase database.
     try {
       await addDoc(messagesCollectionRef, {
-        name: "getUserName",
+        name: "getUserName", //TODO get username
         text: messageText,
-        profilePicUrl: "getProfilePicUrl",
+        profilePicUrl: "getProfilePicUrl", //TODO get profile picture
         timestamp: serverTimestamp(),
       })
     } catch (error) {
