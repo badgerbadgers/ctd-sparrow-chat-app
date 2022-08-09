@@ -1,3 +1,4 @@
+import { signInWithGoogle } from "./config/fire-config";
 import TopNavigationBar from "./components/TopNavigationBar";
 import LeftSideComponent from "./components/LeftSideComponent";
 import MiddleChatWindow from "./components/MiddleChatWindow";
@@ -20,8 +21,8 @@ function App() {
                alt={"Sparrow Logo"}
              />
              <h3>sparrow</h3>
-             <Link to="/signin">
-               <button>Sign in with G</button>
+             <Link to="/chat">
+               <button onClick={signInWithGoogle}>Sign in with G</button>
              </Link>
            </div>
          </>
@@ -43,5 +44,3 @@ function App() {
 }
  
 export default App;
- 
-
