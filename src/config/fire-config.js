@@ -17,18 +17,20 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// auth variable represents everything related to the user currently...
-// ...authenticated in Firebase inside our project.
+// auth object is the gateway to the Firebase authentication API
+// -> we can reference auth objects to manage user accounts and credentials
 export const auth = getAuth(app);
 
 export const db = getFirestore(app);
 
-// provider represents everything related to Google authentication
+// provider object represents everything related to Google authentication
 const provider = new GoogleAuthProvider();
 
+// Prompt user to sign in w/their Google account by opening a pop-up window
 export const signInWithGoogle = () => {
   signInWithPopup(auth, provider).then((result) => {
-    console.log(result);
+    // Information about the user based on who signed in
+    console.log(result.user);
   }).catch((error) => {
     console.log(error);
   })
