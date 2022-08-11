@@ -1,25 +1,19 @@
 import { db } from "../config/fire-config"
-import { collection, onSnapshot } from "firebase/firestore"
-import { useState, useEffect } from "react"
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
+import { useState } from "react"
 import React from "react"
 
 
 function MiddleChatWindow() {
   const [messages, setMessages] = useState([])
   const messagesCollectionRef = collection(db, "messages")
+  const queryMessages = query(messagesCollectionRef, orderBy("timestamp"))
   
-  useEffect(() => {
-    // captures data
-    const getMessages = async () => {
-     await onSnapshot(messagesCollectionRef, function(snapshot) {
-      setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  // captures data
+  onSnapshot(queryMessages, function(snapshot) {
+    setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     })
-    
-  }
-  
-  getMessages()
-  }, [])
-  
+
   return (
     <>
     <ul>
