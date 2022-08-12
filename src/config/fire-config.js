@@ -5,8 +5,11 @@ import { initializeApp } from "firebase/app"
 import {
   getFirestore,
   addDoc,
+  getDocs,
   collection,
   serverTimestamp,
+  query,
+  where,
 } from "firebase/firestore"
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 
@@ -34,13 +37,20 @@ const usersCollectionRef = collection(db, "users")
 // Prompt user to sign in w/their Google account by opening a pop-up window
 export const signInWithGoogle = () => {
   signInWithPopup(auth, provider)
-    .then((result) => {
-      addDoc(usersCollectionRef, {
-        name: result.user.displayName,
-        email: result.user.email,
-        photoURL: result.user.photoURL,
-        timestamp: serverTimestamp(),
-      })
+    .then(async (result) => {
+      // Checks if user is already on "users" collection
+      const userDocs = await getDocs(
+        query(usersCollectionRef, where("email", "==", result.user.email))
+      )
+      const user = userDocs.docs.map((doc) => doc.data())
+      if (!user.length) {
+        addDoc(usersCollectionRef, {
+          name: result.user.displayName,
+          email: result.user.email,
+          photoURL: result.user.photoURL,
+          timestamp: serverTimestamp(),
+        })
+      }
       // Information about the user based on who signed in
       console.log(result.user)
     })
