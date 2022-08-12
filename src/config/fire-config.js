@@ -1,9 +1,14 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getFirestore } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  getFirestore,
+  addDoc,
+  collection,
+  serverTimestamp,
+} from "firebase/firestore"
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,22 +21,30 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 // auth object is the gateway to the Firebase authentication API
 // -> we can reference auth objects to manage user accounts and credentials
-export const auth = getAuth(app);
-
-export const db = getFirestore(app);
+export const auth = getAuth(app)
+export const db = getFirestore(app)
 
 // provider object represents everything related to Google authentication
-const provider = new GoogleAuthProvider();
+const provider = new GoogleAuthProvider()
+const usersCollectionRef = collection(db, "users")
 
 // Prompt user to sign in w/their Google account by opening a pop-up window
 export const signInWithGoogle = () => {
-  signInWithPopup(auth, provider).then((result) => {
-    // Information about the user based on who signed in
-    console.log(result.user);
-  }).catch((error) => {
-    console.log(error);
-  })
-};
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      addDoc(usersCollectionRef, {
+        name: result.user.displayName,
+        email: result.user.email,
+        photoURL: result.user.photoURL,
+        timestamp: serverTimestamp(),
+      })
+      // Information about the user based on who signed in
+      console.log(result.user)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
