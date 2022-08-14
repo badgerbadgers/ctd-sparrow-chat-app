@@ -9,7 +9,7 @@ function MiddleChatWindow() {
 
   // captures data
   const getMessages = () => {
-    onSnapshot(queryMessages, function (snapshot) {
+    onSnapshot(queryMessages, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     })
   }
