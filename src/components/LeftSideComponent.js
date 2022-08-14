@@ -1,17 +1,28 @@
 import { db } from "../config/fire-config"
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
-import { useState } from "react"
+import {
+  collection,
+  onSnapshot,
+  query,
+  orderBy,
+  limit,
+} from "firebase/firestore"
+import { useState, useEffect } from "react"
 
 // Component renders list on currently logged in users in application
 function LeftSideComponent() {
   const [users, setUsers] = useState([])
   const usersCollectionRef = collection(db, "users")
-  const queryMessages = query(usersCollectionRef, orderBy("name"))
+  const queryUsers = query(usersCollectionRef, orderBy("name"), limit(20))
 
-  // When user sign in on app, set user name and password on "users" collection. When user signs out remove user from "users" collection.
-  onSnapshot(queryMessages, function (snapshot) {
-    setUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  })
+  const getUsers = () => {
+    onSnapshot(queryUsers, (snapshot) => {
+      setUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    })
+  }
+
+  useEffect(() => {
+    getUsers()
+  }, [])
 
   return (
     <>
