@@ -11,7 +11,12 @@ import {
   query,
   where,
 } from "firebase/firestore"
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -57,4 +62,10 @@ export const signInWithGoogle = () => {
     .catch((error) => {
       console.log(error)
     })
+}
+
+// Signs-out of Friendly Chat.
+export const signOutUser = () => {
+  // Sign out of Firebase.
+  signOut(getAuth())
 }
