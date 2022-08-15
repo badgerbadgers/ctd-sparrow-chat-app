@@ -30,7 +30,7 @@ function App() {
           path='/chat'
           element={
             <>
-              <TopNavigationBar />
+              <TopNavigationBar currentUser={authState} />
               <LeftSideComponent />
               <MiddleChatWindow />
               <BottomInputComponent />
