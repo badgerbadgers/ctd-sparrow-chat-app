@@ -8,6 +8,8 @@ import {
 import {
   addDoc,
   getDocs,
+  doc,
+  deleteDoc,
   collection,
   serverTimestamp,
   query,
@@ -15,9 +17,18 @@ import {
 } from "firebase/firestore"
 
 export const auth = getAuth()
+// Signs out user from application
 export const signOutUser = () => {
   signOut(auth)
 }
+// when user signs out this function is called to also remove user from 'users' collection
+export const removeUser = async (currentUser) => {
+  const userDocs = await getDocs(
+    query(usersCollectionRef, where("email", "==", currentUser.email))
+  )
+  await deleteDoc(doc(db, "users", userDocs.docs[0].id))
+}
+
 // provider object represents everything related to Google authentication
 const provider = new GoogleAuthProvider()
 const usersCollectionRef = collection(db, "users")

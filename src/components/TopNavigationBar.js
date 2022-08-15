@@ -1,8 +1,13 @@
 import logo from "../assets/sparrow-logo.svg"
-import { signOutUser } from "../config/googleSignIn"
+import { signOutUser, removeUser } from "../config/googleSignIn"
 import { Link } from "react-router-dom"
 
-function TopNavigationBar() {
+function TopNavigationBar({ currentUser }) {
+  // When signing out removes user from 'users' collection and signs out user.
+  const handleSignOutUser = () => {
+    removeUser(currentUser)
+    signOutUser()
+  }
   return (
     <>
       {/* Sparrow logo is HUGE, put some temporary inline styling */}
@@ -17,7 +22,7 @@ function TopNavigationBar() {
 
       {/* Logout button */}
       <Link to='/'>
-        <button onClick={signOutUser}>Logout</button>
+        <button onClick={handleSignOutUser}>Logout</button>
       </Link>
     </>
   )
