@@ -1,5 +1,5 @@
 import logo from "../assets/sparrow-logo.svg"
-import { signOutUser } from "../config/fire-config"
+import { signOutUser } from "../config/googleSignIn"
 import { Link } from "react-router-dom"
 
 function TopNavigationBar() {
@@ -16,7 +16,7 @@ function TopNavigationBar() {
       <span> Placeholder Username </span>
 
       {/* Logout button */}
-      <Link to='/signin'>
+      <Link to='/'>
         <button onClick={signOutUser}>Logout</button>
       </Link>
     </>
