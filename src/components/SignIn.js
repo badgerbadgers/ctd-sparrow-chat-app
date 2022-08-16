@@ -3,6 +3,7 @@ import { signInWithGoogle, auth } from "../config/googleSignIn"
 import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"
 import { Link } from "react-router-dom"
+import { Button } from "react-bootstrap"
 
 function SignIn({ handleAuthStateChange }) {
   useEffect(() => {
@@ -12,16 +13,15 @@ function SignIn({ handleAuthStateChange }) {
   }, [])
 
   return (
-    <div>
-      <img
-        src={logo}
-        // temporary inline styling until we handle CSS
-        style={{ height: 75, width: 75 }}
-        alt={"Sparrow Logo"}
-      />
-      <h3>sparrow</h3>
+    <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50'>
+      <img src={logo} style={{ height: 75, width: 75 }} alt='Sparrow Logo' />
+      <h1 className='h6'>sparrow</h1>
       <Link to='/chat'>
-        <button onClick={signInWithGoogle}>Sign in with G</button>
+        <div className='mt-5'>
+          <Button variant='light' onClick={signInWithGoogle}>
+            Sign in with G
+          </Button>
+        </div>
       </Link>
     </div>
   )
