@@ -1,11 +1,17 @@
-import React from "react"
-import { signInWithGoogle } from "../config/fire-config"
+import { useEffect } from "react"
+import { signInWithGoogle, auth } from "../config/googleSignIn"
+import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"
 import { Link } from "react-router-dom"
-
 import { Button } from "react-bootstrap"
 
-function SignIn() {
+function SignIn({ handleAuthStateChange }) {
+  useEffect(() => {
+    onAuthStateChanged(auth, (data) => {
+      handleAuthStateChange(data)
+    })
+  }, [])
+
   return (
     <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50'>
       <img src={logo} style={{ height: 75, width: 75 }} alt='Sparrow Logo' />
