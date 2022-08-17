@@ -1,0 +1,12 @@
+.navbarContainer {
+  background-color: #202020;
+}
+.navText {
+  color: #fff;
+  font-size: 2.75rem;
+}
+.navButton, .navButton:hover {
+  background-color: #C5C1C0 !important;
+  border-color: #C5C1C0 !important;
+  color: #2B2B2B !important;
+}

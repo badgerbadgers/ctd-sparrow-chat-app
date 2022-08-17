@@ -1,6 +1,11 @@
-import logo from "../assets/sparrow-logo.svg"
+import logo from "../assets/sparrow-logo-w-bg.png"
 import { signOutUser, removeUser } from "../config/googleSignIn"
 import { Link } from "react-router-dom"
+import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
+import Button from "react-bootstrap/Button"
+import Image from "react-bootstrap/Image"
+import style from "./TopNavigationBar.module.css"
 
 function TopNavigationBar({ currentUser }) {
   // When signing out removes user from 'users' collection and signs out user.
@@ -10,20 +15,19 @@ function TopNavigationBar({ currentUser }) {
   }
   return (
     <>
-      {/* Sparrow logo is HUGE, put some temporary inline styling */}
-      <img src={logo} alt='Sparrow Logo' style={{ height: "28px" }} />
-
-      {/* Search input and button */}
-      {/* <input type="text" placeholder='Search chat for...' /> */}
-      {/* <button>Search</button> */}
-
-      {/* Profile */}
-      <span> Placeholder Username </span>
-
-      {/* Logout button */}
-      <Link to='/'>
-        <button onClick={handleSignOutUser}>Logout</button>
-      </Link>
+      <Navbar className={style.navbarContainer}>
+        <Container>
+          <Image src={logo} width='75' />
+          <Image src={currentUser.photoURL} width='75' />
+          <p className={style.navText}>{currentUser.displayName}</p>
+          <Navbar.Toggle aria-expanded='true' />
+          <Link to='/'>
+            <Button className={style.navButton} onClick={handleSignOutUser}>
+              Sign Out
+            </Button>
+          </Link>
+        </Container>
+      </Navbar>
     </>
   )
 }
