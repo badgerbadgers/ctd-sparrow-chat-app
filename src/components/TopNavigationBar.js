@@ -20,6 +20,7 @@ function TopNavigationBar({ currentUser }) {
       <Navbar className={style.navbarContainer}>
         <Container>
           <Image src={logo} width='75' />
+          <Image src={currentUser.photoURL} width='75' />
           <p className={style.navText}>{signedInUser}</p>
           <Navbar.Toggle aria-expanded='true' />
           <Link to='/'>
