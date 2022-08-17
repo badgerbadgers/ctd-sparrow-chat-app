@@ -3,7 +3,7 @@ import { signInWithGoogle, auth } from "../config/googleSignIn"
 import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"
 import { Link } from "react-router-dom"
-import { Button } from "react-bootstrap"
+import Button from "react-bootstrap/Button"
 
 function SignIn({ handleAuthStateChange }) {
   useEffect(() => {
@@ -18,8 +18,12 @@ function SignIn({ handleAuthStateChange }) {
       <h1 className='h6'>sparrow</h1>
       <Link to='/chat'>
         <div className='mt-5'>
-          <Button variant='light' onClick={signInWithGoogle}>
-            Sign in with G
+          <Button
+            variant='light'
+            onClick={signInWithGoogle}
+            className='px-4 rounded-pill'
+          >
+            Sign in with <i class='bi bi-google'></i>
           </Button>
         </div>
       </Link>
