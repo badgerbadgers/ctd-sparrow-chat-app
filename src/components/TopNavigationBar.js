@@ -8,8 +8,6 @@ import Image from "react-bootstrap/Image"
 import style from "./TopNavigationBar.module.css"
 
 function TopNavigationBar({ currentUser }) {
-  const signedInUser = currentUser ? currentUser.displayName : "user"
-
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)
@@ -21,7 +19,7 @@ function TopNavigationBar({ currentUser }) {
         <Container>
           <Image src={logo} width='75' />
           <Image src={currentUser.photoURL} width='75' />
-          <p className={style.navText}>{signedInUser}</p>
+          <p className={style.navText}>{currentUser.displayName}</p>
           <Navbar.Toggle aria-expanded='true' />
           <Link to='/'>
             <Button className={style.navButton} onClick={handleSignOutUser}>
