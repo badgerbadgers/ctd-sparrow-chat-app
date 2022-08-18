@@ -2,7 +2,6 @@ import TopNavigationBar from "./components/TopNavigationBar"
 import LeftSideComponent from "./components/LeftSideComponent"
 import MiddleChatWindow from "./components/MiddleChatWindow"
 import BottomInputComponent from "./components/BottomInputComponent"
-import RightSideComponent from "./components/RightSideComponent"
 import SignIn from "./components/SignIn"
 import { Routes, Route } from "react-router-dom"
 import { useState } from "react"
@@ -34,7 +33,6 @@ function App() {
               <LeftSideComponent />
               <MiddleChatWindow />
               <BottomInputComponent />
-              <RightSideComponent />
             </>
           }
         />
