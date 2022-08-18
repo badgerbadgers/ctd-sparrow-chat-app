@@ -23,7 +23,7 @@ function SignIn({ handleAuthStateChange }) {
             onClick={signInWithGoogle}
             className='px-4 rounded-pill'
           >
-            Sign in with <i class='bi bi-google'></i>
+            Sign in with <i className='bi bi-google'></i>
           </Button>
         </div>
       </Link>
