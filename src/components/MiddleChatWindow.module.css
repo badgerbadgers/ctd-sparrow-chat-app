@@ -1,0 +1,22 @@
+.listGroupItem {
+    border: 1px solid #e9ecef;
+     margin:0.4em; 
+     border-radius:10px;
+      background-color: #e9ecef;
+       width: 20em;
+       padding:1em;
+
+    
+        /* display:flexbox;
+        flex-direction: row;
+        justify-content: center; */
+
+}
+.listGroup {
+    list-style-type: none;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        align-items: center;
+}

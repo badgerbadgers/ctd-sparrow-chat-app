@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.list-group-item {
+  background: #282c34;
+}
+.list-group {
+  background: #282c34;
+}
