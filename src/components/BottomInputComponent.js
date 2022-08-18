@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
+import style from './BottomInputComponent.module.css'
 
 function BottomInputComponent() {
   const [message, setMessage] = useState("")
@@ -34,15 +35,20 @@ function BottomInputComponent() {
   }
 
   return (
-    <form onSubmit={handleSubmitMessage}>
+    <div>
+    <form onSubmit={handleSubmitMessage} className={style.formGroup} >
       <input
         type='text'
         value={message}
-        placeholder='type something'
+        placeholder='Type something...'
         onChange={handleMessageChange}
+        className={style.userInput}
+        
+        
       ></input>
-      <button>Submit</button>
+      {/* <button>Submit</button> */}
     </form>
+    </div>
   )
 }
 

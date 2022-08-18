@@ -1,0 +1,11 @@
+.formGroup {
+    display:flex;
+    justify-content: center;
+}
+
+.userInput {
+   margin-bottom: 0.5em;
+    border-radius:10px;
+   font-size: 25px;
+ width:25em;
+}
