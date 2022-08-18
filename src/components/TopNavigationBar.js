@@ -18,8 +18,10 @@ function TopNavigationBar({ currentUser }) {
       <Navbar className={style.navbarContainer}>
         <Container>
           <Image src={logo} width='75' />
-          <Image src={currentUser.photoURL} width='75' />
-          <p className={style.navText}>{currentUser.displayName}</p>
+          <Image src={currentUser ? currentUser.photoURL : ""} width='75' />
+          <p className={style.navText}>
+            {currentUser ? currentUser.displayName : ""}
+          </p>
           <Navbar.Toggle aria-expanded='true' />
           <Link to='/'>
             <Button className={style.navButton} onClick={handleSignOutUser}>

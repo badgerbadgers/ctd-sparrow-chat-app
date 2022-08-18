@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <h5>{authState ? authState.email : "no user signed in"}</h5>
+      <TopNavigationBar currentUser={authState} />
       <Routes>
         <Route
           path='/'
@@ -29,7 +29,6 @@ function App() {
           path='/chat'
           element={
             <>
-              <TopNavigationBar currentUser={authState} />
               <LeftSideComponent />
               <MiddleChatWindow />
               <BottomInputComponent />
