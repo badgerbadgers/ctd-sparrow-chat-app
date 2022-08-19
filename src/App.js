@@ -31,7 +31,7 @@ function App() {
             <>
               <LeftSideComponent />
               <MiddleChatWindow currentUser={authState} />
-              <BottomInputComponent />
+              <BottomInputComponent currentUser={authState}/>
             </>
           }
         />
