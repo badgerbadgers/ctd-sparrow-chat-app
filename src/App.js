@@ -30,7 +30,7 @@ function App() {
           element={
             <>
               <LeftSideComponent />
-              <MiddleChatWindow currentUserData={authState} />
+              <MiddleChatWindow currentUser={authState} />
               <BottomInputComponent />
             </>
           }
