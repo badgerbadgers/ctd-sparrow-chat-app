@@ -32,7 +32,7 @@ function LeftSideComponent({ name, ...props }) {
 
   return (
     <div className='text-light'>
-      <Button onClick={handleShow} className='me-2' variant='warning'>
+      <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
         Users
       </Button>
       <Offcanvas
