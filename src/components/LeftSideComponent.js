@@ -48,7 +48,7 @@ function LeftSideComponent({ name, ...props }) {
         </Offcanvas.Header>
         <Offcanvas.Body className='bg-secondary'>
           {users.length > 0 ? (
-            <ul class={style.listGroup}>
+            <ul className={style.listGroup}>
               {users.map((user) => {
                 return (
                   <li key={user.id} className={style.listGroupItem}>
