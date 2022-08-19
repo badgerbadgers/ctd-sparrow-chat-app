@@ -1,5 +1,5 @@
 .listGroupItem {
-    border: 1px solid #e9ecef;
+
      margin:0.4em; 
      border-radius:10px;
       background-color: #e9ecef;
@@ -17,6 +17,7 @@ display: inline;
     border-radius:10px;
     width: 3.6em;
     margin:0.4em; 
+
 }
 
 
@@ -27,4 +28,14 @@ display: inline;
         justify-content: center;
         text-decoration: none;
         align-items: center;
+        background-color: #1A2930;
 }
+
+
+
+/* 1. Add a mini title for what channel everyone is on 
+2. switch the image to the left hand side
+3.  add colored background #in-progress
+4. expand the left hand side bar
+5. character limit / text content should not spill over
+*/
