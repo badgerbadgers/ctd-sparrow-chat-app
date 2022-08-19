@@ -43,12 +43,10 @@ function LeftSideComponent({ name, ...props }) {
       >
         <Offcanvas.Header closeButton className='bg-secondary'>
           <Offcanvas.Title className='bg-secondary'>
-            {" "}
             Users: {users.length}
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className='bg-secondary'>
-          <h4>Logged in users: {users.length}</h4>
           {users.length > 0 ? (
             <ul class={style.listGroup}>
               {users.map((user) => {
