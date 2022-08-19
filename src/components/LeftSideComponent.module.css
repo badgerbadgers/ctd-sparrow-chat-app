@@ -3,3 +3,25 @@
     font-size: 1.75rem;
 }
 
+.sideBar {
+    height:500px;
+    width: 82px;
+    border-radius: 10px;
+position:fixed;
+/* bottom: 0px; */
+left: auto;
+/* right: 40px; */
+z-index: 10;
+background-color: #202020;
+}
+
+
+/* .LeftSidePanel {
+    width: 40px;
+position: fixed;
+bottom: 0px;
+left: auto;
+right: 40px;
+z-index: 10;
+
+} */
