@@ -30,6 +30,9 @@ function TopNavigationBar({ currentUser }) {
           </Link>
         </Container>
       </Navbar>
+<section className={style.Channels}>
+  Channel: Main group
+</section>
     </>
   )
 }
