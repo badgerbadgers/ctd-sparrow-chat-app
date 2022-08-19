@@ -15,7 +15,6 @@ function App() {
 
   return (
     <>
-      <TopNavigationBar currentUser={authState} />
       <Routes>
         <Route
           path='/'
@@ -29,6 +28,7 @@ function App() {
           path='/chat'
           element={
             <>
+      				<TopNavigationBar currentUser={authState} />
               <LeftSideComponent />
               <MiddleChatWindow currentUser={authState} />
               <BottomInputComponent currentUser={authState}/>
