@@ -31,8 +31,8 @@ function LeftSideComponent({ name, ...props }) {
   }, [])
 
   return (
-    <div className='bg-secondary text-light'>
-      <Button onClick={handleShow} className='me-2' variant='secondary'>
+    <div className='text-light'>
+      <Button onClick={handleShow} className='me-2' variant='warning'>
         Users
       </Button>
       <Offcanvas
