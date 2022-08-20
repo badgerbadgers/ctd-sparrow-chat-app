@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button"
 import Image from "react-bootstrap/Image"
+import Col from "react-bootstrap/Col"
 import style from "./TopNavigationBar.module.css"
 
 function TopNavigationBar({ currentUser }) {
@@ -17,17 +18,28 @@ function TopNavigationBar({ currentUser }) {
     <>
       <Navbar className={style.navbarContainer}>
         <Container>
-          <Image src={logo} width='75' />
-          <Image src={currentUser ? currentUser.photoURL : ""} width='75' />
-          <p className={style.navText}>
-            {currentUser ? currentUser.displayName : ""}
-          </p>
-          <Navbar.Toggle aria-expanded='true' />
-          <Link to='/'>
-            <Button className={style.navButton} onClick={handleSignOutUser}>
-              Sign Out
-            </Button>
-          </Link>
+          <Col md={7}>
+            <Image src={logo} width='70' />
+          </Col>
+          <Col sm={1}>
+            <Image
+              src={currentUser ? currentUser.photoURL : ""}
+              width='50'
+              className={style.logoImg}
+            />
+          </Col>
+          <Col sm={2}>
+            <p className={style.navText}>
+              {currentUser ? currentUser.displayName : ""}
+            </p>
+          </Col>
+          <Col sm={2}>
+            <Link to='/'>
+              <Button className={style.navButton} onClick={handleSignOutUser}>
+                Sign Out
+              </Button>
+            </Link>
+          </Col>
         </Container>
       </Navbar>
     </>

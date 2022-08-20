@@ -1,12 +1,20 @@
 .navbarContainer {
   background-color: #202020;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid green;
 }
 .navText {
   color: #fff;
-  font-size: 2.75rem;
+  font-size: 2rem;
+  margin-top: 1rem !important;
 }
 .navButton, .navButton:hover {
   background-color: #C5C1C0 !important;
   border-color: #C5C1C0 !important;
   color: #2B2B2B !important;
+}
+.logoImg {
+  border-radius: 5%;
 }
