@@ -1,4 +1,4 @@
-import logo from "../assets/sparrow-logo-w-bg.png"
+import logo from "../assets/sparrow-navbar-w-bg-logo.png"
 import { signOutUser, removeUser } from "../config/googleSignIn"
 import { Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
