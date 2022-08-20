@@ -15,12 +15,13 @@ function App() {
 
   return (
     <>
-      <TopNavigationBar currentUser={authState} />
+<TopNavigationBar currentUser={authState} />      
       <Routes>
         <Route
           path='/'
           element={
             <>
+            {/* <TopNavigationBar currentUser={authState} />  */}
               <SignIn handleAuthStateChange={handleAuthStateChange} />
             </>
           }
