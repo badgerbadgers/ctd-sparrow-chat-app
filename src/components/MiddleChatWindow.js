@@ -1,7 +1,7 @@
 import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
 import { useState, useEffect } from "react"
-import style from './MiddleChatWindow.module.css'
+import style from "./MiddleChatWindow.module.css"
 
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])
@@ -10,7 +10,7 @@ function MiddleChatWindow({ currentUser }) {
 
   // captures data
   const getMessages = () => {
-      const passedUser = currentUser ? currentUser.photoURL : ""
+    const passedUser = currentUser ? currentUser.photoURL : ""
     onSnapshot(queryMessages, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     })
@@ -22,21 +22,23 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className={style.listGroup} >
+      <ul className={style.listGroup}>
         {/* renders message */}
         {messages.map((message) => {
-          return(
-
-            <span key={message.id}>
-              <img className={style.userImage} src={currentUser ? currentUser.photoURL : ""} width='75' />
-          <li className={style.listGroupItem} >{message.text} 
-          </li> 
-          
-
-          </span>
+          return (
+            <>
+              <section className={style.Channels}>Channel: Main group</section>
+              <span key={message.id}>
+                <img
+                  className={style.userImage}
+                  src={currentUser ? currentUser.photoURL : ""}
+                  width='75'
+                  alt='profile pic'
+                />
+                <li className={style.listGroupItem}>{message.text}</li>
+              </span>
+            </>
           )
-
-
         })}
       </ul>
     </>
