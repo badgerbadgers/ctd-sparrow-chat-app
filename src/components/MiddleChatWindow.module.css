@@ -1,26 +1,5 @@
-.listGroupItem {
-
-     margin:0.4em; 
-     border-radius:10px;
-      background-color: #e9ecef;
-       width: 20em;
-       padding:1em;
-display: inline;
-    
-        /* display:flexbox;
-        flex-direction: row;
-        justify-content: center; */
-
-}
-
-.userImage {
-    border-radius:10px;
-    width: 3.6em;
-    margin:0.4em; 
-}
-
-
 .listGroup {
+  margin: auto;
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -31,7 +10,23 @@ display: inline;
   min-height: 100vh;
 }
 
+.listGroupItem {
+  margin:0.4em; 
+  border-radius:10px;
+  background-color: #e9ecef;
+  width: 20em;
+  padding:1em;
+  display: inline;
+  /* display:flexbox;
+  flex-direction: row;
+  justify-content: center; */
+}
 
+.userImage {
+  border-radius:10px;
+  width: 3.6em;
+  margin:0.4em; 
+}
 
 /* 1. Add a mini title for what channel everyone is on #Finished
 2. switch the image to the left hand side #Finished
