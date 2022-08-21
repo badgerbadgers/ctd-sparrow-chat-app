@@ -13,6 +13,17 @@
   border-color: #C5C1C0 !important;
   color: #2B2B2B !important;
 }
+
+
+.Channels {
+  background-color: #1A2930 ;
+  color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.50rem;
+}
+
 .logoImg {
   border-radius: 5%;
 }
+
