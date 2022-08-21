@@ -7,11 +7,17 @@ import { Routes, Route } from "react-router-dom"
 import { useState } from "react"
 
 function App() {
-  const [authState, setAuthState] = useState(null)
+  const [authState, setAuthState] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleAuthStateChange = (auth) => {
-    setAuthState(auth)
+    setAuthState(auth);
   }
+
+	const handleIsLoadingStateChange = (isLoading) => {
+		setIsLoading(!isLoading);
+		setTimeout(1000);
+	}
 
   return (
     <>
@@ -20,17 +26,21 @@ function App() {
           path='/'
           element={
             <>
-              <SignIn handleAuthStateChange={handleAuthStateChange} />
+              <SignIn 
+								handleAuthStateChange={handleAuthStateChange} 
+								isLoading={isLoading}
+								handleIsLoadingStateChange={handleIsLoadingStateChange} 
+							/>
             </>
           }
         />
+				{ authState ? true : false }
+
         <Route
           path='/chat'
           element={
             <>
-      				<TopNavigationBar currentUser={authState} />
-              <LeftSideComponent />
-              <MiddleChatWindow currentUser={authState} />
+      				<TopNavigationBar currentUser={authState} /> <LeftSideComponent /> <MiddleChatWindow currentUser={authState} />
               <BottomInputComponent currentUser={authState}/>
             </>
           }
