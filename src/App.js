@@ -34,6 +34,7 @@ function App() {
           path='/'
           element={
             <>
+              {/* <TopNavigationBar currentUser={authState} />  */}
               <SignIn 
 								handleAuthStateChange={handleAuthStateChange} 
 								isLoading={isLoading}

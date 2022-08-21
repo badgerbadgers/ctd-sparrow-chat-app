@@ -31,7 +31,7 @@ function LeftSideComponent({ name, ...props }) {
   }, [])
 
   return (
-    <div className='text-light'>
+    <div className={style.sideBar}>
       <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
         Users
       </Button>
