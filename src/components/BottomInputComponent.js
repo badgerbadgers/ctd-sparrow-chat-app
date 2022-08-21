@@ -3,7 +3,7 @@ import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import style from './BottomInputComponent.module.css'
 
-function BottomInputComponent() {
+function BottomInputComponent( {currentUser} ) {
   const [message, setMessage] = useState("")
 
   const handleMessageChange = (e) => {
@@ -18,9 +18,10 @@ function BottomInputComponent() {
     // Add a new message entry to the Firebase database.
     try {
       await addDoc(messagesCollectionRef, {
-        name: "getUserName", //TODO get username
+        name: currentUser.displayName,
+				email: currentUser.email,
         text: messageText,
-        profilePicUrl: "getProfilePicUrl", //TODO get profile picture
+        profilePicUrl: currentUser.photoURL,
         timestamp: serverTimestamp(),
       })
     } catch (error) {

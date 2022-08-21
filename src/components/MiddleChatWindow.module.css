@@ -5,7 +5,7 @@
       background-color: #e9ecef;
        width: 20em;
        padding:1em;
-
+display: inline;
     
         /* display:flexbox;
         flex-direction: row;
@@ -17,7 +17,6 @@
     border-radius:10px;
     width: 3.6em;
     margin:0.4em; 
-
 }
 
 
