@@ -21,13 +21,14 @@ display: inline;
 
 
 .listGroup {
-    list-style-type: none;
-    display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-decoration: none;
-        align-items: center;
-        background-color: #1A2930;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  background-color: #1A2930;
+  min-height: 100vh;
 }
 
 
