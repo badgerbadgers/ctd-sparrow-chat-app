@@ -27,13 +27,12 @@ function MiddleChatWindow({ currentUser }) {
         {messages.map((message) => {
           return (
             <div key={message.id}>
-                <img
-                  className={style.userImage}
-                  src={currentUser ? currentUser.photoURL : ""}
-                  width='75'
-                  alt='profile pic'
-                />
-              </span>
+              <img
+                className={style.userImage}
+                src={currentUser ? currentUser.photoURL : ""}
+                width='75'
+                alt='profile pic'
+              />
               <li className={style.listGroupItem}>{message.text}</li>
             </div>
           )
