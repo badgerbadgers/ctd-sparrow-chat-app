@@ -19,7 +19,7 @@ function Chat({ currentUser }) {
       <TopNavigationBar currentUser={currentUser} />
       <LeftSideComponent />
       <MiddleChatWindow currentUser={currentUser} />
-      <BottomInputComponent currentUser={currentUser} />
+      <BottomInputComponent currentUser={currentUser} isFocused />
     </>
   )
 }

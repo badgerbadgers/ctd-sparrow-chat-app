@@ -1,9 +1,10 @@
+import React from "react"
 import { useState } from "react"
 import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
-import style from './BottomInputComponent.module.css'
+import style from "./BottomInputComponent.module.css"
 
-function BottomInputComponent( {currentUser} ) {
+function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
 
   const handleMessageChange = (e) => {
@@ -19,7 +20,7 @@ function BottomInputComponent( {currentUser} ) {
     try {
       await addDoc(messagesCollectionRef, {
         name: currentUser.displayName,
-				email: currentUser.email,
+        email: currentUser.email,
         text: messageText,
         profilePicUrl: currentUser.photoURL,
         timestamp: serverTimestamp(),
@@ -35,20 +36,30 @@ function BottomInputComponent( {currentUser} ) {
     setMessage("")
   }
 
+  // Perform focus on input field's element via the DOM API when component renders/ dependency changes
+  // (imperative approach)
+  const inputRef = React.useRef()
+
+  // Execute focus() only if isFocused is set & current property is existent
+  React.useEffect(() => {
+    if (isFocused && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [isFocused])
+
   return (
     <div>
-    <form onSubmit={handleSubmitMessage} className={style.formGroup} >
-      <input
-        type='text'
-        value={message}
-        placeholder='Type something...'
-        onChange={handleMessageChange}
-        className={style.userInput}
-        
-        
-      ></input>
-      {/* <button>Submit</button> */}
-    </form>
+      <form onSubmit={handleSubmitMessage} className={style.formGroup}>
+        <input
+          type='text'
+          value={message}
+          placeholder='Type something...'
+          onChange={handleMessageChange}
+          className={style.userInput}
+          ref={inputRef}
+        ></input>
+        {/* <button>Submit</button> */}
+      </form>
     </div>
   )
 }
