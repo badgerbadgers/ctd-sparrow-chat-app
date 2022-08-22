@@ -1,13 +1,11 @@
 .listGroup {
-  margin: auto;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-  align-items: center;
-  background-color: #1A2930;
-  min-height: 100vh;
+    list-style-type: none;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        align-items: center;
+        background-color: #1A2930;
 }
 
 .listGroupItem {
@@ -17,15 +15,15 @@
   width: 20em;
   padding:1em;
   display: inline;
-  /* display:flexbox;
+   /* display:flexbox;
   flex-direction: row;
   justify-content: center; */
 }
 
 .userImage {
-  border-radius:10px;
-  width: 3.6em;
-  margin:0.4em; 
+    border-radius:10px;
+    width: 3.6em;
+    margin:0.4em; 
 }
 
 /* 1. Add a mini title for what channel everyone is on #Finished

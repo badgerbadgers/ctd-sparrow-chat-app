@@ -26,18 +26,16 @@ function MiddleChatWindow({ currentUser }) {
         {/* renders message */}
         {messages.map((message) => {
           return (
-            <>
-              <section className={style.Channels}>Channel: Main group</section>
-              <span key={message.id}>
+            <div key={message.id}>
                 <img
                   className={style.userImage}
                   src={currentUser ? currentUser.photoURL : ""}
                   width='75'
                   alt='profile pic'
                 />
-                <li className={style.listGroupItem}>{message.text}</li>
               </span>
-            </>
+              <li className={style.listGroupItem}>{message.text}</li>
+            </div>
           )
         })}
       </ul>
