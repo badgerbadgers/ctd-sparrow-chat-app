@@ -27,7 +27,6 @@ function MiddleChatWindow({ currentUser }) {
         {messages.map((message) => {
           return (
             <div key={message.id}>
-              <span>
                 <img
                   className={style.userImage}
                   src={currentUser ? currentUser.photoURL : ""}
