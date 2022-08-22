@@ -10,7 +10,6 @@ function MiddleChatWindow({ currentUser }) {
 
   // captures data
   const getMessages = () => {
-    const passedUser = currentUser ? currentUser.photoURL : ""
     onSnapshot(queryMessages, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     })
@@ -29,7 +28,7 @@ function MiddleChatWindow({ currentUser }) {
             <div key={message.id}>
               <img
                 className={style.userImage}
-                src={currentUser ? currentUser.photoURL : ""}
+                src={message.profilePicUrl}
                 width='75'
                 alt='profile pic'
               />
