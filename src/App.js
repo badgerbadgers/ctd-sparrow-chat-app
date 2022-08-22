@@ -1,31 +1,27 @@
-import TopNavigationBar from "./components/TopNavigationBar"
-import LeftSideComponent from "./components/LeftSideComponent"
-import MiddleChatWindow from "./components/MiddleChatWindow"
-import BottomInputComponent from "./components/BottomInputComponent"
+import Chat from "./components/Chat"
 import SignIn from "./components/SignIn"
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 function App() {
-  const [authState, setAuthState] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-	const navigate = useNavigate();
+  const [authState, setAuthState] = useState(null)
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleAuthStateChange = (auth) => {
-    setAuthState(auth);
+    setAuthState(auth)
   }
 
-	const handleIsLoadingStateChange = (isLoading) => {
-		setIsLoading(!isLoading);
-		setTimeout(1000);
-	}
+  const handleIsLoadingStateChange = (isLoading) => {
+    setIsLoading(!isLoading)
+  }
 
-	useEffect(() => {
-		if (authState) {
-			setIsLoading(false);
-			navigate("/chat");
-		}
-	}, [authState]);
+  useEffect(() => {
+    if (authState) {
+      setIsLoading(false)
+      navigate("/chat")
+    }
+  }, [authState])
 
   return (
     <>
@@ -34,28 +30,15 @@ function App() {
           path='/'
           element={
             <>
-              {/* <TopNavigationBar currentUser={authState} />  */}
-              <SignIn 
-								handleAuthStateChange={handleAuthStateChange} 
-								isLoading={isLoading}
-								handleIsLoadingStateChange={handleIsLoadingStateChange} 
-							/>
+              <SignIn
+                handleAuthStateChange={handleAuthStateChange}
+                isLoading={isLoading}
+                handleIsLoadingStateChange={handleIsLoadingStateChange}
+              />
             </>
           }
         />
-				{ authState ? true : false }
-
-        <Route
-          path='/chat'
-          element={
-            <>
-      				<TopNavigationBar currentUser={authState} /> 
-							<LeftSideComponent /> 
-							<MiddleChatWindow currentUser={authState} />
-              <BottomInputComponent currentUser={authState}/>
-            </>
-          }
-        />
+        <Route path='/chat' element={<Chat currentUser={authState} />} />
       </Routes>
     </>
   )
