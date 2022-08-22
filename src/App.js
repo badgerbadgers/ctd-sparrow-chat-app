@@ -13,7 +13,7 @@ function App() {
   }
 
   const handleIsLoadingStateChange = (bool) => {
-    bool ? setIsLoading(bool) : setIsLoading(false)
+    bool ? setIsLoading(true) : setIsLoading(false)
   }
 
   useEffect(() => {
