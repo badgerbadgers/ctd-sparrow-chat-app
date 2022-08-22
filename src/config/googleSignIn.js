@@ -34,7 +34,7 @@ const provider = new GoogleAuthProvider()
 const usersCollectionRef = collection(db, "users")
 
 // Prompt user to sign in w/their Google account by opening a pop-up window
-export const signInWithGoogle = () => {
+export const signInWithGoogle = (handleIsLoadingStateChange) => {
   signInWithPopup(auth, provider)
     .then(async (result) => {
       // Checks if user is already on "users" collection
@@ -55,5 +55,6 @@ export const signInWithGoogle = () => {
     })
     .catch((error) => {
       console.log(error)
+      handleIsLoadingStateChange(false)
     })
 }

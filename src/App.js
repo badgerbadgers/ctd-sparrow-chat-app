@@ -12,8 +12,8 @@ function App() {
     setAuthState(auth)
   }
 
-  const handleIsLoadingStateChange = (isLoading) => {
-    setIsLoading(!isLoading)
+  const handleIsLoadingStateChange = (bool) => {
+    bool ? setIsLoading(bool) : setIsLoading(false)
   }
 
   useEffect(() => {
