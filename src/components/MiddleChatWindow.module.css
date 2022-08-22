@@ -1,11 +1,13 @@
 .listGroup {
-    list-style-type: none;
-    display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-decoration: none;
-        align-items: center;
-        background-color: #1A2930;
+  margin: auto;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  background-color: #1A2930;
+  min-height: 100vh;
 }
 
 .listGroupItem {
