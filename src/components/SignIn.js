@@ -20,34 +20,34 @@ function SignIn({
 
   return (
     <div className='bg-secondary'>
-      {/* <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50 bg-primary'> */}
-      <img
-        src={logo}
-        className='filterYellow'
-        style={{ height: 75, width: 75 }}
-        alt='Sparrow Logo'
-      />
-      <h1 className='h6 text-warning'>sparrow</h1>
-
-      {isLoading ? (
+      <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50 bg-primary'>
         <img
-          src={spinner}
+          src={logo}
+          className='filterYellow'
           style={{ height: 75, width: 75 }}
-          alt='Loading Spinner'
+          alt='Sparrow Logo'
         />
-      ) : (
-        <Button
-          variant='light'
-          onClick={() => {
-            handleIsLoadingStateChange(true)
-            signInWithGoogle(handleIsLoadingStateChange)
-          }}
-          // className='px-4 rounded-pill bg-info'
-        >
-          Sign in with <i className='bi bi-google'></i>
-        </Button>
-      )}
-      {/* </div> */}
+        <h1 className='h6 text-warning'>sparrow</h1>
+
+        {isLoading ? (
+          <img
+            src={spinner}
+            style={{ height: 75, width: 75 }}
+            alt='Loading Spinner'
+          />
+        ) : (
+          <Button
+            variant='light'
+            onClick={() => {
+              handleIsLoadingStateChange(true)
+              signInWithGoogle(handleIsLoadingStateChange)
+            }}
+            className='px-4 rounded-pill bg-info'
+          >
+            Sign in with <i className='bi bi-google'></i>
+          </Button>
+        )}
+      </div>
     </div>
   )
 }

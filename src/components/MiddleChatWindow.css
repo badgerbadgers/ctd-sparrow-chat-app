@@ -8,6 +8,7 @@
   align-items: center;
   background-color: #1A2930;
   height: 90vh;
+  overflow: scroll;
 }
 
 .listGroupItem {
@@ -20,10 +21,10 @@
   overflow-y: scroll;
 }
 
-.picAndMessageDiv {
-  /* display: flex; */
-  /* flex-direction: row; */
-}
+/* .picAndMessageDiv {
+  display: flex;
+  flex-direction: row;
+} */
 
 .userImage {
   border-radius:10px;

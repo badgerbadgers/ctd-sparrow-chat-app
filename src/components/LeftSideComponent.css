@@ -1,6 +1,7 @@
 .listGroupItem {
-    list-style-type: none;
-    font-size: 1.75rem;
+  list-style-type: none;
+  /* font-size: 1.75rem; */
+    
 }
 
 .sideBar {

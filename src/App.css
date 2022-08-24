@@ -6,3 +6,10 @@
   min-height: 75vh;
   max-height: 100vh;
 }
+
+.list-group-item {
+  background: #282c34;
+}
+.list-group {
+  background: #282c34;
+}
