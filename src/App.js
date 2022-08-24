@@ -3,6 +3,7 @@ import SignIn from "./components/SignIn"
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { Container } from "react-bootstrap"
+import "./App.css"
 
 function App() {
   const [authState, setAuthState] = useState(null)

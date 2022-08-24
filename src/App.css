@@ -1,6 +1,10 @@
 /* container for all components*/
 .container-fluid {
-  padding: 0;
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  min-height: 75vh;
+  max-height: 100vh;
 }
 
 /* .list-group-item {
