@@ -31,7 +31,7 @@ function LeftSideComponent({ name, ...props }) {
   }, [])
 
   return (
-    <div>
+    <div className='side-bar'>
       <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
         Users
       </Button>
@@ -51,7 +51,7 @@ function LeftSideComponent({ name, ...props }) {
             <ul className='listGroup'>
               {users.map((user) => {
                 return (
-                  <li key={user.id} className='listGroupItem'>
+                  <li key={user.id} className='sidebar-text'>
                     {user.name}
                   </li>
                 )

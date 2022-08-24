@@ -1,34 +1,17 @@
-.listGroupItem {
-  list-style-type: none;
-  /* font-size: 1.75rem; */
-    
-}
-
-.sideBar {
-  /* height:800px; */
-  /* width: 400px; */
+/* styling for sidebar component*/
+.side-bar {
   height: 100vh;
-  border: 1px solid red;
-    width: 86px;
-    padding-top: 20px;
-  /* border-radius: 10px; */
-  /* position: fixed; */
-  /* bottom: 0px; */
+  width: 86px;
+  padding-top: 110px;
+  position: fixed;
+  bottom: 0px;
   left: auto;
-  /* right: 40px; */
   z-index: 10;
-  background-color: #202020;
 }
 
-
-/* .LeftSidePanel {
-    width: 40px;
-position: fixed;
-bottom: 0px;
-left: auto;
-right: 40px;
-z-index: 10;
-
-} */
-
+/* styling for sidebar text */
+.sidebar-text {
+  list-style-type: none;
+  font-size: 1.75rem;
+}
 

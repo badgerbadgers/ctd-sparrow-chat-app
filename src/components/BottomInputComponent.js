@@ -49,13 +49,13 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmitMessage} className='formGroup'>
+      <form onSubmit={handleSubmitMessage} className='bottom-input-form'>
         <input
           type='text'
           value={message}
           placeholder='Type something...'
           onChange={handleMessageChange}
-          className='userInput'
+          className='bottom-input-field'
           ref={inputRef}
         ></input>
         <button>Submit</button>
