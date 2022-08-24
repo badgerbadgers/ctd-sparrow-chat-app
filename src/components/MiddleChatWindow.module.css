@@ -16,16 +16,19 @@
   background-color: #e9ecef;
   width: 20em;
   padding:1em;
-  display: inline;
-   /* display:flexbox;
+  /* display: inline; */
+  overflow-y: scroll;
+}
+
+.picAndMessageDiv {
+  display: flex;
   flex-direction: row;
-  justify-content: center; */
 }
 
 .userImage {
-    border-radius:10px;
-    width: 3.6em;
-    margin:0.4em; 
+  border-radius:10px;
+  width: 3.6em;
+  margin:0.4em; 
 }
 
 /* 1. Add a mini title for what channel everyone is on #Finished
