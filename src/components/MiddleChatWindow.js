@@ -27,7 +27,7 @@ function MiddleChatWindow({ currentUser }) {
           return (
             <div key={message.id} className='profile-pic-and-message'>
               <img
-                className='userImage'
+                className='user-image'
                 src={message.profilePicUrl}
                 width='75'
                 alt='profile pic'
