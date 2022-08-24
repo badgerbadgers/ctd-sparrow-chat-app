@@ -1,15 +1,8 @@
-/* container for all components*/
+/* styling for main container that holds all components */
 .container-fluid {
   width: 100%;
   padding-left: 0 !important;
   padding-right: 0 !important;
   min-height: 75vh;
   max-height: 100vh;
-}
-
-.list-group-item {
-  background: #282c34;
-}
-.list-group {
-  background: #282c34;
 }

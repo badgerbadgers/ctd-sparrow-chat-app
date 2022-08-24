@@ -1,3 +1,4 @@
+/* styling for the unordered list or container */
 .list-container {
   margin: auto;
   list-style-type: none;
@@ -7,7 +8,7 @@
   height: 90vh;
   overflow: scroll;
 }
-
+/* styling for each message displayed in chat window */
 .list-item {
   margin:0.4em; 
   border-radius:10px;
@@ -18,19 +19,21 @@
   overflow-y: scroll;
 }
 
+/* styling for the div that contains both profile pic and message */
 .profile-pic-and-message {
   display: flex;
   flex-direction: row;
   padding-left: 80px;
 }
 
+/* styling for the profile pic */
 .userImage {
   border-radius:10px;
   width: 3.6em;
   margin:0.4em; 
 }
 
-/*
+/* todos
   -Add a mini title for what channel everyone is on #Finished
   -character limit / text content should not spill over
 */
