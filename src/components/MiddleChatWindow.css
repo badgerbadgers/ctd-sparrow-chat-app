@@ -21,10 +21,10 @@
   overflow-y: scroll;
 }
 
-/* .picAndMessageDiv {
+.profile-pic-and-message {
   display: flex;
   flex-direction: row;
-} */
+}
 
 .userImage {
   border-radius:10px;
