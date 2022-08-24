@@ -1,8 +1,8 @@
 /* styling for bottom input field form */
 .bottom-input-form {
-    display: flex;
-    justify-content: center;
-    background-color: #1A2930;
+  display: flex;
+  justify-content: center;
+  background-color: #1A2930;
 }
 
 /* styling for the input field */
@@ -10,5 +10,6 @@
   margin-bottom: 0.5em;
   border-radius:10px;
   font-size: 25px;
-  width:25em;
+  width: 70%;
+  /* width:25em; */
 }

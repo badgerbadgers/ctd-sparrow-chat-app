@@ -16,7 +16,7 @@
   border-radius:10px;
   background-color: #e9ecef;
   width: 20em;
-  padding:1em;
+  /* padding:1em; */
   /* display: inline; */
   overflow-y: scroll;
 }
@@ -24,6 +24,7 @@
 .profile-pic-and-message {
   display: flex;
   flex-direction: row;
+  padding-left: 80px;
 }
 
 .userImage {
