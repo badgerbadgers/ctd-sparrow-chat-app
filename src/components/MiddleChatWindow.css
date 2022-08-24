@@ -1,9 +1,6 @@
 .list-container {
   margin: auto;
   list-style-type: none;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-start; */
   text-decoration: none;
   align-items: center;
   background-color: #1A2930;
@@ -33,9 +30,7 @@
   margin:0.4em; 
 }
 
-/* 1. Add a mini title for what channel everyone is on #Finished
-2. switch the image to the left hand side #Finished
-3.  add colored background #in-progress
-4. expand the left hand side bar #in-progress
-5. character limit / text content should not spill over
+/*
+  -Add a mini title for what channel everyone is on #Finished
+  -character limit / text content should not spill over
 */
