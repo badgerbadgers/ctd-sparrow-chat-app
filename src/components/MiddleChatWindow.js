@@ -21,7 +21,7 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className='listGroup'>
+      <ul className='list-container'>
         {/* renders message */}
         {messages.map((message) => {
           return (
@@ -32,7 +32,7 @@ function MiddleChatWindow({ currentUser }) {
                 width='75'
                 alt='profile pic'
               />
-              <li className='listGroupItem'>{message.text}</li>
+              <li className='list-item'>{message.text}</li>
             </div>
           )
         })}
