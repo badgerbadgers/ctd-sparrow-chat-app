@@ -22,7 +22,7 @@ function TopNavigationBar({ currentUser }) {
               src={logo}
               width='50'
               height='50'
-              // className={style.filterYellow}
+              className='filter-yellow'
               alt='Sparrow Logo'
             />
             <p className='h6 text-warning'>sparrow</p>
@@ -34,12 +34,12 @@ function TopNavigationBar({ currentUser }) {
             src={currentUser ? currentUser.photoURL : ""}
             width='55'
             height='55'
-            // className='me-5 rounded-circle'
+            className='me-5 rounded-circle'
           />
           <Link to='/'>
             <Button
               variant='light'
-              // className='px-3 rounded bg-info'
+              className='px-3 rounded bg-info'
               onClick={handleSignOutUser}
             >
               Sign Out
