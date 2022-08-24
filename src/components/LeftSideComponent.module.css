@@ -3,17 +3,20 @@
     font-size: 1.75rem;
 }
 
-
 .sideBar {
-    height:500px;
-    width: 82px;
-    border-radius: 10px;
-position:fixed;
-/* bottom: 0px; */
-left: auto;
-/* right: 40px; */
-z-index: 10;
-background-color: #202020;
+  /* height:800px; */
+  /* width: 400px; */
+  height: 100vh;
+  border: 1px solid red;
+    width: 86px;
+    padding-top: 20px;
+  /* border-radius: 10px; */
+  /* position: fixed; */
+  /* bottom: 0px; */
+  left: auto;
+  /* right: 40px; */
+  z-index: 10;
+  background-color: #202020;
 }
 
 

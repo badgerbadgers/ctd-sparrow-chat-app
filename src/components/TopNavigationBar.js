@@ -16,36 +16,36 @@ function TopNavigationBar({ currentUser }) {
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-3'>
-        <Container>
-          <Navbar.Brand>
-            <img
-              src={logo}
-              width='50'
-              height='50'
-              className={style.filterYellow}
-              alt='Sparrow Logo'
-            />
-            <p className='h6 text-warning'>sparrow</p>
-          </Navbar.Brand>
-          <span className='fs-5 text-white ms-auto me-2'>
-            {currentUser ? currentUser.displayName : ""}
-          </span>
-          <Image
-            src={currentUser ? currentUser.photoURL : ""}
-            width='55'
-            height='55'
-            className='me-5 rounded-circle'
+        {/* <Container> */}
+        <Navbar.Brand>
+          <img
+            src={logo}
+            width='50'
+            height='50'
+            // className={style.filterYellow}
+            alt='Sparrow Logo'
           />
-          <Link to='/'>
-            <Button
-              variant='light'
-              className='px-3 rounded bg-info'
-              onClick={handleSignOutUser}
-            >
-              Sign Out
-            </Button>
-          </Link>
-        </Container>
+          <p className='h6 text-warning'>sparrow</p>
+        </Navbar.Brand>
+        <span className='fs-5 text-white ms-auto me-2'>
+          {currentUser ? currentUser.displayName : ""}
+        </span>
+        <Image
+          src={currentUser ? currentUser.photoURL : ""}
+          width='55'
+          height='55'
+          // className='me-5 rounded-circle'
+        />
+        <Link to='/'>
+          <Button
+            variant='light'
+            // className='px-3 rounded bg-info'
+            onClick={handleSignOutUser}
+          >
+            Sign Out
+          </Button>
+        </Link>
+        {/* </Container> */}
       </Navbar>
     </div>
   )

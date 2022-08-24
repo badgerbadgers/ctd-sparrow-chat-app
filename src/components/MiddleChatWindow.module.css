@@ -1,9 +1,9 @@
 .listGroup {
   margin: auto;
   list-style-type: none;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
   text-decoration: none;
   align-items: center;
   background-color: #1A2930;
@@ -21,8 +21,8 @@
 }
 
 .picAndMessageDiv {
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
 }
 
 .userImage {

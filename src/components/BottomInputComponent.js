@@ -55,7 +55,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
           value={message}
           placeholder='Type something...'
           onChange={handleMessageChange}
-          className={style.userInput}
+          // className={style.userInput}
           ref={inputRef}
         ></input>
         {/* <button>Submit</button> */}
