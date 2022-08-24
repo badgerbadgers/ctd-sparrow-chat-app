@@ -42,7 +42,7 @@ function SignIn({
             handleIsLoadingStateChange(true)
             signInWithGoogle(handleIsLoadingStateChange)
           }}
-          className='px-4 rounded-pill bg-info'
+          // className='px-4 rounded-pill bg-info'
         >
           Sign in with <i className='bi bi-google'></i>
         </Button>

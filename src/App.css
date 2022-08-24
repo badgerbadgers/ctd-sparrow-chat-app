@@ -1,6 +1,11 @@
-.list-group-item {
+/* container for all components*/
+.container-fluid {
+  padding: 0;
+}
+
+/* .list-group-item {
   background: #282c34;
 }
 .list-group {
   background: #282c34;
-}
+} */

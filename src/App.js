@@ -2,6 +2,7 @@ import Chat from "./components/Chat"
 import SignIn from "./components/SignIn"
 import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
+import { Container } from "react-bootstrap"
 
 function App() {
   const [authState, setAuthState] = useState(null)
@@ -24,7 +25,7 @@ function App() {
   }, [authState])
 
   return (
-    <>
+    <Container fluid>
       <Routes>
         <Route
           path='/'
@@ -40,7 +41,7 @@ function App() {
         />
         <Route path='/chat' element={<Chat currentUser={authState} />} />
       </Routes>
-    </>
+    </Container>
   )
 }
 

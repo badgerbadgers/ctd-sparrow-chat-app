@@ -31,8 +31,8 @@ function LeftSideComponent({ name, ...props }) {
   }, [])
 
   return (
-    <div className={style.sideBar}>
-      {/* <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
+    <div>
+      <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
         Users
       </Button>
       <Offcanvas
@@ -61,7 +61,7 @@ function LeftSideComponent({ name, ...props }) {
             <p>No user online</p>
           )}
         </Offcanvas.Body>
-      </Offcanvas> */}
+      </Offcanvas>
     </div>
   )
 }
