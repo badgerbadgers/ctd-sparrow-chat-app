@@ -15,7 +15,7 @@ function TopNavigationBar({ currentUser }) {
   }
   return (
     <div>
-      <Navbar bg='primary navbar-dark' className='pt-3'>
+      <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
         <Container>
           <Navbar.Brand>
             <img
