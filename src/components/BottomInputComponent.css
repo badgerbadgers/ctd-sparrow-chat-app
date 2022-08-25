@@ -3,13 +3,24 @@
   display: flex;
   justify-content: center;
   background-color: #1A2930;
+  align-items: center;
 }
 
 /* styling for the input field */
 .bottom-input-field {
-  margin-bottom: 0.5em;
+  padding: 5px 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
   border-radius:10px;
   font-size: 25px;
   width: 70%;
-  /* width:25em; */
+}
+
+/* styling for input submit button */
+.input-button {
+  align-items: center;
+  height: 45px;
+  margin-bottom: 0px;
+  border-radius: 10px;
 }
