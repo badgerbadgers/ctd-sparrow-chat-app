@@ -7,6 +7,7 @@
   background-color: #1A2930;
   height: 90vh;
   overflow: scroll;
+  padding-left: 200px;
 }
 /* styling for each message displayed in chat window */
 .list-item {
@@ -14,16 +15,15 @@
   border-radius:10px;
   background-color: #e9ecef;
   width: 20em;
-  /* padding:1em; */
-  /* display: inline; */
-  overflow-y: scroll;
+  padding: .5em 1em;
+  overflow-wrap: break-word;
 }
 
 /* styling for the div that contains both profile pic and message */
 .profile-pic-and-message {
   display: flex;
   flex-direction: row;
-  padding-left: 80px;
+  align-items: flex-start;  
 }
 
 /* styling for the profile pic */
