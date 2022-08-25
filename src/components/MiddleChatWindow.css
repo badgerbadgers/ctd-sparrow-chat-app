@@ -24,7 +24,7 @@
 .profile-pic-and-message {
   display: flex;
   flex-direction: row;
-  padding-left: 80px;
+  align-items: flex-start;  
 }
 
 /* styling for the profile pic */
