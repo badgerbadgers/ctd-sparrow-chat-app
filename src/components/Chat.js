@@ -20,11 +20,13 @@ function Chat({ currentUser }) {
       <section className='bg-secondary'>
         <div className='container'>
           <div className='row'>
-            <div className='col-3'>
+            <div className='col-2'>
               <LeftSideComponent />
             </div>
-            <div className='col-9'>
+            <div className='col-8'>
               <MiddleChatWindow currentUser={currentUser} />
+            </div>
+              <div className='col-2'>
             </div>
           </div>
         </div>
