@@ -17,8 +17,18 @@ function Chat({ currentUser }) {
   return (
     <>
       <TopNavigationBar currentUser={currentUser} />
-      <LeftSideComponent />
-      <MiddleChatWindow currentUser={currentUser} />
+      <section className='bg-secondary'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-3'>
+              <LeftSideComponent />
+            </div>
+            <div className='col-9'>
+              <MiddleChatWindow currentUser={currentUser} />
+            </div>
+          </div>
+        </div>
+      </section>
       <BottomInputComponent currentUser={currentUser} isFocused />
     </>
   )
