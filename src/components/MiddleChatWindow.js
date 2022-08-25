@@ -25,7 +25,14 @@ function MiddleChatWindow({ currentUser }) {
         {/* renders message */}
         {messages.map((message) => {
           return (
-            <div key={message.id} className='profile-pic-and-message'>
+            <div
+              key={message.id}
+              className={
+                message.email === currentUser.email
+                  ? "profile-pic-and-message-end"
+                  : "profile-pic-and-message"
+              }
+            >
               <img
                 className='user-image'
                 src={message.profilePicUrl}
