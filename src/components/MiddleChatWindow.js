@@ -24,18 +24,15 @@ function MiddleChatWindow({ currentUser }) {
       <ul className='list-container'>
         {/* renders message */}
         {messages.map((message) => {
-          return message.email === currentUser.email ? (
-            <div key={message.id} className='profile-pic-and-message-end'>
-              <img
-                className='user-image'
-                src={message.profilePicUrl}
-                width='75'
-                alt='profile pic'
-              />
-              <li className='list-item'>{message.text}</li>
-            </div>
-          ) : (
-            <div key={message.id} className='profile-pic-and-message'>
+          return (
+            <div
+              key={message.id}
+              className={
+                message.email === currentUser.email
+                  ? "profile-pic-and-message-end"
+                  : "profile-pic-and-message"
+              }
+            >
               <img
                 className='user-image'
                 src={message.profilePicUrl}
