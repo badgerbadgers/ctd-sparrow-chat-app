@@ -3,11 +3,10 @@
   margin: auto;
   list-style-type: none;
   text-decoration: none;
-  align-items: center;
   background-color: #1A2930;
   height: 90vh;
   overflow: scroll;
-  padding-left: 200px;
+  padding-top: 150px;
 }
 /* styling for each message displayed in chat window */
 .list-item {
@@ -24,6 +23,13 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;  
+}
+
+.profile-pic-and-message-end {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+
 }
 
 /* styling for the profile pic */
