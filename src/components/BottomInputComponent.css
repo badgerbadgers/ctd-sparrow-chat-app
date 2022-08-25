@@ -11,5 +11,12 @@
   border-radius:10px;
   font-size: 25px;
   width: 70%;
-  /* width:25em; */
+}
+
+/* styling for input submit button */
+.input-button {
+  align-items: center;
+  height: 45px;
+  margin-bottom: 0px;
+  border-radius: 10px;
 }
