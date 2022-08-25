@@ -1,3 +1,8 @@
+/* hide scrollbars that appear in web browser */
+body {
+  overflow: hidden; 
+}
+
 /* styling for main container that holds all components */
 .container-fluid {
   width: 100%;
