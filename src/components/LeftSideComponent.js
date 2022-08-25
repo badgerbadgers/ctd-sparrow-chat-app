@@ -7,7 +7,7 @@ import {
   limit,
 } from "firebase/firestore"
 import { useState, useEffect } from "react"
-import style from "./LeftSideComponent.module.css"
+import "./LeftSideComponent.css"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import Button from "react-bootstrap/Button"
 
@@ -31,7 +31,7 @@ function LeftSideComponent({ name, ...props }) {
   }, [])
 
   return (
-    <div className={style.sideBar}>
+    <div className='side-bar'>
       <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
         Users
       </Button>
@@ -48,10 +48,10 @@ function LeftSideComponent({ name, ...props }) {
         </Offcanvas.Header>
         <Offcanvas.Body className='bg-secondary'>
           {users.length > 0 ? (
-            <ul className={style.listGroup}>
+            <ul className='listGroup'>
               {users.map((user) => {
                 return (
-                  <li key={user.id} className={style.listGroupItem}>
+                  <li key={user.id} className='sidebar-text'>
                     {user.name}
                   </li>
                 )

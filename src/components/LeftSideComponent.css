@@ -1,0 +1,17 @@
+/* styling for sidebar component*/
+.side-bar {
+  height: 100vh;
+  width: 86px;
+  padding-top: 80px;
+  position: fixed;
+  bottom: 0px;
+  left: auto;
+  z-index: 10;
+}
+
+/* styling for sidebar text */
+.sidebar-text {
+  list-style-type: none;
+  font-size: 1.75rem;
+}
+

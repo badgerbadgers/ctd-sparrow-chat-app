@@ -5,7 +5,7 @@ import logo from "../assets/sparrow-logo.svg"
 import spinner from "../assets/loading_spinner_icon_yellow.png"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
-import style from "./SignIn.module.css"
+import "./SignIn.css"
 
 function SignIn({
   handleAuthStateChange,
@@ -23,7 +23,7 @@ function SignIn({
       <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50 bg-primary'>
         <img
           src={logo}
-          className={style.filterYellow}
+          className='filterYellow'
           style={{ height: 75, width: 75 }}
           alt='Sparrow Logo'
         />

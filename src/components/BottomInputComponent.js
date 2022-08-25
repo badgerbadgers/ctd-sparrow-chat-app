@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
-import style from "./BottomInputComponent.module.css"
+import "./BottomInputComponent.css"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
@@ -49,16 +49,16 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmitMessage} className={style.formGroup}>
+      <form onSubmit={handleSubmitMessage} className='bottom-input-form'>
         <input
           type='text'
           value={message}
           placeholder='Type something...'
           onChange={handleMessageChange}
-          className={style.userInput}
+          className='bottom-input-field'
           ref={inputRef}
         ></input>
-        {/* <button>Submit</button> */}
+        <button>Submit</button>
       </form>
     </div>
   )

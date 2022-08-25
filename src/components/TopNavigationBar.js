@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button"
 import Image from "react-bootstrap/Image"
-import style from "./TopNavigationBar.module.css"
+import "./TopNavigationBar.css"
 
 function TopNavigationBar({ currentUser }) {
   // When signing out removes user from 'users' collection and signs out user.
@@ -22,7 +22,7 @@ function TopNavigationBar({ currentUser }) {
               src={logo}
               width='50'
               height='50'
-              className={style.filterYellow}
+              className='filter-yellow'
               alt='Sparrow Logo'
             />
             <p className='h6 text-warning'>sparrow</p>

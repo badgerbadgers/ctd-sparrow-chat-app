@@ -1,7 +1,7 @@
 import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
 import { useState, useEffect } from "react"
-import style from "./MiddleChatWindow.module.css"
+import "./MiddleChatWindow.css"
 
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])
@@ -21,18 +21,18 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className={style.listGroup}>
+      <ul className='list-container'>
         {/* renders message */}
         {messages.map((message) => {
           return (
-            <div key={message.id} className={style.picAndMessageDiv}>
+            <div key={message.id} className='profile-pic-and-message'>
               <img
-                className={style.userImage}
+                className='user-image'
                 src={message.profilePicUrl}
                 width='75'
                 alt='profile pic'
               />
-              <li className={style.listGroupItem}>{message.text}</li>
+              <li className='list-item'>{message.text}</li>
             </div>
           )
         })}
