@@ -82,33 +82,6 @@ function BottomInputComponent({ currentUser, isFocused }) {
         </Container>
       </Navbar>
     </>
-    // <>
-    //   <form
-    //     onSubmit={handleSubmitMessage}
-    //     className='bottom-input-form'
-    //     fixed='bottom'
-    //   >
-    //     <input
-    //       type='text'
-    //       value={message}
-    //       placeholder='Type something...'
-    //       onChange={handleMessageChange}
-    //       className='bottom-input-field'
-    //       ref={inputRef}
-    //     ></input>
-    //     <BsFillArrowUpSquareFill
-    //       className='bottom-input-form-button'
-    //       type='button'
-    //       onClick={handleSubmitMessage}
-    //       style={{
-    //         color: "#3BBF69",
-    //         fontSize: "44px",
-    //         backgroundColor: "#1A2930",
-    //         borderRadius: "10px",
-    //       }}
-    //     />
-    //   </form>
-    // </>
   )
 }
 
