@@ -3,10 +3,8 @@
   margin: auto;
   list-style-type: none;
   text-decoration: none;
-  background-color: #1A2930;
-  height: 90vh;
-  overflow: scroll;
-  padding-top: 150px;
+  padding-top: 125px;
+  flex-grow: 1;
 }
 /* styling for each message displayed in chat window */
 .list-item {

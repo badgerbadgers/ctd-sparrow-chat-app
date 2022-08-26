@@ -28,13 +28,7 @@ function Chat({ currentUser }) {
             </div>
             <div className='col-2'></div>
           </div>
-          <div className='row'>
-            <div className='col-2'></div>
-            <div className='col-8'>
-              <BottomInputComponent currentUser={currentUser} isFocused />
-            </div>
-            <div className='col-2'></div>
-          </div>
+          <BottomInputComponent currentUser={currentUser} isFocused />
         </div>
       </section>
     </>
