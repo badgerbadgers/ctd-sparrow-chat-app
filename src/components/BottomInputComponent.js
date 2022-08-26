@@ -64,11 +64,12 @@ function BottomInputComponent({ currentUser, isFocused }) {
           ref={inputRef}
         ></input>
         <BsFillArrowUpSquareFill
+          className='bottom-input-form-button'
           type='button'
           onClick={handleSubmitMessage}
           style={{
             color: "#3BBF69",
-            fontSize: "50px",
+            fontSize: "44px",
             backgroundColor: "#1A2930",
             borderRadius: "10px",
           }}
