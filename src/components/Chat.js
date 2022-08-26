@@ -17,7 +17,7 @@ function Chat({ currentUser }) {
   return (
     <>
       <TopNavigationBar currentUser={currentUser} />
-      <section className='bg-secondary'>
+      <section className='bg-secondary min-vh-100'>
         <div className='container'>
           <div className='row'>
             <div className='col-2'>
@@ -26,12 +26,11 @@ function Chat({ currentUser }) {
             <div className='col-8'>
               <MiddleChatWindow currentUser={currentUser} />
             </div>
-              <div className='col-2'>
-            </div>
+            <div className='col-2'></div>
           </div>
+          <BottomInputComponent currentUser={currentUser} isFocused />
         </div>
       </section>
-      <BottomInputComponent currentUser={currentUser} isFocused />
     </>
   )
 }

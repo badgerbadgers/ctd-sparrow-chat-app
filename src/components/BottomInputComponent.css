@@ -2,8 +2,10 @@
 .bottom-input-form {
   display: flex;
   justify-content: center;
-  background-color: #1A2930;
   align-items: center;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: 750px;
 }
 
 /* styling for the input field */
@@ -13,8 +15,12 @@
   margin-bottom: 20px;
   margin-right: 15px;
   border-radius: 10px !important;
-  font-size: 25px;
-  width: 70%;
+  font-size: 20px;
+  width: 80%;
+}
+
+.container-bottom-input-form {
+  justify-content: center !important;
 }
 
 .wrapper {

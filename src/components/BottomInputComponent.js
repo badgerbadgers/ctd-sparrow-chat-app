@@ -4,6 +4,8 @@ import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import "./BottomInputComponent.css"
 import { BsFillArrowUpSquareFill } from "react-icons/bs"
+import Container from "react-bootstrap/Container"
+import Navbar from "react-bootstrap/Navbar"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
@@ -50,19 +52,21 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmitMessage}
-        className='bottom-input-form'
-        fixed='bottom'
-      >
-        <input
-          type='text'
-          value={message}
-          placeholder='Type something...'
-          onChange={handleMessageChange}
-          className='bottom-input-field'
-          ref={inputRef}
-        ></input>
+      <Navbar fixed='bottom' bg='secondary'>
+        <Container className='container-bottom-input-form'>
+          <form
+            onSubmit={handleSubmitMessage}
+            className='bottom-input-form'
+            fixed='bottom'
+          >
+            <input
+              type='text'
+              value={message}
+              placeholder='Type something...'
+              onChange={handleMessageChange}
+              className='bottom-input-field'
+              ref={inputRef}
+            ></input>
         {message.length === 0 ? (
           <div className='wrapper'>
             <BsFillArrowUpSquareFill
@@ -71,7 +75,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
               className='pointer-events-none'
               style={{
                 color: "#3BBF69",
-                fontSize: "50px",
+                fontSize: "44px",
                 backgroundColor: "#1A2930",
                 borderRadius: "10px",
               }}
@@ -83,13 +87,15 @@ function BottomInputComponent({ currentUser, isFocused }) {
             onClick={handleSubmitMessage}
             style={{
               color: "#3BBF69",
-              fontSize: "50px",
+              fontSize: "44px",
               backgroundColor: "#1A2930",
               borderRadius: "10px",
             }}
           />
         )}
-      </form>
+        </form>
+       </Container>
+      </Navbar>
     </>
   )
 }
