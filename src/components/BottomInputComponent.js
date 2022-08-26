@@ -3,6 +3,7 @@ import { useState } from "react"
 import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import "./BottomInputComponent.css"
+import { BsFillArrowUpSquareFill } from "react-icons/bs"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
@@ -48,7 +49,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
   }, [isFocused])
 
   return (
-    <div>
+    <>
       <form
         onSubmit={handleSubmitMessage}
         className='bottom-input-form'
@@ -62,9 +63,18 @@ function BottomInputComponent({ currentUser, isFocused }) {
           className='bottom-input-field'
           ref={inputRef}
         ></input>
-        <button>Submit</button>
+        <BsFillArrowUpSquareFill
+          type='button'
+          onClick={handleSubmitMessage}
+          style={{
+            color: "#3BBF69",
+            fontSize: "50px",
+            backgroundColor: "#1A2930",
+            borderRadius: "10px",
+          }}
+        />
       </form>
-    </div>
+    </>
   )
 }
 
