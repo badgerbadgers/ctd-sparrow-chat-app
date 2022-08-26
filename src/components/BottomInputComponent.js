@@ -4,6 +4,9 @@ import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import "./BottomInputComponent.css"
 import { BsFillArrowUpSquareFill } from "react-icons/bs"
+import InputGroup from "react-bootstrap/InputGroup"
+import Button from "react-bootstrap/Button"
+import Form from "react-bootstrap/Form"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
@@ -55,24 +58,30 @@ function BottomInputComponent({ currentUser, isFocused }) {
         className='bottom-input-form'
         fixed='bottom'
       >
-        <input
-          type='text'
-          value={message}
-          placeholder='Type something...'
-          onChange={handleMessageChange}
-          className='bottom-input-field'
-          ref={inputRef}
-        ></input>
-        <BsFillArrowUpSquareFill
-          type='button'
-          onClick={handleSubmitMessage}
-          style={{
-            color: "#3BBF69",
-            fontSize: "50px",
-            backgroundColor: "#1A2930",
-            borderRadius: "10px",
-          }}
-        />
+        <InputGroup>
+          <input
+            type='text'
+            value={message}
+            placeholder='Type something...'
+            onChange={handleMessageChange}
+            className='bottom-input-field'
+            ref={inputRef}
+          ></input>
+          <BsFillArrowUpSquareFill
+            type='button'
+            onClick={handleSubmitMessage}
+            style={{
+              color: "#3BBF69",
+              fontSize: "50px",
+              backgroundColor: "#1A2930",
+              borderRadius: "10px",
+              marginTop: "1px",
+              position: "relative",
+              right: "50px",
+            }}
+            className='submit-button'
+          />
+        </InputGroup>
       </form>
     </>
   )
