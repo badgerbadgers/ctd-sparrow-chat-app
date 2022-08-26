@@ -16,3 +16,11 @@
   font-size: 25px;
   width: 70%;
 }
+
+.wrapper {
+  cursor: not-allowed;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
