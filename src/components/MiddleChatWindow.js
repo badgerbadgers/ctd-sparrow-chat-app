@@ -6,7 +6,10 @@ import "./MiddleChatWindow.css"
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])
   const messagesCollectionRef = collection(db, "messages")
-  const queryMessages = query(messagesCollectionRef, orderBy("timestamp"))
+  const queryMessages = query(
+    messagesCollectionRef,
+    orderBy("timestamp", "desc")
+  )
 
   // captures data
   const getMessages = () => {
@@ -21,7 +24,7 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className='list-container'>
+      <ul className='list-container d-flex'>
         {/* renders message */}
         {messages.map((message) => {
           return (
