@@ -39,7 +39,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
     setMessage("")
   }
 
-  // Perform focus on input field's element via the DOM API when component renders/ dependency changes
+  // Perform focus on input field's element via the DOM API when component renders/dependency changes
   // (imperative approach)
   const inputRef = React.useRef()
 
@@ -67,10 +67,12 @@ function BottomInputComponent({ currentUser, isFocused }) {
               className='bottom-input-field'
               ref={inputRef}
             ></input>
+        {message.length === 0 ? (
+          <div className='wrapper'>
             <BsFillArrowUpSquareFill
-              className='bottom-input-form-button'
               type='button'
-              onClick={handleSubmitMessage}
+              disabled={true}
+              className='pointer-events-none'
               style={{
                 color: "#3BBF69",
                 fontSize: "44px",
@@ -78,8 +80,21 @@ function BottomInputComponent({ currentUser, isFocused }) {
                 borderRadius: "10px",
               }}
             />
-          </form>
-        </Container>
+          </div>
+        ) : (
+          <BsFillArrowUpSquareFill
+            type='button'
+            onClick={handleSubmitMessage}
+            style={{
+              color: "#3BBF69",
+              fontSize: "44px",
+              backgroundColor: "#1A2930",
+              borderRadius: "10px",
+            }}
+          />
+        )}
+        </form>
+       </Container>
       </Navbar>
     </>
   )

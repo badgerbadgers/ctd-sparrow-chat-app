@@ -22,3 +22,11 @@
 .container-bottom-input-form {
   justify-content: center !important;
 }
+
+.wrapper {
+  cursor: not-allowed;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
