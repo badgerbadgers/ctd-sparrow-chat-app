@@ -35,7 +35,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   const handleSubmitMessage = (e) => {
     if (message === null || message.trim() === "") {
-      alert("type something...")
+      return
     } else {
       e.preventDefault()
       saveMessage(message)
@@ -79,10 +79,11 @@ function BottomInputComponent({ currentUser, isFocused }) {
                   disabled={true}
                   className='pointer-events-none'
                   style={{
-                    color: "#3BBF69",
-                    fontSize: "44px",
-                    backgroundColor: "#1A2930",
-                    borderRadius: "10px",
+                    color: "rgb(59, 191, 105, .6)",
+                    fontSize: "40px",
+                    marginLeft: "-42px",
+                    border: "1px solid #fff",
+                    borderRadius: "0 10px 10px 0",
                   }}
                 />
               </div>
@@ -92,9 +93,10 @@ function BottomInputComponent({ currentUser, isFocused }) {
                 onClick={handleSubmitMessage}
                 style={{
                   color: "#3BBF69",
-                  fontSize: "44px",
-                  backgroundColor: "#1A2930",
-                  borderRadius: "10px",
+                  fontSize: "40px",
+                  marginLeft: "-42px",
+                  border: "1px solid #fff",
+                  borderRadius: "0 10px 10px 0",
                 }}
               />
             )}
