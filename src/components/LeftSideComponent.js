@@ -10,6 +10,7 @@ import { useState, useEffect } from "react"
 import "./LeftSideComponent.css"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import Button from "react-bootstrap/Button"
+import { BsFillPeopleFill } from "react-icons/bs"
 
 // Component renders list on currently logged in users in application
 function LeftSideComponent({ name, ...props }) {
@@ -32,9 +33,20 @@ function LeftSideComponent({ name, ...props }) {
 
   return (
     <div className='side-bar'>
-      <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
+      {/* <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
         Users
-      </Button>
+      </Button> */}
+      <div className='user-button'>
+        <BsFillPeopleFill
+          onClick={handleShow}
+          className='me-2'
+          variant='warning'
+          size='lg'
+          style={{
+            color: "#1A2930",
+          }}
+        />
+      </div>
       <Offcanvas
         show={show}
         onHide={handleClose}
