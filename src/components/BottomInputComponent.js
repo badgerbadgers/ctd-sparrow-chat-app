@@ -34,12 +34,14 @@ function BottomInputComponent({ currentUser, isFocused }) {
   }
 
   const handleSubmitMessage = (e) => {
-    if (message.value === undefined || message.trim.value() === null) {
-      alert("type something...")
+    if (message === null || message.trim() === "") {
+      return alert("type something...")
+    } else {
+      console.log("message", message)
+      e.preventDefault()
+      saveMessage(message)
+      setMessage("")
     }
-    e.preventDefault()
-    saveMessage(message)
-    setMessage("")
   }
 
   // Perform focus on input field's element via the DOM API when component renders/dependency changes
