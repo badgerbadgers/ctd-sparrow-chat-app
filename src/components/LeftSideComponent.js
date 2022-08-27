@@ -33,9 +33,6 @@ function LeftSideComponent({ name, ...props }) {
 
   return (
     <div className='side-bar'>
-      {/* <Button onClick={handleShow} className='me-2' variant='warning' size='lg'>
-        Users
-      </Button> */}
       <div className='user-button'>
         <BsFillPeopleFill
           onClick={handleShow}
@@ -43,7 +40,7 @@ function LeftSideComponent({ name, ...props }) {
           variant='warning'
           size='lg'
           style={{
-            color: "#1A2930",
+            color: "#2B2B2B",
           }}
         />
       </div>
