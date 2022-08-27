@@ -34,9 +34,13 @@ function BottomInputComponent({ currentUser, isFocused }) {
   }
 
   const handleSubmitMessage = (e) => {
-    e.preventDefault()
-    saveMessage(message)
-    setMessage("")
+    if (message === null || message.trim() === "") {
+      alert("type something...")
+    } else {
+      e.preventDefault()
+      saveMessage(message)
+      setMessage("")
+    }
   }
 
   // Perform focus on input field's element via the DOM API when component renders/dependency changes
@@ -60,6 +64,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
             fixed='bottom'
           >
             <input
+              required
               type='text'
               value={message}
               placeholder='Type something...'
@@ -67,34 +72,34 @@ function BottomInputComponent({ currentUser, isFocused }) {
               className='bottom-input-field'
               ref={inputRef}
             ></input>
-        {message.length === 0 ? (
-          <div className='wrapper'>
-            <BsFillArrowUpSquareFill
-              type='button'
-              disabled={true}
-              className='pointer-events-none'
-              style={{
-                color: "#3BBF69",
-                fontSize: "44px",
-                backgroundColor: "#1A2930",
-                borderRadius: "10px",
-              }}
-            />
-          </div>
-        ) : (
-          <BsFillArrowUpSquareFill
-            type='button'
-            onClick={handleSubmitMessage}
-            style={{
-              color: "#3BBF69",
-              fontSize: "44px",
-              backgroundColor: "#1A2930",
-              borderRadius: "10px",
-            }}
-          />
-        )}
-        </form>
-       </Container>
+            {message.length === 0 ? (
+              <div className='wrapper'>
+                <BsFillArrowUpSquareFill
+                  type='button'
+                  disabled={true}
+                  className='pointer-events-none'
+                  style={{
+                    color: "#3BBF69",
+                    fontSize: "44px",
+                    backgroundColor: "#1A2930",
+                    borderRadius: "10px",
+                  }}
+                />
+              </div>
+            ) : (
+              <BsFillArrowUpSquareFill
+                type='button'
+                onClick={handleSubmitMessage}
+                style={{
+                  color: "#3BBF69",
+                  fontSize: "44px",
+                  backgroundColor: "#1A2930",
+                  borderRadius: "10px",
+                }}
+              />
+            )}
+          </form>
+        </Container>
       </Navbar>
     </>
   )
