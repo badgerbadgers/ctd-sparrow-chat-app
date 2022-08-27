@@ -20,3 +20,13 @@
 .btn-close {
  background-color: #fff !important;
 }
+
+/* styling for custom users icon*/
+.user-button, .user-button:hover {
+  cursor: pointer;
+  background-color: #F7CE3F;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 10px;
+}
