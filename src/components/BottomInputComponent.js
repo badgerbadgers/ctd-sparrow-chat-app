@@ -35,9 +35,8 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   const handleSubmitMessage = (e) => {
     if (message === null || message.trim() === "") {
-      return alert("type something...")
+      alert("type something...")
     } else {
-      console.log("message", message)
       e.preventDefault()
       saveMessage(message)
       setMessage("")
