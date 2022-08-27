@@ -15,11 +15,15 @@ function MiddleChatWindow({ currentUser }) {
   const getMessages = () => {
     onSnapshot(queryMessages, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      window.scrollBy(0, 100)
     })
   }
 
   useEffect(() => {
     getMessages()
+    setTimeout(() => {
+      window.scrollBy(0, 100000)
+    }, 500)
   }, [])
 
   return (
