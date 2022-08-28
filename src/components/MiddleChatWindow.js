@@ -1,7 +1,8 @@
 import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import "./MiddleChatWindow.css"
+import { ThemeContext } from "../context.js"
 
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])
@@ -10,6 +11,9 @@ function MiddleChatWindow({ currentUser }) {
     messagesCollectionRef,
     orderBy("timestamp", "desc")
   )
+
+  //use context hook
+  const { light, setLight } = useContext(ThemeContext)
 
   // captures data
   const getMessages = () => {
@@ -51,6 +55,9 @@ function MiddleChatWindow({ currentUser }) {
           )
         })}
       </ul>
+      <button type='button' onClick={() => setLight(!light)}>
+        toggle
+      </button>
     </>
   )
 }

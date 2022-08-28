@@ -1,5 +1,5 @@
 import { createContext } from "react"
 
-export const themeContext = createContext({})
+export const ThemeContext = createContext(false)
 
-export function themeContextProvider({ children }) {}
+// export function themeContextProvider({ children }) {}

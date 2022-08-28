@@ -6,8 +6,14 @@ import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button"
 import Image from "react-bootstrap/Image"
 import "./TopNavigationBar.css"
+import { ThemeContext } from "../context.js"
+import { useContext } from "react"
 
 function TopNavigationBar({ currentUser }) {
+  const { light, setLight } = useContext(ThemeContext)
+
+  console.log(light)
+
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)
@@ -15,7 +21,14 @@ function TopNavigationBar({ currentUser }) {
   }
   return (
     <div>
-      <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
+      <Navbar
+        bg='navbar-dark'
+        className='pt-2'
+        fixed='top'
+        style={
+          light ? { backgroundColor: "white" } : { backgroundColor: "black" }
+        }
+      >
         <Container>
           <Navbar.Brand>
             <img
@@ -45,6 +58,9 @@ function TopNavigationBar({ currentUser }) {
               Sign Out
             </Button>
           </Link>
+          <button type='button' onClick={() => setLight(!light)}>
+            toggle
+          </button>
         </Container>
       </Navbar>
     </div>
