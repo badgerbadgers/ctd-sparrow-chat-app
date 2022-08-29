@@ -64,7 +64,7 @@ function TopNavigationBar({ currentUser }) {
               color: theme.color,
             }}
           >
-            toggle theme {!light ? "Light" : "Dark"} theme
+            toggle {!light ? "Light" : "Dark"} theme
           </button>
         </Container>
       </Navbar>
