@@ -12,9 +12,6 @@ function MiddleChatWindow({ currentUser }) {
     orderBy("timestamp", "desc")
   )
 
-  //use context hook
-  const { light, setLight } = useContext(ThemeContext)
-
   // captures data
   const getMessages = () => {
     onSnapshot(queryMessages, (snapshot) => {
@@ -55,9 +52,6 @@ function MiddleChatWindow({ currentUser }) {
           )
         })}
       </ul>
-      <button type='button' onClick={() => setLight(!light)}>
-        toggle
-      </button>
     </>
   )
 }

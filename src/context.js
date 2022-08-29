@@ -1,5 +1,48 @@
-import { createContext } from "react"
+import { useEffect } from "react"
+import { createContext, useState } from "react"
 
-export const ThemeContext = createContext(false)
+const themes = {
+  dark: {
+    backgroundColor: "black",
+    color: "white",
+  },
+  light: {
+    backgroundColor: "white",
+    color: "black",
+  },
+}
 
-// export function themeContextProvider({ children }) {}
+const initialState = {
+  light: false,
+  themes: themes.dark,
+  toggle: () => {},
+}
+const ThemeContext = createContext(initialState)
+
+function ThemeContextProvider({ children }) {
+  //initial state
+  const [light, setLight] = useState(false)
+
+  useEffect(() => {
+    //Gets previous state from localStorage
+    const isLight = localStorage.getItem("light") === "true"
+    setLight(isLight)
+  }, [light])
+
+  const toggle = () => {
+    const isLight = !light
+    //Saves state on local storage
+    localStorage.setItem("light", JSON.stringify(isLight))
+    setLight(isLight)
+  }
+
+  const theme = light ? themes.dark : themes.light
+
+  return (
+    <ThemeContext.Provider value={{ light, setLight, toggle, theme }}>
+      {children}
+    </ThemeContext.Provider>
+  )
+}
+
+export { ThemeContextProvider, ThemeContext }
