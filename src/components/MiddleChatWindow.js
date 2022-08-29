@@ -15,7 +15,7 @@ function MiddleChatWindow({ currentUser }) {
   const getMessages = () => {
     onSnapshot(queryMessages, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      window.scrollBy(0, 100)
+      window.scrollBy(0, 1000)
     })
   }
 
@@ -28,9 +28,13 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className='list-container d-flex'>
+      <ul className='list-container d-flex list-unstyled'>
         {/* renders message */}
         {messages.map((message) => {
+          const name = `${message.name.split(" ")[0]} ${
+            message.name.split(" ")[1][0]
+          }.`
+
           return (
             <div
               key={message.id}
@@ -46,7 +50,18 @@ function MiddleChatWindow({ currentUser }) {
                 width='75'
                 alt='profile pic'
               />
-              <li className='list-item'>{message.text}</li>
+              <li className='list-item'>
+                <div className='card-header d-flex justify-content-between p-0 list-item-divider'>
+                  <p className='list-item-name fw-bold mb-0'>{name}</p>
+                </div>
+                <div className='card-body'>
+                  <p className='mb-0'>{message.text}</p>
+                </div>
+                {/* TODO Implement TimeAgo */}
+                {/* <div className='card-header d-flex justify-content-end p-0'>
+                  <p className='text-dark small mb-0 mt-1'>1 min ago</p>
+                </div> */}
+              </li>
             </div>
           )
         })}
