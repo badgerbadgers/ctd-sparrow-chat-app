@@ -20,6 +20,10 @@ Below is a look at our chat app built and deployed in a span of 8 weeks:
 
 ### How to access our deployed app:
 
+```live deployment
+https://sparrow-chat-f6e4c.web.app
+```
+
 ```bash
 git clone git@github.com:badgerbadgers/ctd-sparrow-chat-app.git
 
@@ -56,3 +60,7 @@ Practicum Mentors:
 
 - Justin Kong
 - Murial Anindo
+
+Special thanks to:
+- Mary Alice Moore
+- Lori Khamala
