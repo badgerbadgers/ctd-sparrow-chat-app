@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button"
 import Image from "react-bootstrap/Image"
 import "./TopNavigationBar.css"
+import UserLogo from "../assets/sparrow-user-profile.svg"
 
 function TopNavigationBar({ currentUser }) {
   // When signing out removes user from 'users' collection and signs out user.
@@ -13,6 +14,12 @@ function TopNavigationBar({ currentUser }) {
     removeUser(currentUser)
     signOutUser()
   }
+
+// const brokenImage = () => {
+
+// }
+
+
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
@@ -31,7 +38,8 @@ function TopNavigationBar({ currentUser }) {
             {currentUser ? currentUser.displayName : ""}
           </span>
           <Image
-            src={currentUser ? currentUser.photoURL : ""}
+            // Conditional statement for profile image
+            src={currentUser ? currentUser.photoURL : UserLogo }
             width='55'
             height='55'
             className='me-5 rounded-circle'
