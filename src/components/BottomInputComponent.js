@@ -9,10 +9,16 @@ import Navbar from "react-bootstrap/Navbar"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
+  const [maxchar, setMaxChar] = useState("")
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
     setMessage(newMessage)
+    if(e.target.value.length === 500){ 
+      window.alert("Username shouldn't exceed 500 characters")
+    }
+  
+    setMaxChar(e.target.value);
   }
 
   const messagesCollectionRef = collection(db, "messages")
@@ -37,8 +43,8 @@ function BottomInputComponent({ currentUser, isFocused }) {
   // add character limit & prevent page reload on space submission
   //  ========================================================
   const handleSubmitMessage = (e) => {
-    if (message === null || message.trim() === "") {
-      return
+    if (message === null || message.trim() === "" || message.length >= 500) {
+     window.alert("Username shouldn't exceed 500 characters")
     } else {
       e.preventDefault()
       saveMessage(message)
@@ -57,6 +63,18 @@ function BottomInputComponent({ currentUser, isFocused }) {
     }
   }, [isFocused])
 
+
+// const handleCharLimit =(e)=>{
+  
+//   // maxChar
+//   if(e.target.value.length === 500){ 
+//     window.alert("Username shouldn't exceed 10 characters")
+//   }
+
+//   setMaxChar(e.target.value);
+// }
+
+
   return (
     <>
       <Navbar fixed='bottom' bg='secondary'>
@@ -74,6 +92,8 @@ function BottomInputComponent({ currentUser, isFocused }) {
               onChange={handleMessageChange}
               className='bottom-input-field'
               ref={inputRef}
+              maxLength={handleMessageChange}
+              
             ></input>
             {message.length === 0 ? (
               <div className='wrapper'>
