@@ -24,7 +24,10 @@ function TopNavigationBar({ currentUser }) {
         className='pt-2'
         fixed='top'
         style={
-          light ? { backgroundColor: "white" } : { backgroundColor: "black" }
+          // light ? { backgroundColor: "white" } : { backgroundColor: "black" }
+          light
+            ? { backgroundColor: theme.backgroundColor }
+            : { backgroundColor: theme.backgroundColor }
         }
       >
         <Container>

@@ -14,7 +14,7 @@ const themes = {
 
 const initialState = {
   light: false,
-  themes: themes.dark,
+  theme: themes.dark,
   toggle: () => {},
 }
 const ThemeContext = createContext(initialState)

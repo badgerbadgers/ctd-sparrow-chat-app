@@ -11,6 +11,10 @@ function MiddleChatWindow({ currentUser }) {
     messagesCollectionRef,
     orderBy("timestamp", "desc")
   )
+  const { light, toggle, theme } = useContext(ThemeContext)
+  console.log("middlechat", light)
+
+  console.log("middleWindow light", light)
 
   // captures data
   const getMessages = () => {
@@ -29,7 +33,15 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className='list-container d-flex'>
+      <ul
+        className='list-container d-flex'
+        style={
+          // light ? { backgroundColor: "white" } : { backgroundColor: "black" }
+          light
+            ? { backgroundColor: theme.backgroundColor }
+            : { backgroundColor: theme.backgroundColor }
+        }
+      >
         {/* renders message */}
         {messages.map((message) => {
           return (
