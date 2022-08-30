@@ -38,7 +38,7 @@ function TopNavigationBar({ currentUser }) {
             {currentUser ? currentUser.displayName : ""}
           </span>
           <Image
-            // src={currentUser ? currentUser.photoURL : ""}
+            // Conditional statement for profile image
             src={currentUser ? currentUser.photoURL : UserLogo }
             width='55'
             height='55'

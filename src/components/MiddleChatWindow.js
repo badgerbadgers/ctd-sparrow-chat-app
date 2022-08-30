@@ -47,7 +47,8 @@ function MiddleChatWindow({ currentUser }) {
             >
               <img
                 className='user-image'
-                src={message.profilePicUrl}
+                // Conditional statement for profile image
+                src={message ? message.profilePicUrl : UserLogo}
                 width='75'
                 alt='profile pic'
               />
