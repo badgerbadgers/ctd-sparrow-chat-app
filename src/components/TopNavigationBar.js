@@ -22,10 +22,10 @@ function TopNavigationBar({ currentUser }) {
               src={logo}
               width='50'
               height='50'
-              className='filter-yellow'
+              className='filter-yellow ms-4'
               alt='Sparrow Logo'
             />
-            <p className='h6 text-warning'>sparrow</p>
+            <p className='h6 text-warning ms-3'>sparrow</p>
           </Navbar.Brand>
           <span className='fs-5 text-white ms-auto me-2'>
             {currentUser ? currentUser.displayName : ""}
