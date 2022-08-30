@@ -20,16 +20,39 @@ Below is a look at our chat app built and deployed in a span of 8 weeks:
 
 ### How to access our deployed app:
 
-...
+```bash
+git clone git@github.com:badgerbadgers/ctd-sparrow-chat-app.git
+
+npm install
+
+npm start
+```
 
 ### How to run the app locally:
 
-...
+After running
 
-## Contributors
+```bash
+npm start
+```
 
-...
+on your terminal...
+
+(Firebase info goes here)
 
 ## Thank you
 
-...
+We want to extend our thanks to Code the Dream for providing a space to collaborate and practice working on a development team.
+
+React Mentors:
+
+- Jared Siirila
+- Elijah Bernstein-Cooper
+- Karson Kalt
+- Michael Howey
+- Lin Clark
+
+Practicum Mentors:
+
+- Justin Kong
+- Murial Anindo
