@@ -24,7 +24,6 @@ function TopNavigationBar({ currentUser }) {
         className='pt-2'
         fixed='top'
         style={
-          // light ? { backgroundColor: "white" } : { backgroundColor: "black" }
           light
             ? { backgroundColor: theme.backgroundColor }
             : { backgroundColor: theme.backgroundColor }
@@ -67,7 +66,7 @@ function TopNavigationBar({ currentUser }) {
               color: theme.color,
             }}
           >
-            toggle {!light ? "Light" : "Dark"} theme
+            toggle {!light ? "Dark" : "Light"} theme
           </button>
         </Container>
       </Navbar>
