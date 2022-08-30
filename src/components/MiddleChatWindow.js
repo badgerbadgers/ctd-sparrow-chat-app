@@ -2,6 +2,7 @@ import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import "./MiddleChatWindow.css"
+import UserLogo from "../assets/sparrow-user-profile.svg"
 
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])

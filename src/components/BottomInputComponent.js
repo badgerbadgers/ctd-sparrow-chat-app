@@ -33,6 +33,9 @@ function BottomInputComponent({ currentUser, isFocused }) {
     }
   }
 
+//  ========================================================
+  // add character limit & prevent page reload on space submission
+  //  ========================================================
   const handleSubmitMessage = (e) => {
     if (message === null || message.trim() === "") {
       return
