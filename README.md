@@ -2,6 +2,15 @@
 
 ![Sparrow Logo](./src/assets/sparrow-chat-logo-yellow-filledbg.png)
 
+
+Team members:
+- Asaia Palacios
+- Tim Almacen
+- Vinicius Pietscher
+- William J. Cook Fernandez
+- Lawrence Lee
+[Screenshot of App with names on it]
+
 ---
 
 ## What is Sparrow Chat app?
