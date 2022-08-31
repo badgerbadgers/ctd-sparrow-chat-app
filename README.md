@@ -9,6 +9,7 @@ Team members:
 - Vinicius Pietscher
 - William J. Cook Fernandez
 - Lawrence Lee
+
 [Screenshot of App with names on it]
 
 ---
