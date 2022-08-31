@@ -74,3 +74,4 @@ Practicum Mentors:
 Special thanks to:
 - Mary Alice Moore
 - Lori Khamala
+- Everyone at Code the Dream whose help and support made this possible.
