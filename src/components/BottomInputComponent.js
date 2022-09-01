@@ -1,14 +1,15 @@
-import React from "react"
-import { useState } from "react"
+import React, { useContext, useState } from "react"
 import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import "./BottomInputComponent.css"
 import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
+import { ThemeContext } from "../context.js"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
+  const { light, toggle, theme } = useContext(ThemeContext)
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value

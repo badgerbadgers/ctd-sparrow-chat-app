@@ -36,10 +36,9 @@ function MiddleChatWindow({ currentUser }) {
       <ul
         className='list-container d-flex'
         style={
-          // light ? { backgroundColor: "white" } : { backgroundColor: "black" }
           light
-            ? { backgroundColor: theme.backgroundColor }
-            : { backgroundColor: theme.backgroundColor }
+            ? { backgroundColor: theme.primary }
+            : { backgroundColor: theme.primary }
         }
       >
         {/* renders message */}
@@ -51,6 +50,11 @@ function MiddleChatWindow({ currentUser }) {
                 message.email === currentUser.email
                   ? "profile-pic-and-message-end"
                   : "profile-pic-and-message"
+              }
+              style={
+                light
+                  ? { backgroundColor: theme.backgroundColor }
+                  : { backgroundColor: theme.backgroundColor }
               }
             >
               <img

@@ -17,18 +17,10 @@ function TopNavigationBar({ currentUser }) {
     removeUser(currentUser)
     signOutUser()
   }
+  console.log("theme object", theme.primary)
   return (
     <div>
-      <Navbar
-        bg='navbar-dark'
-        className='pt-2'
-        fixed='top'
-        style={
-          light
-            ? { backgroundColor: theme.backgroundColor }
-            : { backgroundColor: theme.backgroundColor }
-        }
-      >
+      <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
         <Container>
           <Navbar.Brand>
             <img
@@ -58,16 +50,11 @@ function TopNavigationBar({ currentUser }) {
               Sign Out
             </Button>
           </Link>
-          <button
-            type='button'
-            onClick={toggle}
-            style={{
-              backgroundColor: theme.backgroundColor,
-              color: theme.color,
-            }}
-          >
-            toggle {!light ? "Dark" : "Light"} theme
-          </button>
+          {/* Switch */}
+          <label class='switch'>
+            <input type='checkbox' onClick={toggle} />
+            <span class='slider round'></span>
+          </label>
         </Container>
       </Navbar>
     </div>
