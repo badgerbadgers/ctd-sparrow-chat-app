@@ -2,7 +2,7 @@ import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
 import { useState, useEffect } from "react"
 import "./MiddleChatWindow.css"
-import UserLogo from "../assets/sparrow-user-profile.svg"
+
 
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])
@@ -48,7 +48,7 @@ function MiddleChatWindow({ currentUser }) {
               <img
                 className='user-image'
                 // Conditional statement for profile image
-                src={message ? message.profilePicUrl : UserLogo}
+                src={message ? message.profilePicUrl : ''}
                 width='75'
                 alt='profile pic'
               />
