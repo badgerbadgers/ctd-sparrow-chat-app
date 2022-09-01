@@ -9,13 +9,13 @@ import Navbar from "react-bootstrap/Navbar"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
-  const [maxchar, setMaxChar] = useState("")
+  
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
     setMessage(newMessage)
     if(e.target.value.length === 500){ 
-      window.alert("Username shouldn't exceed 500 characters")
+      window.alert("Messages shouldn't exceed 500 characters")
     }
   
     setMaxChar(e.target.value);
@@ -44,7 +44,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
   //  ========================================================
   const handleSubmitMessage = (e) => {
     if (message === null || message.trim() === "" || message.length >= 500) {
-     window.alert("Username shouldn't exceed 500 characters")
+     window.alert("Messages shouldn't exceed 500 characters")
     } else {
       e.preventDefault()
       saveMessage(message)
@@ -62,18 +62,6 @@ function BottomInputComponent({ currentUser, isFocused }) {
       inputRef.current.focus()
     }
   }, [isFocused])
-
-
-// const handleCharLimit =(e)=>{
-  
-//   // maxChar
-//   if(e.target.value.length === 500){ 
-//     window.alert("Username shouldn't exceed 10 characters")
-//   }
-
-//   setMaxChar(e.target.value);
-// }
-
 
   return (
     <>
