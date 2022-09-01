@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { createContext, useState } from "react"
 
-//theme object
+//themes object
 const themes = {
   light: {
     primary: "#FFF",
