@@ -11,13 +11,11 @@ import { useContext } from "react"
 
 function TopNavigationBar({ currentUser }) {
   const { light, toggle, theme } = useContext(ThemeContext)
-  console.log("light", light)
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)
     signOutUser()
   }
-  console.log("theme object", theme.primary)
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
