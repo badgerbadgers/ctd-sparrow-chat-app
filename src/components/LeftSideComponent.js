@@ -67,7 +67,6 @@ function LeftSideComponent({ name, ...props }) {
       >
         <Offcanvas.Header
           closeButton
-          // className='bg-secondary'
           style={
             light
               ? { backgroundColor: theme.primary }
@@ -75,7 +74,6 @@ function LeftSideComponent({ name, ...props }) {
           }
         >
           <Offcanvas.Title
-            // className='bg-secondary'
             style={
               light ? { color: theme.secondary } : { color: theme.secondary }
             }
@@ -84,7 +82,6 @@ function LeftSideComponent({ name, ...props }) {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body
-          // className='bg-secondary'
           style={light ? { color: theme.color } : { color: theme.color }}
         >
           {users.length > 0 ? (

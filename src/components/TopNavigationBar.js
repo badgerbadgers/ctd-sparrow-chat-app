@@ -18,11 +18,6 @@ function TopNavigationBar({ currentUser }) {
     signOutUser()
   }
 
-// const brokenImage = () => {
-
-// }
-
-
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
@@ -42,7 +37,7 @@ function TopNavigationBar({ currentUser }) {
           </span>
           <Image
             // Conditional statement for profile image
-            src={currentUser ? currentUser.photoURL : UserLogo }
+            src={currentUser ? currentUser.photoURL : UserLogo}
             width='55'
             height='55'
             className='me-5 rounded-circle'
@@ -56,11 +51,8 @@ function TopNavigationBar({ currentUser }) {
               Sign Out
             </Button>
           </Link>
-          {/* Switch */}
-          <label class='switch'>
-            <input type='checkbox' onClick={toggle} />
-            <span class='slider round'></span>
-          </label>
+
+          <button onClick={toggle}>Theme</button>
         </Container>
       </Navbar>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { createContext, useState } from "react"
 
-//themes object
+//theme object
 const themes = {
   light: {
     primary: "#FFF",
@@ -15,7 +15,6 @@ const themes = {
   },
 }
 
-//sets intial theme
 const initialState = {
   light: false,
   theme: themes.dark,
@@ -28,6 +27,7 @@ const ThemeContext = createContext(initialState)
 function ThemeContextProvider({ children }) {
   //initial state
   const [light, setLight] = useState(false)
+  const [toggleOn, setToggleOn] = useState(false)
 
   useEffect(() => {
     //gets state
@@ -35,17 +35,22 @@ function ThemeContextProvider({ children }) {
     setLight(isLight)
   }, [light])
 
+  useEffect(() => {}, [])
+
   const toggle = () => {
     const isLight = !light
     //saves state
     localStorage.setItem("light", JSON.stringify(isLight))
     setLight(isLight)
+    setToggleOn(!toggleOn)
   }
 
-  const theme = light ? themes.dark : themes.light
+  const theme = light ? themes.light : themes.dark
 
   return (
-    <ThemeContext.Provider value={{ light, setLight, toggle, theme }}>
+    <ThemeContext.Provider
+      value={{ light, setLight, toggle, theme, setToggleOn, toggleOn }}
+    >
       {children}
     </ThemeContext.Provider>
   )

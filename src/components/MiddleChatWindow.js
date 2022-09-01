@@ -32,7 +32,7 @@ function MiddleChatWindow({ currentUser }) {
   return (
     <>
       <ul
-        className='list-container d-flex list-unstyled''
+        className='list-container d-flex list-unstyled'
         style={
           light
             ? { backgroundColor: theme.primary }

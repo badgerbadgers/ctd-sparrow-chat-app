@@ -10,6 +10,7 @@ function App() {
   const [authState, setAuthState] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+  const { light, theme } = useContext(ThemeContext)
 
   const handleAuthStateChange = (auth) => {
     setAuthState(auth)
@@ -27,7 +28,14 @@ function App() {
   }, [authState])
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={
+        light
+          ? { backgroundColor: theme.primary }
+          : { backgroundColor: theme.primary }
+      }
+    >
       <Routes>
         <Route
           path='/'
