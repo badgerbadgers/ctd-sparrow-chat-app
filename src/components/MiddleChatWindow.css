@@ -13,8 +13,8 @@
   margin:0.4em; 
   border-radius:10px;
   background-color: #e9ecef;
-  width: 20em;
-  padding: .5em 1em;
+  max-width: 25em;
+  padding: 0.1em 1em;
   overflow-wrap: break-word;
 }
 
@@ -42,3 +42,12 @@
   -Add a mini title for what channel everyone is on #Finished
   -character limit / text content should not spill over
 */
+
+.list-item-divider {
+  border-bottom: 1px solid rgba(99, 96, 96, 0.367) !important;
+}
+
+/* adds padding to user name */
+/* .list-item-name {
+  padding-right: 30px; 
+} */

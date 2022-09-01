@@ -8,6 +8,7 @@ import Image from "react-bootstrap/Image"
 import "./TopNavigationBar.css"
 import { ThemeContext } from "../context.js"
 import { useContext } from "react"
+import UserLogo from "../assets/sparrow-user-profile.svg"
 
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
@@ -16,6 +17,12 @@ function TopNavigationBar({ currentUser }) {
     removeUser(currentUser)
     signOutUser()
   }
+
+// const brokenImage = () => {
+
+// }
+
+
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
@@ -25,16 +32,17 @@ function TopNavigationBar({ currentUser }) {
               src={logo}
               width='50'
               height='50'
-              className='filter-yellow'
+              className='filter-yellow ms-4'
               alt='Sparrow Logo'
             />
-            <p className='h6 text-warning'>sparrow</p>
+            <p className='h6 text-warning ms-3'>sparrow</p>
           </Navbar.Brand>
           <span className='fs-5 text-white ms-auto me-2'>
             {currentUser ? currentUser.displayName : ""}
           </span>
           <Image
-            src={currentUser ? currentUser.photoURL : ""}
+            // Conditional statement for profile image
+            src={currentUser ? currentUser.photoURL : UserLogo }
             width='55'
             height='55'
             className='me-5 rounded-circle'

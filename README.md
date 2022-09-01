@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Sparrow Chat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Sparrow Logo](./src/assets/sparrow-chat-logo-yellow-filledbg.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+Team members:
+- Asaia Palacios
+- Tim Almacen
+- Vinicius Pietscher
+- William J. Cook Fernandez
+- Lawrence Lee
 
-### `npm start`
+[Screenshot of App with names on it]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## What is Sparrow Chat app?
 
-### `npm test`
+Sparrow Chat is born out of a group project at [Code the Dream](https://learn.codethedream.org/sparrow-react-practicum/ "Code the Dream") to gain experience working on a development team and on a real-world, deployable project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sparrow Chat is a responsive web chat app in React that uses [Firebase](https://firebase.google.com/ "Firebase") services such as Cloud Firestore database to store chatroom messages and Firebase Authentication to sign in using Google sign-in.
 
-### `npm run build`
+Users enter the landing page to sign in, then are routed to our chat room. Here, the main content window displays all messages. The left pane reveals all the users in the chat room and the bottom input field is where users can type and send messages. The navbar displays our Sparrow logo and the sign-out button.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Below is a look at our chat app built and deployed in a span of 8 weeks:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[screenshot/short video of app working]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+### How to access our deployed app:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```live deployment
+https://sparrow-chat-f6e4c.web.app
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone git@github.com:badgerbadgers/ctd-sparrow-chat-app.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
+```
 
-## Learn More
+### How to run the app locally:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After running
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+on your terminal...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+(Firebase info goes here)
 
-### Analyzing the Bundle Size
+## Thank you
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+We want to extend our thanks to Code the Dream for providing a space to collaborate and practice working on a development team.
 
-### Making a Progressive Web App
+React Mentors:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Jared Siirila
+- Elijah Bernstein-Cooper
+- Karson Kalt
+- Michael Howey
+- Lin Clark
 
-### Advanced Configuration
+Practicum Mentors:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Justin Kong
+- Murial Anindo
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Special thanks to:
+- Mary Alice Moore
+- Lori Khamala
+- Everyone at Code the Dream whose help and support made this possible.

@@ -48,7 +48,7 @@ function LeftSideComponent({ name, ...props }) {
           onClick={handleShow}
           className='me-2'
           variant='warning'
-          size='lg'
+          size='40'
           style={{
             color: "#2B2B2B",
           }}
