@@ -10,7 +10,7 @@ import { ThemeContext } from "../context.js"
 import { useContext } from "react"
 
 function TopNavigationBar({ currentUser }) {
-  const { light, toggle, theme } = useContext(ThemeContext)
+  const { toggle } = useContext(ThemeContext)
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)
