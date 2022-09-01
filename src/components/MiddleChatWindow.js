@@ -1,7 +1,8 @@
 import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import "./MiddleChatWindow.css"
+import { ThemeContext } from "../context.js"
 import UserLogo from "../assets/sparrow-user-profile.svg"
 
 function MiddleChatWindow({ currentUser }) {
@@ -11,6 +12,7 @@ function MiddleChatWindow({ currentUser }) {
     messagesCollectionRef,
     orderBy("timestamp", "desc")
   )
+  const { light, theme } = useContext(ThemeContext)
 
   // captures data
   const getMessages = () => {
@@ -29,7 +31,14 @@ function MiddleChatWindow({ currentUser }) {
 
   return (
     <>
-      <ul className='list-container d-flex list-unstyled'>
+      <ul
+        className='list-container d-flex list-unstyled'
+        style={
+          light
+            ? { backgroundColor: theme.primary }
+            : { backgroundColor: theme.primary }
+        }
+      >
         {/* renders message */}
         {messages.map((message) => {
           const name = `${message.name.split(" ")[0]} ${
@@ -43,6 +52,11 @@ function MiddleChatWindow({ currentUser }) {
                 message.email === currentUser.email
                   ? "profile-pic-and-message-end"
                   : "profile-pic-and-message"
+              }
+              style={
+                light
+                  ? { backgroundColor: theme.backgroundColor }
+                  : { backgroundColor: theme.backgroundColor }
               }
             >
               <img

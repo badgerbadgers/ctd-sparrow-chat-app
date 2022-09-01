@@ -1,14 +1,15 @@
-import React from "react"
-import { useState } from "react"
+import React, { useContext, useState } from "react"
 import { db } from "../config/fire-config"
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"
 import "./BottomInputComponent.css"
 import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
+import { ThemeContext } from "../context.js"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
+  const { light, theme } = useContext(ThemeContext)
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
@@ -59,7 +60,14 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   return (
     <>
-      <Navbar fixed='bottom' bg='secondary'>
+      <Navbar
+        fixed='bottom'
+        style={
+          light
+            ? { backgroundColor: theme.primary }
+            : { backgroundColor: theme.primary }
+        }
+      >
         <Container className='container-bottom-input-form'>
           <form
             onSubmit={handleSubmitMessage}
