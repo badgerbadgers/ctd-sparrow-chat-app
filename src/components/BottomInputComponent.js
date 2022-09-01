@@ -18,7 +18,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
       window.alert("Messages shouldn't exceed 500 characters")
     }
   
-    setMaxChar(e.target.value);
+   
   }
 
   const messagesCollectionRef = collection(db, "messages")
@@ -39,9 +39,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
     }
   }
 
-//  ========================================================
-  // add character limit & prevent page reload on space submission
-  //  ========================================================
+
   const handleSubmitMessage = (e) => {
     if (message === null || message.trim() === "" || message.length >= 500) {
      window.alert("Messages shouldn't exceed 500 characters")
@@ -80,7 +78,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
               onChange={handleMessageChange}
               className='bottom-input-field'
               ref={inputRef}
-              maxLength={handleMessageChange}
+            maxLength='500'
               
             ></input>
             {message.length === 0 ? (
