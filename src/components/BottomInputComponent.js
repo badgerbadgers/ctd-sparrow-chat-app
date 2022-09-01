@@ -9,7 +9,7 @@ import { ThemeContext } from "../context.js"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
-  const { light, toggle, theme } = useContext(ThemeContext)
+  const { light, theme } = useContext(ThemeContext)
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
@@ -57,7 +57,14 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   return (
     <>
-      <Navbar fixed='bottom' bg='secondary'>
+      <Navbar
+        fixed='bottom'
+        style={
+          light
+            ? { backgroundColor: theme.primary }
+            : { backgroundColor: theme.primary }
+        }
+      >
         <Container className='container-bottom-input-form'>
           <form
             onSubmit={handleSubmitMessage}

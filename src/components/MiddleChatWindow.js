@@ -11,10 +11,7 @@ function MiddleChatWindow({ currentUser }) {
     messagesCollectionRef,
     orderBy("timestamp", "desc")
   )
-  const { light, toggle, theme } = useContext(ThemeContext)
-  console.log("middlechat", light)
-
-  console.log("middleWindow light", light)
+  const { light, theme } = useContext(ThemeContext)
 
   // captures data
   const getMessages = () => {

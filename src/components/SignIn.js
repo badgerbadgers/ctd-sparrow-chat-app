@@ -19,7 +19,7 @@ function SignIn({
   }, [])
 
   return (
-    <div className='bg-secondary'>
+    <div>
       <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50 bg-primary'>
         <img
           src={logo}

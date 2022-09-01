@@ -22,7 +22,7 @@ function LeftSideComponent({ name, ...props }) {
   const [users, setUsers] = useState([])
   const usersCollectionRef = collection(db, "users")
   const queryUsers = query(usersCollectionRef, orderBy("name"), limit(20))
-  const { light, toggle, theme } = useContext(ThemeContext)
+  const { light, theme } = useContext(ThemeContext)
 
   const getUsers = () => {
     onSnapshot(queryUsers, (snapshot) => {
@@ -75,8 +75,10 @@ function LeftSideComponent({ name, ...props }) {
           }
         >
           <Offcanvas.Title
-            className='bg-secondary'
-            style={light ? { color: theme.color } : { color: theme.color }}
+            // className='bg-secondary'
+            style={
+              light ? { color: theme.secondary } : { color: theme.secondary }
+            }
           >
             Users: {users.length}
           </Offcanvas.Title>
