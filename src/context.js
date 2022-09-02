@@ -12,6 +12,7 @@ const themes = {
   dark: {
     primary: "#1A2930",
     secondary: "#202020",
+    light: "#FFFFFF",
   },
 }
 

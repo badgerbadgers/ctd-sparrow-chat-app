@@ -22,11 +22,7 @@ function Chat({ currentUser }) {
       <TopNavigationBar currentUser={currentUser} />
       <section
         className='min-vh-100'
-        style={
-          light
-            ? { backgroundColor: theme.primary }
-            : { backgroundColor: theme.primary }
-        }
+        style={{ backgroundColor: theme.primary }}
       >
         <div className='container'>
           <div className='row'>

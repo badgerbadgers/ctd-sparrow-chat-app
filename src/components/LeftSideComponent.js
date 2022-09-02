@@ -22,7 +22,7 @@ function LeftSideComponent({ name, ...props }) {
   const [users, setUsers] = useState([])
   const usersCollectionRef = collection(db, "users")
   const queryUsers = query(usersCollectionRef, orderBy("name"), limit(20))
-  const { light, theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   const getUsers = () => {
     onSnapshot(queryUsers, (snapshot) => {
@@ -58,7 +58,7 @@ function LeftSideComponent({ name, ...props }) {
           closeButton
           style={{ backgroundColor: theme.primary }}
         >
-          <Offcanvas.Title style={{ color: theme.secondary }}>
+          <Offcanvas.Title style={{ color: theme.light }}>
             Users: {users.length}
           </Offcanvas.Title>
         </Offcanvas.Header>
