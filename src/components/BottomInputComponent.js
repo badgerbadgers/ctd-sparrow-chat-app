@@ -9,7 +9,7 @@ import { ThemeContext } from "../context.js"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
-  const { light, theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
@@ -34,7 +34,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
     }
   }
 
-//  ========================================================
+  //  ========================================================
   // add character limit & prevent page reload on space submission
   //  ========================================================
   const handleSubmitMessage = (e) => {
@@ -60,14 +60,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
 
   return (
     <>
-      <Navbar
-        fixed='bottom'
-        style={
-          light
-            ? { backgroundColor: theme.primary }
-            : { backgroundColor: theme.primary }
-        }
-      >
+      <Navbar fixed='bottom' style={{ backgroundColor: theme.primary }}>
         <Container className='container-bottom-input-form'>
           <form
             onSubmit={handleSubmitMessage}
