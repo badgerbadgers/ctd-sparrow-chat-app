@@ -5,6 +5,7 @@ import "./MiddleChatWindow.css"
 import { ThemeContext } from "../context.js"
 import UserLogo from "../assets/sparrow-user-profile.svg"
 
+
 function MiddleChatWindow({ currentUser }) {
   const [messages, setMessages] = useState([])
   const messagesCollectionRef = collection(db, "messages")
@@ -62,7 +63,7 @@ function MiddleChatWindow({ currentUser }) {
               <img
                 className='user-image'
                 // Conditional statement for profile image
-                src={message ? message.profilePicUrl : UserLogo}
+                src={message ? message.profilePicUrl : ''}
                 width='75'
                 alt='profile pic'
               />
