@@ -9,6 +9,8 @@ import "./TopNavigationBar.css"
 import { ThemeContext } from "../context.js"
 import { useContext } from "react"
 import UserLogo from "../assets/sparrow-user-profile.svg"
+import useSound from "use-sound"
+import logoutSound from "../sounds/logout.mp3"
 
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
@@ -16,7 +18,10 @@ function TopNavigationBar({ currentUser }) {
   const handleSignOutUser = () => {
     removeUser(currentUser)
     signOutUser()
+    logoutSfx()
   }
+
+  const [logoutSfx] = useSound(logoutSound)
 
   return (
     <div>

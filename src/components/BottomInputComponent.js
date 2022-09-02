@@ -6,6 +6,8 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import { ThemeContext } from "../context.js"
+import useSound from "use-sound"
+import buttonSound from "../sounds/arcade-button.mp3"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
@@ -34,7 +36,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
     }
   }
 
-//  ========================================================
+  //  ========================================================
   // add character limit & prevent page reload on space submission
   //  ========================================================
   const handleSubmitMessage = (e) => {
@@ -44,8 +46,11 @@ function BottomInputComponent({ currentUser, isFocused }) {
       e.preventDefault()
       saveMessage(message)
       setMessage("")
+      buttonSfx()
     }
   }
+
+  const [buttonSfx] = useSound(buttonSound)
 
   // Perform focus on input field's element via the DOM API when component renders/dependency changes
   // (imperative approach)

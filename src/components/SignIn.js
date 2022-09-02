@@ -6,6 +6,9 @@ import spinner from "../assets/loading_spinner_icon_yellow.png"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import "./SignIn.css"
+// import use-sound React hook for sound effects
+import useSound from "use-sound"
+import loginSound from "../sounds/login.mp3"
 
 function SignIn({
   handleAuthStateChange,
@@ -17,6 +20,8 @@ function SignIn({
       handleAuthStateChange(data)
     })
   }, [])
+
+  const [loginSfx] = useSound(loginSound)
 
   return (
     <div>
@@ -41,6 +46,7 @@ function SignIn({
             onClick={() => {
               handleIsLoadingStateChange(true)
               signInWithGoogle(handleIsLoadingStateChange)
+              loginSfx()
             }}
             className='px-4 rounded-pill bg-info'
           >
