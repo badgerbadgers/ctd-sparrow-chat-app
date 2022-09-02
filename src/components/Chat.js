@@ -9,7 +9,7 @@ import { useContext } from "react"
 
 function Chat({ currentUser }) {
   const navigate = useNavigate()
-  const { light, theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   useEffect(() => {
     if (!currentUser) {
