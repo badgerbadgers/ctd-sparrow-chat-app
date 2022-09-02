@@ -1,14 +1,16 @@
 import Chat from "./components/Chat"
 import SignIn from "./components/SignIn"
 import { Routes, Route, useNavigate } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { Container } from "react-bootstrap"
 import "./App.css"
+import { ThemeContext } from "./context.js"
 
 function App() {
   const [authState, setAuthState] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
+  const { light, theme } = useContext(ThemeContext)
 
   const handleAuthStateChange = (auth) => {
     setAuthState(auth)
@@ -26,7 +28,14 @@ function App() {
   }, [authState])
 
   return (
-    <Container fluid>
+    <Container
+      fluid
+      style={
+        light
+          ? { backgroundColor: theme.primary }
+          : { backgroundColor: theme.primary }
+      }
+    >
       <Routes>
         <Route
           path='/'

@@ -4,9 +4,12 @@ import MiddleChatWindow from "./MiddleChatWindow"
 import BottomInputComponent from "./BottomInputComponent"
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
+import { ThemeContext } from "../context.js"
+import { useContext } from "react"
 
 function Chat({ currentUser }) {
   const navigate = useNavigate()
+  const { light, theme } = useContext(ThemeContext)
 
   useEffect(() => {
     if (!currentUser) {
@@ -17,7 +20,14 @@ function Chat({ currentUser }) {
   return (
     <>
       <TopNavigationBar currentUser={currentUser} />
-      <section className='bg-secondary min-vh-100'>
+      <section
+        className='min-vh-100'
+        style={
+          light
+            ? { backgroundColor: theme.primary }
+            : { backgroundColor: theme.primary }
+        }
+      >
         <div className='container'>
           <div className='row'>
             <div className='col-2'>

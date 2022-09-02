@@ -2,6 +2,16 @@
 
 ![Sparrow Logo](./src/assets/sparrow-chat-logo-yellow-filledbg.png)
 
+
+Team members:
+- Asaia Palacios
+- Tim Almacen
+- Vinicius Pietscher
+- William J. Cook Fernandez
+- Lawrence Lee
+
+[Screenshot of App with names on it]
+
 ---
 
 ## What is Sparrow Chat app?
@@ -20,16 +30,48 @@ Below is a look at our chat app built and deployed in a span of 8 weeks:
 
 ### How to access our deployed app:
 
-...
+```live deployment
+https://sparrow-chat-f6e4c.web.app
+```
+
+```bash
+git clone git@github.com:badgerbadgers/ctd-sparrow-chat-app.git
+
+npm install
+
+npm start
+```
 
 ### How to run the app locally:
 
-...
+After running
 
-## Contributors
+```bash
+npm start
+```
 
-...
+on your terminal...
+
+(Firebase info goes here)
 
 ## Thank you
 
-...
+We want to extend our thanks to Code the Dream for providing a space to collaborate and practice working on a development team.
+
+React Mentors:
+
+- Jared Siirila
+- Elijah Bernstein-Cooper
+- Karson Kalt
+- Michael Howey
+- Lin Clark
+
+Practicum Mentors:
+
+- Justin Kong
+- Murial Anindo
+
+Special thanks to:
+- Mary Alice Moore
+- Lori Khamala
+- Everyone at Code the Dream whose help and support made this possible.
