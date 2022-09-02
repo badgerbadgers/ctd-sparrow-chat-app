@@ -12,6 +12,7 @@ const themes = {
   dark: {
     primary: "#1A2930",
     secondary: "#202020",
+    light: "#FFFFFF",
   },
 }
 
@@ -27,7 +28,6 @@ const ThemeContext = createContext(initialState)
 function ThemeContextProvider({ children }) {
   //initial state
   const [light, setLight] = useState(false)
-  const [toggleOn, setToggleOn] = useState(false)
 
   useEffect(() => {
     //gets state
@@ -42,15 +42,12 @@ function ThemeContextProvider({ children }) {
     //saves state
     localStorage.setItem("light", JSON.stringify(isLight))
     setLight(isLight)
-    setToggleOn(!toggleOn)
   }
 
   const theme = light ? themes.light : themes.dark
 
   return (
-    <ThemeContext.Provider
-      value={{ light, setLight, toggle, theme, setToggleOn, toggleOn }}
-    >
+    <ThemeContext.Provider value={{ light, setLight, toggle, theme }}>
       {children}
     </ThemeContext.Provider>
   )

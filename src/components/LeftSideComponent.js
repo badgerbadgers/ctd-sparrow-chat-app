@@ -22,7 +22,7 @@ function LeftSideComponent({ name, ...props }) {
   const [users, setUsers] = useState([])
   const usersCollectionRef = collection(db, "users")
   const queryUsers = query(usersCollectionRef, orderBy("name"), limit(20))
-  const { light, theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   const getUsers = () => {
     onSnapshot(queryUsers, (snapshot) => {
@@ -35,14 +35,7 @@ function LeftSideComponent({ name, ...props }) {
   }, [])
 
   return (
-    <div
-      className='side-bar'
-      style={
-        light
-          ? { backgroundColor: theme.primary }
-          : { backgroundColor: theme.primary }
-      }
-    >
+    <div className='side-bar' style={{ backgroundColor: theme.primary }}>
       <div className='user-button'>
         <BsFillPeopleFill
           onClick={handleShow}
@@ -59,31 +52,17 @@ function LeftSideComponent({ name, ...props }) {
         onHide={handleClose}
         {...props}
         className='text-light'
-        style={
-          light
-            ? { backgroundColor: theme.primary }
-            : { backgroundColor: theme.primary }
-        }
+        style={{ backgroundColor: theme.primary }}
       >
         <Offcanvas.Header
           closeButton
-          style={
-            light
-              ? { backgroundColor: theme.primary }
-              : { backgroundColor: theme.primary }
-          }
+          style={{ backgroundColor: theme.primary }}
         >
-          <Offcanvas.Title
-            style={
-              light ? { color: theme.secondary } : { color: theme.secondary }
-            }
-          >
+          <Offcanvas.Title style={{ color: theme.light }}>
             Users: {users.length}
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body
-          style={light ? { color: theme.color } : { color: theme.color }}
-        >
+        <Offcanvas.Body style={{ color: theme.color }}>
           {users.length > 0 ? (
             <ul className='listGroup'>
               {users.map((user) => {
@@ -91,9 +70,7 @@ function LeftSideComponent({ name, ...props }) {
                   <li
                     key={user.id}
                     className='sidebar-text'
-                    style={
-                      light ? { color: theme.light } : { color: theme.light }
-                    }
+                    style={{ color: theme.light }}
                   >
                     {user.name}
                   </li>

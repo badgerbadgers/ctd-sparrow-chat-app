@@ -13,7 +13,7 @@ function MiddleChatWindow({ currentUser }) {
     messagesCollectionRef,
     orderBy("timestamp", "desc")
   )
-  const { light, theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
 
   // captures data
   const getMessages = () => {
@@ -34,11 +34,7 @@ function MiddleChatWindow({ currentUser }) {
     <>
       <ul
         className='list-container d-flex list-unstyled'
-        style={
-          light
-            ? { backgroundColor: theme.primary }
-            : { backgroundColor: theme.primary }
-        }
+        style={{ backgroundColor: theme.primary }}
       >
         {/* renders message */}
         {messages.map((message) => {
@@ -54,11 +50,7 @@ function MiddleChatWindow({ currentUser }) {
                   ? "profile-pic-and-message-end"
                   : "profile-pic-and-message"
               }
-              style={
-                light
-                  ? { backgroundColor: theme.backgroundColor }
-                  : { backgroundColor: theme.backgroundColor }
-              }
+              style={{ backgroundColor: theme.backgroundColor }}
             >
               <img
                 className='user-image'
