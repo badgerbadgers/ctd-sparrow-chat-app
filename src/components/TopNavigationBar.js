@@ -64,7 +64,6 @@ function TopNavigationBar({ currentUser }) {
           >
             Theme
           </button>
-          {/* <button onClick={toggle}>Theme</button> */}
         </Container>
       </Navbar>
     </div>
