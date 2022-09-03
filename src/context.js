@@ -35,8 +35,6 @@ function ThemeContextProvider({ children }) {
     setLight(isLight)
   }, [light])
 
-  useEffect(() => {}, [])
-
   const toggle = () => {
     const isLight = !light
     //saves state
