@@ -62,6 +62,7 @@ function TopNavigationBar({ currentUser }) {
               toggle()
               toggleSfx()
             }}
+            className='btn-theme-toggle'
           >
             <Image
               src={themeIcon}

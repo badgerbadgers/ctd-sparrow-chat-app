@@ -8,6 +8,13 @@
   filter: invert(90%) sepia(5%) saturate(137%) hue-rotate(325deg) brightness(86%) contrast(92%);
 }
 
+/* remove toggle button border to prevent it affecting logout button */
+.btn-theme-toggle {
+  --bs-btn-focus-box-shadow: 0 !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
