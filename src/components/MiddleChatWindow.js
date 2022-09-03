@@ -1,6 +1,6 @@
 import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, useRef, useMemo } from "react"
 import "./MiddleChatWindow.css"
 import { ThemeContext } from "../context.js"
 import UserLogo from "../assets/sparrow-user-profile.svg"
@@ -12,33 +12,66 @@ function MiddleChatWindow({ currentUser }) {
     messagesCollectionRef,
     orderBy("timestamp", "desc")
   )
-  const { light, theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
+  const screenBottom = useRef(null)
+  const lastMessageIsInViewport = useIsInViewport(screenBottom)
 
   // captures data
   const getMessages = () => {
     onSnapshot(queryMessages, (snapshot) => {
       setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      window.scrollBy(0, 1000)
     })
   }
 
+  function useIsInViewport(ref) {
+    const [isIntersecting, setIsIntersecting] = useState(false)
+
+    const observer = useMemo(
+      () =>
+        new IntersectionObserver(
+          ([entry]) => {
+            setIsIntersecting(entry.isIntersecting)
+          },
+          {
+            rootMargin: "20px",
+          }
+        ),
+      []
+    )
+
+    useEffect(() => {
+      observer.observe(ref.current)
+
+      return () => {
+        observer.disconnect()
+      }
+    }, [ref, observer])
+
+    return isIntersecting
+  }
+
+  const scrollToBottom = () => {
+    screenBottom.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    if (lastMessageIsInViewport) {
+      scrollToBottom()
+    }
+  }, [messages])
+
   useEffect(() => {
     getMessages()
-    setTimeout(() => {
-      window.scrollBy(0, 100000)
-    }, 500)
   }, [])
 
   return (
     <>
       <ul
         className='list-container d-flex list-unstyled'
-        style={
-          light
-            ? { backgroundColor: theme.primary }
-            : { backgroundColor: theme.primary }
-        }
+        style={{ backgroundColor: theme.primary }}
       >
+        {/* div to check if last message is in viewport */}
+        <div ref={screenBottom}></div>
         {/* renders message */}
         {messages.map((message) => {
           const name = `${message.name.split(" ")[0]} ${
@@ -53,16 +86,12 @@ function MiddleChatWindow({ currentUser }) {
                   ? "profile-pic-and-message-end"
                   : "profile-pic-and-message"
               }
-              style={
-                light
-                  ? { backgroundColor: theme.backgroundColor }
-                  : { backgroundColor: theme.backgroundColor }
-              }
+              style={{ backgroundColor: theme.backgroundColor }}
             >
               <img
                 className='user-image'
                 // Conditional statement for profile image
-                src={message ? message.profilePicUrl : UserLogo}
+                src={message ? message.profilePicUrl : ""}
                 width='75'
                 alt='profile pic'
               />
