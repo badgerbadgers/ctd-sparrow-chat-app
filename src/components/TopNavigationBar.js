@@ -11,6 +11,7 @@ import { useContext } from "react"
 import UserLogo from "../assets/sparrow-user-profile.svg"
 import useSound from "use-sound"
 import toggleSound from "../sounds/stories_sounds_switch-off.mp3"
+import themeIcon from "../assets/theme-icon.svg"
 
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
@@ -56,14 +57,19 @@ function TopNavigationBar({ currentUser }) {
             </Button>
           </Link>
 
-          <button
+          <Button
             onClick={() => {
               toggle()
               toggleSfx()
             }}
           >
-            Theme
-          </button>
+            <Image
+              src={themeIcon}
+              width='35'
+              height='35'
+              className='filter-grey'
+            />
+          </Button>
         </Container>
       </Navbar>
     </div>
