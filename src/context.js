@@ -1,5 +1,7 @@
 import { useEffect } from "react"
 import { createContext, useState } from "react"
+import useSound from "use-sound"
+import toggleSound from "./sounds/stories_sounds_switch-off.mp3"
 
 //theme object
 const themes = {
@@ -43,7 +45,9 @@ function ThemeContextProvider({ children }) {
     localStorage.setItem("light", JSON.stringify(isLight))
     setLight(isLight)
     setToggleOn(!toggleOn)
+    toggleSfx()
   }
+  const [toggleSfx] = useSound(toggleSound)
 
   const theme = light ? themes.light : themes.dark
 

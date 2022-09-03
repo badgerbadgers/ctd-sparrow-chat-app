@@ -12,6 +12,7 @@ import UserLogo from "../assets/sparrow-user-profile.svg"
 
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
+
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)
