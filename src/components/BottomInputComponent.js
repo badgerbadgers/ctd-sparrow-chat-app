@@ -6,8 +6,9 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import { ThemeContext } from "../context.js"
+// import use-sound React hook for sound effects
 import useSound from "use-sound"
-import buttonSound from "../sounds/arcade-button.mp3"
+import buttonSound from "../sounds/stories_sounds_boop.mp3"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
