@@ -17,11 +17,6 @@ function BottomInputComponent({ currentUser, isFocused }) {
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
     setMessage(newMessage)
-    if(e.target.value.length === 500){ 
-      window.alert("Messages shouldn't exceed 500 characters")
-    }
-  
-   
   }
 
   const messagesCollectionRef = collection(db, "messages")
@@ -46,10 +41,11 @@ function BottomInputComponent({ currentUser, isFocused }) {
   // add character limit & prevent page reload on space submission
   //  ========================================================
   const handleSubmitMessage = (e) => {
-    if (message === null || message.trim() === "" || message.length >= 500) {
-     window.alert("Messages shouldn't exceed 500 characters")
+    e.preventDefault()
+    if (message.trim() === "") {
+      setMessage("")
+      return
     } else {
-      e.preventDefault()
       saveMessage(message)
       setMessage("")
       buttonSfx()
@@ -86,8 +82,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
               onChange={handleMessageChange}
               className='bottom-input-field'
               ref={inputRef}
-            maxLength='500'
-              
+              maxLength='500'
             ></input>
             {message.length === 0 ? (
               <div className='wrapper'>
