@@ -45,6 +45,7 @@ function LeftSideComponent({ name, ...props }) {
           style={{
             color: "#2B2B2B",
           }}
+          title='Users logged in'
         />
       </div>
       <Offcanvas
@@ -57,6 +58,7 @@ function LeftSideComponent({ name, ...props }) {
         <Offcanvas.Header
           closeButton
           style={{ backgroundColor: theme.primary }}
+          title='Close'
         >
           <Offcanvas.Title style={{ color: theme.light }}>
             Users: {users.length}

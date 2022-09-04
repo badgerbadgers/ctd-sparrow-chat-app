@@ -69,6 +69,7 @@ function TopNavigationBar({ currentUser }) {
               width='35'
               height='35'
               className='filter-grey'
+              title='Toggle light/dark mode'
             />
           </Button>
         </Container>
