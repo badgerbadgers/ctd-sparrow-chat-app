@@ -110,6 +110,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
                   border: "1px solid #fff",
                   borderRadius: "0 10px 10px 0",
                 }}
+                title='Send message'
               />
             )}
           </form>
