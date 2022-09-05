@@ -78,3 +78,13 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* right sidebar offcanvas menu */
+.right-side-menu {
+  display: flex;
+  border: 1px solid red;
+  /* align-items: center !important; */
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}

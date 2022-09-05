@@ -86,33 +86,35 @@ function TopNavigationBar({ currentUser }) {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement='end'
+              className='right-side-menu'
             >
               <Offcanvas.Header closeButton></Offcanvas.Header>
-              <Link to='/'>
+              <div className='right-side-menu-item-container'>
+                <Link to='/'>
+                  <Button
+                    variant='light'
+                    className='px-3 rounded bg-info'
+                    onClick={handleSignOutUser}
+                  >
+                    Sign Out
+                  </Button>
+                </Link>
                 <Button
-                  variant='light'
-                  className='px-3 rounded bg-info'
-                  onClick={handleSignOutUser}
+                  onClick={() => {
+                    toggle()
+                    toggleSfx()
+                  }}
+                  className='btn-theme-toggle'
                 >
-                  Sign Out
+                  <Image
+                    src={themeIcon}
+                    width='35'
+                    height='35'
+                    className='filter-grey'
+                    title='Toggle light/dark mode'
+                  />
                 </Button>
-              </Link>
-
-              <Button
-                onClick={() => {
-                  toggle()
-                  toggleSfx()
-                }}
-                className='btn-theme-toggle'
-              >
-                <Image
-                  src={themeIcon}
-                  width='35'
-                  height='35'
-                  className='filter-grey'
-                  title='Toggle light/dark mode'
-                />
-              </Button>
+              </div>
             </Navbar.Offcanvas>
           </Container>
         </Navbar>
