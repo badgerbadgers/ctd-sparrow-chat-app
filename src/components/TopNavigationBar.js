@@ -12,6 +12,7 @@ import UserLogo from "../assets/sparrow-user-profile.svg"
 import useSound from "use-sound"
 import toggleSound from "../sounds/stories_sounds_switch-off.mp3"
 import themeIcon from "../assets/theme-icon.svg"
+import Offcanvas from "react-bootstrap/Offcanvas"
 
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
@@ -25,28 +26,36 @@ function TopNavigationBar({ currentUser }) {
 
   return (
     <div>
-      <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
-        <Container>
-          <Navbar.Brand>
-            <img
-              src={logo}
-              width='50'
-              height='50'
-              className='filter-yellow ms-4'
-              alt='Sparrow Logo'
+      {[false, "sm", "md", "lg", "xl", "xxl"].map((expand) => (
+        <Navbar
+          bg='primary navbar-dark'
+          className='pt-2'
+          fixed='top'
+          key={expand}
+          expand={expand}
+        >
+          <Container>
+            <Navbar.Brand>
+              <img
+                src={logo}
+                width='50'
+                height='50'
+                className='filter-yellow ms-4'
+                alt='Sparrow Logo'
+              />
+              <p className='h6 text-warning ms-3'>sparrow</p>
+            </Navbar.Brand>
+            <span className='fs-5 text-white ms-auto me-2'>
+              {currentUser ? currentUser.displayName : ""}
+            </span>
+            <Image
+              // Conditional statement for profile image
+              src={currentUser ? currentUser.photoURL : UserLogo}
+              width='55'
+              height='55'
+              className='me-5 rounded-circle'
             />
-            <p className='h6 text-warning ms-3'>sparrow</p>
-          </Navbar.Brand>
-          <span className='fs-5 text-white ms-auto me-2'>
-            {currentUser ? currentUser.displayName : ""}
-          </span>
-          <Image
-            // Conditional statement for profile image
-            src={currentUser ? currentUser.photoURL : UserLogo}
-            width='55'
-            height='55'
-            className='me-5 rounded-circle'
-          />
+            {/*
           <Link to='/'>
             <Button
               variant='light'
@@ -71,9 +80,43 @@ function TopNavigationBar({ currentUser }) {
               className='filter-grey'
               title='Toggle light/dark mode'
             />
-          </Button>
-        </Container>
-      </Navbar>
+          </Button> */}
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas
+              id={`offcanvasNavbar-expand-${expand}`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              placement='end'
+            >
+              <Offcanvas.Header closeButton></Offcanvas.Header>
+              <Link to='/'>
+                <Button
+                  variant='light'
+                  className='px-3 rounded bg-info'
+                  onClick={handleSignOutUser}
+                >
+                  Sign Out
+                </Button>
+              </Link>
+
+              <Button
+                onClick={() => {
+                  toggle()
+                  toggleSfx()
+                }}
+                className='btn-theme-toggle'
+              >
+                <Image
+                  src={themeIcon}
+                  width='35'
+                  height='35'
+                  className='filter-grey'
+                  title='Toggle light/dark mode'
+                />
+              </Button>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
     </div>
   )
 }
