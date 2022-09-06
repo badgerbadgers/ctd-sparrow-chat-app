@@ -17,6 +17,7 @@ import Offcanvas from "react-bootstrap/Offcanvas"
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
   const [toggleSfx] = useSound(toggleSound)
+  const { theme } = useContext(ThemeContext)
 
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
@@ -88,7 +89,10 @@ function TopNavigationBar({ currentUser }) {
               placement='end'
               className='right-side-menu'
             >
-              <Offcanvas.Header closeButton></Offcanvas.Header>
+              <Offcanvas.Header
+                closeButton
+                style={{ backgroundColor: theme.primary }}
+              ></Offcanvas.Header>
               <div className='right-sidebar-menu-container'>
                 <Link to='/'>
                   <Button

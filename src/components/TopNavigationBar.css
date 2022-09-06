@@ -84,9 +84,9 @@ input:checked + .slider:before {
   display: flex;
   /* border: 1px solid red; */
   /* align-items: center !important; */
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
 }
 
 /* container for items in right sidebar offcanvas menu */
@@ -96,4 +96,9 @@ input:checked + .slider:before {
   padding: 20px;*/
   display: flex;
   flex-direction: column; 
+}
+
+/* signout buttn */
+.btn-signout {
+  margin: 10px;
 }
