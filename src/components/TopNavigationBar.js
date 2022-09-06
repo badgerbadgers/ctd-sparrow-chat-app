@@ -15,9 +15,8 @@ import themeIcon from "../assets/theme-icon.svg"
 import Offcanvas from "react-bootstrap/Offcanvas"
 
 function TopNavigationBar({ currentUser }) {
-  const { toggle } = useContext(ThemeContext)
+  const { toggle, theme } = useContext(ThemeContext)
   const [toggleSfx] = useSound(toggleSound)
-  const { theme } = useContext(ThemeContext)
 
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
@@ -88,6 +87,7 @@ function TopNavigationBar({ currentUser }) {
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement='end'
               className='right-side-menu'
+              style={{ backgroundColor: theme.primary }}
             >
               <Offcanvas.Header
                 closeButton
@@ -97,7 +97,7 @@ function TopNavigationBar({ currentUser }) {
                 <Link to='/'>
                   <Button
                     variant='light'
-                    className='px-3 rounded bg-info'
+                    className='px-3 rounded bg-info btn-signout'
                     onClick={handleSignOutUser}
                   >
                     Sign Out

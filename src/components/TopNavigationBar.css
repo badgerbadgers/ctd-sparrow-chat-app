@@ -84,7 +84,7 @@ input:checked + .slider:before {
   display: flex;
   /* border: 1px solid red; */
   /* align-items: center !important; */
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
   /* justify-content: flex-start; */
 }
@@ -96,9 +96,5 @@ input:checked + .slider:before {
   padding: 20px;*/
   display: flex;
   flex-direction: column; 
-}
-
-/* signout buttn */
-.btn-signout {
-  margin: 10px;
+  padding: 10px;
 }
