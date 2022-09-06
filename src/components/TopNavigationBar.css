@@ -96,9 +96,4 @@ input:checked + .slider:before {
   padding: 20px;*/
   display: flex;
   flex-direction: column; 
-  padding: 10px;
-}
-
-.btn-theme-toggle {
-  padding-top: 20px !important;
 }

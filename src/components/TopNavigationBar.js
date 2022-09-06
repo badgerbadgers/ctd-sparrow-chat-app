@@ -29,7 +29,7 @@ function TopNavigationBar({ currentUser }) {
       {[false, "sm", "md", "lg", "xl", "xxl"].map((expand) => (
         <Navbar
           bg='primary navbar-dark'
-          // className='pt-1'
+          className='pt-1'
           fixed='top'
           key={expand}
           expand={expand}
@@ -55,32 +55,6 @@ function TopNavigationBar({ currentUser }) {
               height='55'
               className='me-5 rounded-circle'
             />
-            {/*
-          <Link to='/'>
-            <Button
-              variant='light'
-              className='px-3 rounded bg-info'
-              onClick={handleSignOutUser}
-            >
-              Sign Out
-            </Button>
-          </Link>
-
-          <Button
-            onClick={() => {
-              toggle()
-              toggleSfx()
-            }}
-            className='btn-theme-toggle'
-          >
-            <Image
-              src={themeIcon}
-              width='35'
-              height='35'
-              className='filter-grey'
-              title='Toggle light/dark mode'
-            />
-          </Button> */}
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -91,7 +65,9 @@ function TopNavigationBar({ currentUser }) {
             >
               <Offcanvas.Header
                 closeButton
-                style={{ backgroundColor: theme.primary }}
+                style={{
+                  backgroundColor: theme.primary,
+                }}
               ></Offcanvas.Header>
               <div className='right-sidebar-menu-container'>
                 <Link to='/'>
@@ -118,7 +94,6 @@ function TopNavigationBar({ currentUser }) {
                     title='Toggle light/dark mode'
                   />
                 </Button>
-                {light ? "light" : "dark"}
               </div>
             </Navbar.Offcanvas>
           </Container>
