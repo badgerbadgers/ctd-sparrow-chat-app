@@ -15,7 +15,7 @@ import themeIcon from "../assets/theme-icon.svg"
 import Offcanvas from "react-bootstrap/Offcanvas"
 
 function TopNavigationBar({ currentUser }) {
-  const { toggle, theme, light } = useContext(ThemeContext)
+  const { toggle, theme } = useContext(ThemeContext)
   const [toggleSfx] = useSound(toggleSound)
 
   // When signing out removes user from 'users' collection and signs out user.
