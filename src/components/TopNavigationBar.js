@@ -15,7 +15,7 @@ import themeIcon from "../assets/theme-icon.svg"
 import Offcanvas from "react-bootstrap/Offcanvas"
 
 function TopNavigationBar({ currentUser }) {
-  const { toggle, theme } = useContext(ThemeContext)
+  const { toggle, theme, light } = useContext(ThemeContext)
   const [toggleSfx] = useSound(toggleSound)
 
   // When signing out removes user from 'users' collection and signs out user.
@@ -29,7 +29,7 @@ function TopNavigationBar({ currentUser }) {
       {[false, "sm", "md", "lg", "xl", "xxl"].map((expand) => (
         <Navbar
           bg='primary navbar-dark'
-          className='pt-2'
+          // className='pt-1'
           fixed='top'
           key={expand}
           expand={expand}
@@ -118,6 +118,7 @@ function TopNavigationBar({ currentUser }) {
                     title='Toggle light/dark mode'
                   />
                 </Button>
+                {light ? "light" : "dark"}
               </div>
             </Navbar.Offcanvas>
           </Container>
