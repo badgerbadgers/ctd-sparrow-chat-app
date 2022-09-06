@@ -15,6 +15,7 @@ import {
   query,
   where,
 } from "firebase/firestore"
+import { useContext } from "react"
 
 export const auth = getAuth()
 // Signs out user from application

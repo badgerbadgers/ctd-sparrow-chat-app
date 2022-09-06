@@ -6,12 +6,16 @@ import spinner from "../assets/loading_spinner_icon_yellow.png"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import "./SignIn.css"
+import { useContext } from "react"
+import { ThemeContext } from "../context.js"
 
 function SignIn({
   handleAuthStateChange,
   isLoading,
   handleIsLoadingStateChange,
 }) {
+  const { theme } = useContext(ThemeContext)
+
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
       handleAuthStateChange(data)
@@ -36,16 +40,22 @@ function SignIn({
             alt='Loading Spinner'
           />
         ) : (
-          <Button
-            variant='light'
-            onClick={() => {
-              handleIsLoadingStateChange(true)
-              signInWithGoogle(handleIsLoadingStateChange)
-            }}
-            className='px-4 rounded-pill bg-info'
-          >
-            Sign in with <i className='bi bi-google'></i>
-          </Button>
+          <>
+            <Button
+              variant='light'
+              onClick={() => {
+                handleIsLoadingStateChange(true)
+                signInWithGoogle(handleIsLoadingStateChange)
+              }}
+              className='px-4 rounded-pill bg-info'
+            >
+              Sign in with <i className='bi bi-google'></i>
+            </Button>
+            <p style={{ color: theme.light }}>Don't Have An Account?</p>
+            <Link to='/SignUp.js' style={{ color: theme.light }}>
+              Sign Up With Email
+            </Link>
+          </>
         )}
       </div>
     </div>
