@@ -1,3 +1,17 @@
 .filterYellow {
   filter: invert(84%) sepia(81%) saturate(2592%) hue-rotate(323deg) brightness(101%) contrast(94%);
 }
+/* sign in container */
+.sign-in-container {
+  border: 1px solid red;
+  width: 50%;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.sign-in-form-section {
+  border: 1px solid white;
+  padding: 15px;
+  width: 100%;
+}

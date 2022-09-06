@@ -3,4 +3,14 @@
   border: 1px solid red;
   width: 50%;
   margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.sign-up-form-section {
+  border: 1px solid white;
+  padding: 15px;
+  width: 100%;
+  /* background-color: #fff; */
+  color: #202020;
 }

@@ -9,7 +9,7 @@ function SignUp() {
   const { theme } = useContext(ThemeContext)
   return (
     <Container className='sign-up-container'>
-      <div style={{ backgroundColor: theme.primary }}>
+      <div className='form-section'>
         <h2 style={{ color: theme.light }}>Sign Up</h2>
         <Form>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
@@ -23,9 +23,10 @@ function SignUp() {
             <Form.Label style={{ color: theme.light }}>Password</Form.Label>
             <Form.Control type='password' placeholder='Password' />
           </Form.Group>
-          <Form.Group className='mb-3' controlId='formBasicCheckbox'>
-            <Form.Check type='checkbox' label='Check me out' />
-          </Form.Group>
+          <Form.Group
+            className='mb-3'
+            controlId='formBasicCheckbox'
+          ></Form.Group>
           <Button variant='primary' type='submit'>
             Submit
           </Button>
