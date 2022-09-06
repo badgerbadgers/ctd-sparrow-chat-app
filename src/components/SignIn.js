@@ -52,7 +52,7 @@ function SignIn({
               Sign in with <i className='bi bi-google'></i>
             </Button>
             <p style={{ color: theme.light }}>Don't Have An Account?</p>
-            <Link to='/SignUp.js' style={{ color: theme.light }}>
+            <Link to='/SignUp' style={{ color: theme.light }}>
               Sign Up With Email
             </Link>
           </>

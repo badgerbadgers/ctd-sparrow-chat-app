@@ -1,10 +1,12 @@
-import React from "react"
+import { useContext } from "react"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
+import { ThemeContext } from "../context.js"
 
 function SignUp() {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div>
+    <div style={{ backgroundColor: theme.primary }}>
       <h2>Sign Up</h2>
       <Form>
         <Form.Group className='mb-3' controlId='formBasicEmail'>

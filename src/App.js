@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from "react"
 import { Container } from "react-bootstrap"
 import "./App.css"
 import { ThemeContext } from "./context.js"
+import SignUp from "./components/SignUp"
 
 function App() {
   const [authState, setAuthState] = useState(null)
@@ -50,6 +51,7 @@ function App() {
           }
         />
         <Route path='/chat' element={<Chat currentUser={authState} />} />
+        <Route path='/SignUp' element={<SignUp />} />
       </Routes>
     </Container>
   )
