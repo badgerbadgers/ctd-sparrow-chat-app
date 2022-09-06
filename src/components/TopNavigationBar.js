@@ -89,7 +89,7 @@ function TopNavigationBar({ currentUser }) {
               className='right-side-menu'
             >
               <Offcanvas.Header closeButton></Offcanvas.Header>
-              <div className='right-side-menu-item-container'>
+              <div className='right-sidebar-menu-container'>
                 <Link to='/'>
                   <Button
                     variant='light'

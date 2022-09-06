@@ -82,9 +82,18 @@ input:checked + .slider:before {
 /* right sidebar offcanvas menu */
 .right-side-menu {
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* align-items: center !important; */
   align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+/* container for items in right sidebar offcanvas menu */
+.right-sidebar-menu-container {
+  /* border: 1px solid red;
+  margin: 20px;
+  padding: 20px;*/
+  display: flex;
+  flex-direction: column; 
 }
