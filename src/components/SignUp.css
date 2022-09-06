@@ -1,16 +1,19 @@
 /* sign up container */
 .sign-up-container {
   border: 1px solid red;
-  width: 50%;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .sign-up-form-section {
   border: 1px solid white;
   padding: 15px;
-  width: 100%;
-  /* background-color: #fff; */
+  width: 50%;
+  background-color: #fff;
   color: #202020;
+  display: flex;
 }

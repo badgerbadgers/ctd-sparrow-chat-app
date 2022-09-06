@@ -80,7 +80,7 @@ function SignIn({
                     controlId='formBasicCheckbox'
                   ></Form.Group>
                   <Button variant='info' type='submit'>
-                    <p style={{ color: theme.dark }}>Submit</p>
+                    Submit
                   </Button>
                   <br />
                   <Button
