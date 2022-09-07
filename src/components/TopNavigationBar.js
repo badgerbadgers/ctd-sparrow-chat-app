@@ -1,5 +1,5 @@
 import logo from "../assets/sparrow-logo.svg"
-import { signOutUser, removeUser } from "../config/googleSignIn"
+import { signOutUser, removeUser } from "../config/sign-in"
 import { Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
