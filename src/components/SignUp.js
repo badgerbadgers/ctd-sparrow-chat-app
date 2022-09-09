@@ -5,7 +5,7 @@ import { ThemeContext } from "../context.js"
 import { Container } from "react-bootstrap"
 import "./SignUp.css"
 import { createEmail } from "../config/sign-in.js"
-import { Navigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 
 function SignUp() {
   const [loading, setLoading] = useState(false)
@@ -13,6 +13,7 @@ function SignUp() {
   const [password, setPassword] = useState("")
   const { theme } = useContext(ThemeContext)
 
+  // const navigate = useNavigate()
   const onEmailChange = (event) => {
     setEmail(event.target.value)
   }
@@ -20,15 +21,15 @@ function SignUp() {
     setPassword(event.target.value)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    // try {
-    //   await signup(emailRef.current.value, passwordRef.current.value)
-    // } catch {
-    //   alert("Error")
-    // }
-    // setLoading(false)
-    createEmail(email, password)
+    try {
+      await createEmail(email, password)
+    } catch {
+      alert("Error")
+    }
+    setLoading(false)
+    // navigate("/")
   }
 
   return (

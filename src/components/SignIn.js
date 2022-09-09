@@ -3,7 +3,6 @@ import {
   signInWithGoogle,
   auth,
   // signInError,
-  signInWithEmailAndPassword,
 } from "../config/sign-in"
 import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"

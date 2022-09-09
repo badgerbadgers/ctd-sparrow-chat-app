@@ -63,13 +63,6 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
 }
 
 /* function to create user using email  */
-// export function signup(email, password) {
-//   return createUserWithEmailAndPassword(auth, email, password)
-// }
-
-// export const signin = (email, password) => {
-//   return signInWithEmailAndPassword(auth, email, password)
-// }
 export const createEmail = (email, password) => {
   console.log(email, password)
   createUserWithEmailAndPassword(auth, email, password)
@@ -83,5 +76,19 @@ export const createEmail = (email, password) => {
       const errorCode = error.code
       const errorMessage = error.message
       console(errorCode, errorMessage)
+    })
+}
+/* function to sign in user with email and password */
+export const signInEmail = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user
+      console.log(user)
+    })
+    .catch((error) => {
+      const errorCode = error.code
+      const errorMessage = error.message
+      console.log(errorCode, errorMessage)
     })
 }
