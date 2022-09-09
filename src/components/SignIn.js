@@ -1,15 +1,21 @@
 import { useEffect } from "react"
-import { signInWithGoogle, auth, signInError } from "../config/sign-in"
+import {
+  signInWithGoogle,
+  auth,
+  // signInError,
+  signInWithEmailAndPassword,
+} from "../config/sign-in"
 import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"
 import spinner from "../assets/loading_spinner_icon_yellow.png"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import "./SignIn.css"
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import { ThemeContext } from "../context.js"
 import Form from "react-bootstrap/Form"
 import { Container } from "react-bootstrap"
+import { signin } from "../config/sign-in"
 
 function SignIn({
   handleAuthStateChange,
@@ -17,7 +23,21 @@ function SignIn({
   handleIsLoadingStateChange,
 }) {
   const { theme } = useContext(ThemeContext)
+  const emailRef = useRef()
+  const passwordRef = useRef()
 
+  const handleSubmit = () => {
+    // try {
+    //   signin(emailRef.current.value, passwordRef.current.value)
+    // } catch {
+    //   alert("Error")
+    // }
+    // return signsInWithEmailAndPassword(
+    //   auth,
+    //   emailRef.current.value,
+    //   passwordRef.current.value
+    // )
+  }
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
       handleAuthStateChange(data)
@@ -67,19 +87,27 @@ function SignIn({
                     <Form.Label style={{ color: theme.dark }}>
                       Email address
                     </Form.Label>
-                    <Form.Control type='email' placeholder='Enter email' />
+                    <Form.Control
+                      type='email'
+                      placeholder='Enter email'
+                      ref={emailRef}
+                    />
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='formBasicPassword'>
                     <Form.Label style={{ color: theme.dark }}>
                       Password
                     </Form.Label>
-                    <Form.Control type='password' placeholder='Password' />
+                    <Form.Control
+                      type='password'
+                      placeholder='Password'
+                      ref={passwordRef}
+                    />
                   </Form.Group>
                   <Form.Group
                     className='mb-3'
                     controlId='formBasicCheckbox'
                   ></Form.Group>
-                  <Button variant='info' type='submit'>
+                  <Button variant='info' type='submit' onSubmit={handleSubmit}>
                     Submit
                   </Button>
                   <br />
