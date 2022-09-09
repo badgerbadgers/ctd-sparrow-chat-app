@@ -85,17 +85,3 @@ export const createEmail = (email, password) => {
       console(errorCode, errorMessage)
     })
 }
-
-// export const signup = (email, password) => {
-//   return createUserWithEmailAndPassword(auth, email, password)
-// }
-
-// unlink(auth.currentUser, providerId)
-//   .then(() => {
-//     // Auth provider unlinked from account
-//     // ...
-//   })
-//   .catch((error) => {
-//     // An error happened
-//     // ...
-//   })

@@ -5,6 +5,7 @@ import { ThemeContext } from "../context.js"
 import { Container } from "react-bootstrap"
 import "./SignUp.css"
 import { createEmail } from "../config/sign-in.js"
+import { Navigate } from "react-router-dom"
 
 function SignUp() {
   const [loading, setLoading] = useState(false)
@@ -58,12 +59,7 @@ function SignUp() {
             className='mb-3'
             controlId='formBasicCheckbox'
           ></Form.Group>
-          <Button
-            disabled={loading}
-            variant='primary'
-            type='submit'
-            // onClick={handleSubmit}
-          >
+          <Button disabled={loading} variant='primary' type='submit'>
             Sign Up
           </Button>
         </Form>

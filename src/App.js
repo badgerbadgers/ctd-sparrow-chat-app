@@ -29,14 +29,7 @@ function App() {
   }, [authState])
 
   return (
-    <Container
-      fluid
-      style={
-        light
-          ? { backgroundColor: theme.primary }
-          : { backgroundColor: theme.primary }
-      }
-    >
+    <Container fluid style={{ backgroundColor: theme.primary }}>
       <Routes>
         <Route
           path='/'
