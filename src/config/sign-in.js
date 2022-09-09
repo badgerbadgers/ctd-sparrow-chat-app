@@ -4,6 +4,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth"
 import {
   addDoc,
@@ -15,9 +17,9 @@ import {
   query,
   where,
 } from "firebase/firestore"
-import { useContext } from "react"
 
 export const auth = getAuth()
+
 // Signs out user from application
 export const signOutUser = () => {
   signOut(auth)
@@ -31,12 +33,12 @@ export const removeUser = async (currentUser) => {
 }
 
 // provider object represents everything related to Google authentication
-const provider = new GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider()
 const usersCollectionRef = collection(db, "users")
 
 // Prompt user to sign in w/their Google account by opening a pop-up window
 export const signInWithGoogle = (handleIsLoadingStateChange) => {
-  signInWithPopup(auth, provider)
+  signInWithPopup(auth, googleProvider)
     .then(async (result) => {
       // Checks if user is already on "users" collection
       const userDocs = await getDocs(
@@ -52,10 +54,33 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
         })
       }
       // Information about the user based on who signed in
-      // console.log(result.user)
+      console.log(result.user)
     })
     .catch((error) => {
       console.log(error)
       handleIsLoadingStateChange(false)
     })
 }
+
+/* function to create user using email  */
+// export function signup(email, password) {
+//   return createUserWithEmailAndPassword(auth, email, password)
+// }
+
+export const signin = (email, password) => {
+  return signInWithEmailAndPassword(auth, email, password)
+}
+
+export const signup = (email, password) => {
+  return createUserWithEmailAndPassword(auth, email, password)
+}
+
+// unlink(auth.currentUser, providerId)
+//   .then(() => {
+//     // Auth provider unlinked from account
+//     // ...
+//   })
+//   .catch((error) => {
+//     // An error happened
+//     // ...
+//   })
