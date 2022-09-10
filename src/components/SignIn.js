@@ -1,20 +1,16 @@
 import { useEffect } from "react"
-import {
-  signInWithGoogle,
-  auth,
-  // signInError,
-} from "../config/sign-in"
+import { signInWithGoogle, auth, signInError } from "../config/sign-in"
 import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"
 import spinner from "../assets/loading_spinner_icon_yellow.png"
 import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import "./SignIn.css"
-import { useContext, useRef } from "react"
+import { useContext, useState } from "react"
 import { ThemeContext } from "../context.js"
 import Form from "react-bootstrap/Form"
 import { Container } from "react-bootstrap"
-import { signin } from "../config/sign-in"
+import { signInEmail } from "../config/sign-in"
 
 function SignIn({
   handleAuthStateChange,
@@ -22,20 +18,19 @@ function SignIn({
   handleIsLoadingStateChange,
 }) {
   const { theme } = useContext(ThemeContext)
-  const emailRef = useRef()
-  const passwordRef = useRef()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
-  const handleSubmit = () => {
-    // try {
-    //   signin(emailRef.current.value, passwordRef.current.value)
-    // } catch {
-    //   alert("Error")
-    // }
-    // return signsInWithEmailAndPassword(
-    //   auth,
-    //   emailRef.current.value,
-    //   passwordRef.current.value
-    // )
+  const onEmailChange = (event) => {
+    setEmail(event.target.value)
+  }
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value)
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(password, email)
+    signInEmail(email, password)
   }
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
@@ -80,8 +75,8 @@ function SignIn({
                   alt='Sparrow Logo'
                 />
                 <h1 className='h6 text-warning'>sparrow</h1>
-                <h2 style={{ color: theme.dark }}>Sign In</h2>
-                <Form>
+                <h2 style={{ color: theme.light }}>Sign In</h2>
+                <Form onSubmit={handleSubmit}>
                   <Form.Group className='mb-3' controlId='formBasicEmail'>
                     <Form.Label style={{ color: theme.dark }}>
                       Email address
@@ -89,7 +84,8 @@ function SignIn({
                     <Form.Control
                       type='email'
                       placeholder='Enter email'
-                      ref={emailRef}
+                      value={email}
+                      onChange={onEmailChange}
                     />
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='formBasicPassword'>
@@ -99,14 +95,15 @@ function SignIn({
                     <Form.Control
                       type='password'
                       placeholder='Password'
-                      ref={passwordRef}
+                      value={password}
+                      onChange={onPasswordChange}
                     />
                   </Form.Group>
                   <Form.Group
                     className='mb-3'
                     controlId='formBasicCheckbox'
                   ></Form.Group>
-                  <Button variant='info' type='submit' onSubmit={handleSubmit}>
+                  <Button variant='info' type='submit'>
                     Submit
                   </Button>
                   <br />

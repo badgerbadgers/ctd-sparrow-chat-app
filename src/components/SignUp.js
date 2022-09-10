@@ -5,7 +5,7 @@ import { ThemeContext } from "../context.js"
 import { Container } from "react-bootstrap"
 import "./SignUp.css"
 import { createEmail } from "../config/sign-in.js"
-// import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 function SignUp() {
   const [loading, setLoading] = useState(false)
@@ -63,6 +63,10 @@ function SignUp() {
           <Button disabled={loading} variant='primary' type='submit'>
             Sign Up
           </Button>
+          <Link to='/'>
+            <p>Have an account?</p>
+            <p>Sign in</p>
+          </Link>
         </Form>
       </div>
     </Container>
