@@ -16,17 +16,23 @@
   /* margin-right: 15px; */
   border-radius: 10px !important;
   font-size: 20px;
-  width: 80%;
+  width: 95%;
 }
 
 .container-bottom-input-form {
   justify-content: center !important;
 }
 
+/* styling for removing pointer cursor when no message is typed */
 .wrapper {
   cursor: not-allowed;
 }
 
 .pointer-events-none {
   pointer-events: none;
+}
+
+/* styling for removing bootstrap default box shadow */
+.btn-sound-toogle {
+  --bs-btn-focus-box-shadow: 0 !important;
 }

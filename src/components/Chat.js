@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { ThemeContext } from "../context.js"
 import { useContext } from "react"
+import { SoundProvider } from "../context/SoundContext"
 
 function Chat({ currentUser }) {
   const navigate = useNavigate()
@@ -34,7 +35,10 @@ function Chat({ currentUser }) {
             </div>
             <div className='col-2'></div>
           </div>
-          <BottomInputComponent currentUser={currentUser} isFocused />
+          {/* Provide the global sound context value to this component */}
+          <SoundProvider>
+            <BottomInputComponent currentUser={currentUser} isFocused />
+          </SoundProvider>
         </div>
       </section>
     </>
