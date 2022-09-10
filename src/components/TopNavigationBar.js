@@ -16,7 +16,7 @@ import themeIcon from "../assets/theme-icon.svg"
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
   const [toggleSfx] = useSound(toggleSound)
-
+  console.log("currentUser", currentUser.email)
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)
@@ -39,12 +39,14 @@ function TopNavigationBar({ currentUser }) {
           </Navbar.Brand>
           <span className='fs-5 text-white ms-auto me-2'>
             {/* {currentUser ? currentUser.displayName : ""} */}
-            {currentUser ? currentUser.displayName : null}
+            {currentUser.displayName
+              ? currentUser.displayName
+              : currentUser.email}
           </span>
           <Image
             // Conditional statement for profile image
-            // src={currentUser ? currentUser.photoURL : UserLogo}
-            src={currentUser ? currentUser.photoURL : null}
+            src={currentUser ? currentUser.photoURL : UserLogo}
+            // src={currentUser ? currentUser.photoURL : UserLl}
             width='55'
             height='55'
             className='me-5 rounded-circle'
