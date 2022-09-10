@@ -75,7 +75,7 @@ function LeftSideComponent({ name, ...props }) {
                     className='sidebar-text'
                     style={{ color: theme.light }}
                   >
-                    {user.name || user}
+                    {user.name || user.email}
                   </li>
                 )
               })}

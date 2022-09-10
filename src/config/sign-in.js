@@ -16,6 +16,7 @@ import {
   serverTimestamp,
   query,
   where,
+  setDoc,
 } from "firebase/firestore"
 
 export const auth = getAuth()
@@ -64,12 +65,10 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
 
 /* function to create user using email  */
 export const createEmail = (email, password) => {
-  console.log(email, password)
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user
-      // ...
       console.log(user)
     })
     .catch((error) => {
@@ -80,11 +79,33 @@ export const createEmail = (email, password) => {
 }
 /* function to sign in user with email and password */
 export const signInEmail = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-    // Signed in
-    const user = userCredential.user
-    console.log(user)
-  })
+  signInWithEmailAndPassword(auth, email, password)
+    .then(async (result) => {
+      // Checks if user is already on "users" collection
+      const userDocs = await getDocs(
+        query(usersCollectionRef, where("email", "==", result.user.email))
+      )
+      const user = userDocs.docs.map((doc) => doc.data())
+      if (!user.length) {
+        addDoc(usersCollectionRef, {
+          name: result.user.displayName,
+          email: result.user.email,
+          photoURL: result.user.photoURL,
+          timestamp: serverTimestamp(),
+        })
+      }
+      // Information about the user based on who signed in
+      console.log(result.user)
+    })
+    .catch((error) => {
+      console.log(error)
+      // handleIsLoadingStateChange(false)
+    })
+  // .then((userCredential) => {
+  //   // Signed in
+  //   const user = userCredential.user
+  //   console.log(user)
+  // })
   // .then(async (result) => {
   // Checks if user is already on "users" collection
   // const userDocs = await getDocs(
