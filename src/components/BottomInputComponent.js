@@ -13,7 +13,12 @@ import { TbMusicOff } from "react-icons/tb"
 import { BsMusicNoteBeamed } from "react-icons/bs"
 import { useSoundHook } from "../hooks/useSoundHook"
 
-function BottomInputComponent({ currentUser, isFocused }) {
+function BottomInputComponent({
+  currentUser,
+  isFocused,
+  scrollToBottom,
+  lastMessageIsInViewport,
+}) {
   const [message, setMessage] = useState("")
   const { theme } = useContext(ThemeContext)
   const { changeSoundBool, sound, turnSoundOnOff } = useSoundHook()
@@ -139,6 +144,12 @@ function BottomInputComponent({ currentUser, isFocused }) {
               )}
             </Button>
           </form>
+          <button
+            className={lastMessageIsInViewport ? "btn-scroll" : ""}
+            onClick={scrollToBottom}
+          >
+            scroll down
+          </button>
         </Container>
       </Navbar>
     </>

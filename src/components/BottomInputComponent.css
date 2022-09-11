@@ -5,7 +5,7 @@
   align-items: center;
   flex-grow: 1;
   flex-shrink: 1;
-  max-width: 750px;
+  max-width: 850px;
 }
 
 /* styling for the input field */
@@ -35,4 +35,8 @@
 /* styling for removing bootstrap default box shadow */
 .btn-sound-toogle {
   --bs-btn-focus-box-shadow: 0 !important;
+}
+
+.btn-scroll {
+  display: none;
 }
