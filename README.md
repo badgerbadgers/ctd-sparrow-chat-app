@@ -8,15 +8,13 @@
   </a>
 </p>
 
-<!-- ![Sparrow Logo](./src/assets/sparrow-logo-w-bg.png) -->
-
-Team members:
-
-- Asaia Palacios
-- Tim Almacen
-- Vinicius Pietscher
-- William J. Cook Fernandez
-- Lawrence Lee
+<p align="center">
+  <a href="https://github.com/asaiapalacios">Asaia</a> |
+  <a href="https://github.com/badgerbadgers">Tim</a> |
+  <a href="https://github.com/viniciuspietscher">Vinicius</a> |
+  <a href="https://github.com/LongJourney47">William</a> |
+  <a href="https://github.com/LawrenceELee">Lawrence</a>
+</p>
 
 ---
 
@@ -30,7 +28,11 @@ Users enter the landing page to sign in, then are routed to our chat room. Here,
 
 Below is a look at our chat app built and deployed in a span of 8 weeks:
 
-[screenshot/short video of app working]
+<p align="center">
+  <picture>
+    <img alt="Demo Sparrow Chat Photo" src="./src/assets/sparrow-chat-app.png" width="75%" height="75%" />
+  </picture>
+</p>
 
 ## Getting Started
 
