@@ -5,18 +5,26 @@ import "./BottomInputComponent.css"
 import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
+import Button from "react-bootstrap/Button"
 import { ThemeContext } from "../context.js"
-// import use-sound React hook for sound effects
 import useSound from "use-sound"
 import buttonSound from "../sounds/stories_sounds_boop.mp3"
+import { TbMusicOff } from "react-icons/tb"
+import { BsMusicNoteBeamed } from "react-icons/bs"
+import { useSoundHook } from "../hooks/useSoundHook"
 
 function BottomInputComponent({ currentUser, isFocused }) {
   const [message, setMessage] = useState("")
   const { theme } = useContext(ThemeContext)
+  const { changeSoundBool, sound, turnSoundOnOff } = useSoundHook()
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
     setMessage(newMessage)
+  }
+
+  const handleSoundButton = () => {
+    changeSoundBool(sound === false ? true : false)
   }
 
   const messagesCollectionRef = collection(db, "messages")
@@ -48,7 +56,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
     } else {
       saveMessage(message)
       setMessage("")
-      buttonSfx()
+      turnSoundOnOff(sound === true ? buttonSfx() : null)
     }
   }
 
@@ -113,6 +121,23 @@ function BottomInputComponent({ currentUser, isFocused }) {
                 title='Send message'
               />
             )}
+            <Button
+              onClick={handleSoundButton}
+              className='ms-1 bg-info rounded-pill btn-sound-toogle'
+            >
+              {sound ? (
+                <>
+                  <BsMusicNoteBeamed
+                    title='Sound on'
+                    className='text-primary '
+                  />
+                </>
+              ) : (
+                <>
+                  <TbMusicOff title='Sound off' className='text-primary' />
+                </>
+              )}
+            </Button>
           </form>
         </Container>
       </Navbar>
