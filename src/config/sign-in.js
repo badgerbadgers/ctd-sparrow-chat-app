@@ -16,7 +16,6 @@ import {
   serverTimestamp,
   query,
   where,
-  setDoc,
 } from "firebase/firestore"
 
 export const auth = getAuth()
@@ -88,7 +87,7 @@ export const signInEmail = (email, password) => {
       const user = userDocs.docs.map((doc) => doc.data())
       if (!user.length) {
         addDoc(usersCollectionRef, {
-          name: result.user.displayName,
+          name: "current user",
           email: result.user.email,
           photoURL: result.user.photoURL,
           timestamp: serverTimestamp(),

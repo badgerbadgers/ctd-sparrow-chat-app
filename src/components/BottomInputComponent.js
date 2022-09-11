@@ -29,7 +29,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
         name: currentUser.displayName || currentUser.email,
         email: currentUser.email,
         text: messageText,
-        profilePicUrl: currentUser.photoURL || null,
+        profilePicUrl: currentUser.photoURL || "",
         timestamp: serverTimestamp(),
       })
     } catch (error) {

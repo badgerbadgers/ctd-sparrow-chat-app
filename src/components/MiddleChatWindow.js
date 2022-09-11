@@ -74,7 +74,7 @@ function MiddleChatWindow({ currentUser }) {
         <div ref={screenBottom}></div>
         {/* renders message */}
         {messages.map((message) => {
-          console.log(message)
+          console.log("message map", message)
           const name = `${message.name.split(" ")[0]} ${
             message.name.split(" ")[1][0]
           }.`

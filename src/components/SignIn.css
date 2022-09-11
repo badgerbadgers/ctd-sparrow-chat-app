@@ -3,7 +3,7 @@
 }
 /* sign in container */
 .sign-in-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 50%;
   margin: 0 auto;
   height: 100vh;
@@ -11,7 +11,7 @@
   align-items: center;
 }
 .sign-in-form-section {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   padding: 15px;
   width: 100%;
 }

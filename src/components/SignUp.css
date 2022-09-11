@@ -1,6 +1,6 @@
 /* sign up container */
 .sign-up-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100%;
   /* margin: 0 auto; */
   height: 100vh;
@@ -10,7 +10,7 @@
   justify-content: center;
 }
 .sign-up-form-section {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   padding: 15px;
   width: 50%;
   background-color: #fff;

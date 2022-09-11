@@ -68,7 +68,6 @@ function LeftSideComponent({ name, ...props }) {
           {users.length > 0 ? (
             <ul className='listGroup'>
               {users.map((user) => {
-                console.log("leftside user", user)
                 return (
                   <li
                     key={user.id}
