@@ -65,7 +65,7 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
 
 /* function to create user using email  */
 export const createEmail = (name, email, password) => {
-  createUserWithEmailAndPassword(auth, email, password, name).then(
+  createUserWithEmailAndPassword(auth, email, password).then(
     (userCredential) => {
       // Signed in
       const user = userCredential.user
@@ -77,7 +77,12 @@ export const createEmail = (name, email, password) => {
         timestamp: serverTimestamp(),
       })
     }
-  ) // .catch((error) => {
+  )
+  // .createUser({ displayName: name })
+  // .then((displayName) =>
+  //   console.log("Successfully created new user:", displayName)
+  // )
+  // .catch((error) => {
   //   const errorCode = error.code
   //   const errorMessage = error.message
   //   console(errorCode, errorMessage)
@@ -95,7 +100,7 @@ export const signInEmail = (email, password) => {
       const user = userDocs.docs.map((doc) => doc.data())
       if (!user.length) {
         addDoc(usersCollectionRef, {
-          name: "current user",
+          name: result.user.name,
           email: result.user.email,
           photoURL: result.user.photoURL,
           timestamp: serverTimestamp(),

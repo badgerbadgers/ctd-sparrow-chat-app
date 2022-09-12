@@ -21,7 +21,7 @@ function TopNavigationBar({ currentUser }) {
     removeUser(currentUser)
     signOutUser()
   }
-
+  console.log("current user top nav bar", currentUser)
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>

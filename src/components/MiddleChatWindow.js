@@ -75,10 +75,16 @@ function MiddleChatWindow({ currentUser }) {
         {/* renders message */}
         {messages.map((message) => {
           console.log("message map", message)
-          // const name = `${message.name.split(" ")[0]} ${
-          //   message.name.split(" ")[1][0]
-          // }.`
-
+          // const name =
+          //   message.name.length !== undefined
+          //     ? `${message.name.split(" ")[0]} ${
+          //         message.name.split(" ")[1][0]
+          //       }.`
+          //     : message.email
+          const name = message.name.includes("@")
+            ? message.email
+            : `${message.name.split(" ")[0]} ${message.name.split(" ")[1][0]}.`
+          console.log("name", name)
           return (
             <div
               key={message.id}
@@ -98,7 +104,7 @@ function MiddleChatWindow({ currentUser }) {
               />
               <li className='list-item'>
                 <div className='card-header d-flex justify-content-between p-0 list-item-divider'>
-                  <p className='list-item-name fw-bold mb-0'>{message.name}</p>
+                  <p className='list-item-name fw-bold mb-0'>{name}</p>
                 </div>
                 <div className='card-body'>
                   <p className='mb-0'>{message.text}</p>
