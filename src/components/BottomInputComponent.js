@@ -12,6 +12,7 @@ import buttonSound from "../sounds/stories_sounds_boop.mp3"
 import { TbMusicOff } from "react-icons/tb"
 import { BsMusicNoteBeamed } from "react-icons/bs"
 import { useSoundHook } from "../hooks/useSoundHook"
+import { TbArrowBigDown } from "react-icons/tb"
 
 function BottomInputComponent({
   currentUser,
@@ -128,13 +129,13 @@ function BottomInputComponent({
             )}
             <Button
               onClick={handleSoundButton}
-              className='ms-1 bg-info rounded-pill btn-sound-toogle'
+              className='ms-3 bg-info rounded btn-sound-toogle'
             >
               {sound ? (
                 <>
                   <BsMusicNoteBeamed
                     title='Sound on'
-                    className='text-primary '
+                    className='text-primary'
                   />
                 </>
               ) : (
@@ -145,10 +146,13 @@ function BottomInputComponent({
             </Button>
           </form>
           <button
-            className={lastMessageIsInViewport ? "btn-scroll" : ""}
+            className={`${
+              lastMessageIsInViewport ? "btn-scroll" : ""
+            } bg-info rounded btn-scroll-down`}
             onClick={scrollToBottom}
+            title='Scroll to last message'
           >
-            scroll down
+            <TbArrowBigDown />
           </button>
         </Container>
       </Navbar>
