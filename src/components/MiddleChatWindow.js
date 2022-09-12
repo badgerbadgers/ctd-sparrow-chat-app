@@ -75,9 +75,9 @@ function MiddleChatWindow({ currentUser }) {
         {/* renders message */}
         {messages.map((message) => {
           console.log("message map", message)
-          const name = `${message.name.split(" ")[0]} ${
-            message.name.split(" ")[1][0]
-          }.`
+          // const name = `${message.name.split(" ")[0]} ${
+          //   message.name.split(" ")[1][0]
+          // }.`
 
           return (
             <div
@@ -92,13 +92,13 @@ function MiddleChatWindow({ currentUser }) {
               <img
                 className='user-image'
                 // Conditional statement for profile image
-                src={message ? message.profilePicUrl : ""}
+                src={message ? message.profilePicUrl : UserLogo}
                 width='75'
                 alt='profile pic'
               />
               <li className='list-item'>
                 <div className='card-header d-flex justify-content-between p-0 list-item-divider'>
-                  <p className='list-item-name fw-bold mb-0'>{name}</p>
+                  <p className='list-item-name fw-bold mb-0'>{message.name}</p>
                 </div>
                 <div className='card-body'>
                   <p className='mb-0'>{message.text}</p>

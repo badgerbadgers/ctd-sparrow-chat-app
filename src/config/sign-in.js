@@ -16,6 +16,7 @@ import {
   serverTimestamp,
   query,
   where,
+  setDoc,
 } from "firebase/firestore"
 
 export const auth = getAuth()
@@ -63,19 +64,26 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
 }
 
 /* function to create user using email  */
-export const createEmail = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+export const createEmail = (name, email, password) => {
+  createUserWithEmailAndPassword(auth, email, password, name).then(
+    (userCredential) => {
       // Signed in
       const user = userCredential.user
-      console.log(user)
-    })
-    .catch((error) => {
-      const errorCode = error.code
-      const errorMessage = error.message
-      console(errorCode, errorMessage)
-    })
+      console.log("createEmail user", user)
+      //adds user
+      setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        name: name,
+        timestamp: serverTimestamp(),
+      })
+    }
+  ) // .catch((error) => {
+  //   const errorCode = error.code
+  //   const errorMessage = error.message
+  //   console(errorCode, errorMessage)
+  // })
 }
+
 /* function to sign in user with email and password */
 export const signInEmail = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)

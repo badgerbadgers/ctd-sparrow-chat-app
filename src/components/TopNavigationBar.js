@@ -37,7 +37,7 @@ function TopNavigationBar({ currentUser }) {
             <p className='h6 text-warning ms-3'>sparrow</p>
           </Navbar.Brand>
           <span className='fs-5 text-white ms-auto me-2'>
-            {currentUser.displayName}
+            {currentUser.displayName || currentUser.email}
           </span>
           <Image
             // Conditional statement for profile image

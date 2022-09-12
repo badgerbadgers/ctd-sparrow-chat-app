@@ -8,23 +8,21 @@ import { createEmail } from "../config/sign-in.js"
 import { useNavigate, Link } from "react-router-dom"
 
 function SignUp() {
+  const [user, setUser] = useState({ name: "", email: "", password: "" })
   const [loading, setLoading] = useState(false)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
   const { theme } = useContext(ThemeContext)
 
+  console.log("user", user)
+
   // const navigate = useNavigate()
-  const onEmailChange = (event) => {
-    setEmail(event.target.value)
-  }
-  const onPasswordChange = (event) => {
-    setPassword(event.target.value)
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      await createEmail(email, password)
+      await createEmail(user.name, user.email, user.password)
     } catch {
       alert("Error")
     }
@@ -38,22 +36,34 @@ function SignUp() {
         <Form onSubmit={handleSubmit}>
           <h2 style={{ color: theme.dark }}>Sign Up</h2>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
+            <Form.Label style={{ color: theme.dark }}>First Name</Form.Label>
+            <Form.Control
+              value={user.firstName}
+              type='name'
+              name='name'
+              placeholder='Enter name'
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className='mb-3' controlId='formBasicEmail'>
             <Form.Label style={{ color: theme.dark }}>Email address</Form.Label>
             <Form.Control
-              value={email}
+              value={user.email}
               type='email'
+              name='email'
               placeholder='Enter email'
-              onChange={onEmailChange}
+              onChange={handleChange}
             />
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='formBasicPassword'>
             <Form.Label style={{ color: theme.dark }}>Password</Form.Label>
             <Form.Control
-              value={password}
+              value={user.password}
               type='password'
+              name='password'
               placeholder='Password'
-              onChange={onPasswordChange}
+              onChange={handleChange}
             />
           </Form.Group>
           <Form.Group
