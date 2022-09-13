@@ -22,9 +22,15 @@
 .submit-btn {
   margin-bottom: 20px;
 }
+/* styling for google button */
 .google-btn {
   margin-bottom: 10px;
 }
+/* section that links user to sign up for account */
 .link-text {
   text-align: center;
+}
+/* applies bold font weight */
+.font-weight-bold {
+  font-weight: 700;
 }

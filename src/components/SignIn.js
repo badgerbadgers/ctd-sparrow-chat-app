@@ -66,7 +66,7 @@ function SignIn({
                   alt='Sparrow Logo'
                 />
                 <h1 className='h6 text-warning'>sparrow</h1>
-                <h2 className='sign-in-text'>Sign In</h2>
+                <h2 className='sign-in-text font-weight-bold'>Sign In</h2>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group className='mb-3' controlId='formBasicEmail'>
                     <Form.Label className='sign-in-text'>

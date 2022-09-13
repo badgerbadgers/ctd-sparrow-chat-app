@@ -36,7 +36,7 @@ function SignUp() {
         />
         <h1 className='h6 text-warning'>sparrow</h1>
         <Form onSubmit={handleSubmit}>
-          <h2 className='sign-up-text'>Sign Up</h2>
+          <h2 className='sign-up-text font-weight-bold'>Sign Up</h2>
           <Form.Group className='mb-3' controlId='formBasicName'>
             <Form.Label className='sign-up-text'>Enter Name</Form.Label>
             <Form.Control
