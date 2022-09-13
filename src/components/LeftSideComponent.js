@@ -9,7 +9,6 @@ import {
 import { useState, useEffect } from "react"
 import "./LeftSideComponent.css"
 import Offcanvas from "react-bootstrap/Offcanvas"
-import Button from "react-bootstrap/Button"
 import { BsFillPeopleFill } from "react-icons/bs"
 import { ThemeContext } from "../context.js"
 import { useContext } from "react"

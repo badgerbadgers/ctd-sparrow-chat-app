@@ -12,9 +12,7 @@ function SignUp() {
   const [loading, setLoading] = useState(false)
   const { theme } = useContext(ThemeContext)
 
-  console.log("user", user)
-
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
   }
@@ -27,7 +25,7 @@ function SignUp() {
       alert("Error")
     }
     setLoading(false)
-    // navigate("/")
+    navigate("/")
   }
 
   return (

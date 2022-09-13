@@ -29,7 +29,6 @@ function SignIn({
   }
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(password, email)
     signInEmail(email, password)
   }
   useEffect(() => {
