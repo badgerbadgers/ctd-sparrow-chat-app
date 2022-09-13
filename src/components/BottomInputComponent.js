@@ -5,18 +5,32 @@ import "./BottomInputComponent.css"
 import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
+import Button from "react-bootstrap/Button"
 import { ThemeContext } from "../context.js"
-// import use-sound React hook for sound effects
 import useSound from "use-sound"
 import buttonSound from "../sounds/stories_sounds_boop.mp3"
+import { TbMusicOff } from "react-icons/tb"
+import { BsMusicNoteBeamed } from "react-icons/bs"
+import { useSoundHook } from "../hooks/useSoundHook"
+import { TbArrowBigDown } from "react-icons/tb"
 
-function BottomInputComponent({ currentUser, isFocused }) {
+function BottomInputComponent({
+  currentUser,
+  isFocused,
+  scrollToBottom,
+  lastMessageIsInViewport,
+}) {
   const [message, setMessage] = useState("")
   const { theme } = useContext(ThemeContext)
+  const { changeSoundBool, sound, turnSoundOnOff } = useSoundHook()
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value
     setMessage(newMessage)
+  }
+
+  const handleSoundButton = () => {
+    changeSoundBool(sound === false ? true : false)
   }
 
   const messagesCollectionRef = collection(db, "messages")
@@ -48,7 +62,7 @@ function BottomInputComponent({ currentUser, isFocused }) {
     } else {
       saveMessage(message)
       setMessage("")
-      buttonSfx()
+      turnSoundOnOff(sound === true ? buttonSfx() : null)
     }
   }
 
@@ -113,7 +127,33 @@ function BottomInputComponent({ currentUser, isFocused }) {
                 title='Send message'
               />
             )}
+            <Button
+              onClick={handleSoundButton}
+              className='ms-3 bg-info rounded btn-sound-toogle'
+            >
+              {sound ? (
+                <>
+                  <TbMusicOff title='Sound off' className='text-primary' />
+                </>
+              ) : (
+                <>
+                  <BsMusicNoteBeamed
+                    title='Sound on'
+                    className='text-primary'
+                  />
+                </>
+              )}
+            </Button>
           </form>
+          <button
+            className={`${
+              lastMessageIsInViewport ? "btn-scroll" : ""
+            } bg-info rounded btn-scroll-down`}
+            onClick={scrollToBottom}
+            title='Scroll to last message'
+          >
+            <TbArrowBigDown />
+          </button>
         </Container>
       </Navbar>
     </>
