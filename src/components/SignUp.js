@@ -5,15 +5,13 @@ import { ThemeContext } from "../context.js"
 import { Container } from "react-bootstrap"
 import "./SignUp.css"
 import { createEmail } from "../config/sign-in.js"
-import { useNavigate, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import logo from "../assets/sparrow-logo.svg"
 
 function SignUp() {
   const [user, setUser] = useState({ name: "", email: "", password: "" })
   const [loading, setLoading] = useState(false)
-  const { theme } = useContext(ThemeContext)
 
-  const navigate = useNavigate()
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
   }

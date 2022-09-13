@@ -77,15 +77,6 @@ export const createEmail = (name, email, password) => {
       })
     }
   )
-  // .createUser({ displayName: name })
-  // .then((displayName) =>
-  //   console.log("Successfully created new user:", displayName)
-  // )
-  // .catch((error) => {
-  //   const errorCode = error.code
-  //   const errorMessage = error.message
-  //   console(errorCode, errorMessage)
-  // })
 }
 
 /* function to sign in user with email and password */
@@ -110,39 +101,5 @@ export const signInEmail = (email, password) => {
     })
     .catch((error) => {
       console.log(error)
-      // handleIsLoadingStateChange(false)
     })
-  // .then((userCredential) => {
-  //   // Signed in
-  //   const user = userCredential.user
-  //   console.log(user)
-  // })
-  // .then(async (result) => {
-  // Checks if user is already on "users" collection
-  // const userDocs = await getDocs(
-  //   query(usersCollectionRef, where("email", "==", result.user.email))
-  // )
-  // console.log("user docs", userDocs)
-  // const user = userDocs.docs.map((doc) => doc.data())
-  // console.log("sign in email user", user)
-  // if (!user.length) {
-  //   addDoc(usersCollectionRef, {
-  //     name: result.user.displayName || result.user.email,
-  //     email: result.user.email || "",
-  //     photoURL: result.user.photoURL || "",
-  //     timestamp: serverTimestamp(),
-  //   })
-  // }
-  // Information about the user based on who signed in
-  // console.log(result.user)
-  // })
-  // .catch((error) => {
-  //   console.log(error)
-  // handleIsLoadingStateChange(false)
-  // })
-  //   .catch((error) => {
-  //     const errorCode = error.code
-  //     const errorMessage = error.message
-  //     console.log(errorCode, errorMessage)
-  //   })
 }
