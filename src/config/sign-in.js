@@ -4,6 +4,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth"
 import {
   addDoc,
@@ -14,9 +17,11 @@ import {
   serverTimestamp,
   query,
   where,
+  setDoc,
 } from "firebase/firestore"
 
 export const auth = getAuth()
+
 // Signs out user from application
 export const signOutUser = () => {
   signOut(auth)
@@ -30,12 +35,12 @@ export const removeUser = async (currentUser) => {
 }
 
 // provider object represents everything related to Google authentication
-const provider = new GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider()
 const usersCollectionRef = collection(db, "users")
 
 // Prompt user to sign in w/their Google account by opening a pop-up window
 export const signInWithGoogle = (handleIsLoadingStateChange) => {
-  signInWithPopup(auth, provider)
+  signInWithPopup(auth, googleProvider)
     .then(async (result) => {
       // Checks if user is already on "users" collection
       const userDocs = await getDocs(
@@ -56,5 +61,52 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
     .catch((error) => {
       console.log(error)
       handleIsLoadingStateChange(false)
+    })
+}
+
+/* function to create user using email  */
+export const createEmail = (name, email, password) => {
+  createUserWithEmailAndPassword(auth, email, password, name).then(
+    (userCredential) => {
+      // Signed in
+      const user = userCredential.user
+      // Adds user name
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      })
+      //adds user
+      setDoc(doc(db, "users", user.uid), {
+        email: user.email,
+        name: name,
+        timestamp: serverTimestamp(),
+      })
+    }
+  )
+}
+
+/* function to sign in user with email and password */
+export const signInEmail = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then(async (result) => {
+      // Checks if user is already on "users" collection
+      const userDocs = await getDocs(
+        query(usersCollectionRef, where("email", "==", result.user.email))
+      )
+      const user = userDocs.docs.map((doc) => doc.data())
+      if (!user.length) {
+        console.log(auth.currentUser)
+        console.log(result.user)
+        addDoc(usersCollectionRef, {
+          name: result.user.displayName,
+          email: result.user.email,
+          photoURL: "",
+          timestamp: serverTimestamp(),
+        })
+      }
+      // Information about the user based on who signed in
+      // console.log(result.user)
+    })
+    .catch((error) => {
+      console.log(error)
     })
 }

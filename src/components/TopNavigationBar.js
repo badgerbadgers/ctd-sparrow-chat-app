@@ -1,5 +1,5 @@
 import logo from "../assets/sparrow-logo.svg"
-import { signOutUser, removeUser } from "../config/googleSignIn"
+import { signOutUser, removeUser } from "../config/sign-in"
 import { Link } from "react-router-dom"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
@@ -22,7 +22,6 @@ function TopNavigationBar({ currentUser }) {
     removeUser(currentUser)
     signOutUser()
   }
-
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
@@ -42,7 +41,7 @@ function TopNavigationBar({ currentUser }) {
           </span>
           <Image
             // Conditional statement for profile image
-            src={currentUser ? currentUser.photoURL : UserLogo}
+            src={currentUser?.photoURL ? currentUser.photoURL : UserLogo}
             width='55'
             height='55'
             className='me-5 rounded-circle'

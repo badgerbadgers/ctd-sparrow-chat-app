@@ -40,10 +40,10 @@ function BottomInputComponent({
     // Add a new message entry to the Firebase database.
     try {
       await addDoc(messagesCollectionRef, {
-        name: currentUser.displayName,
+        name: currentUser.displayName || currentUser.email,
         email: currentUser.email,
         text: messageText,
-        profilePicUrl: currentUser.photoURL,
+        profilePicUrl: currentUser.photoURL || "",
         timestamp: serverTimestamp(),
       })
     } catch (error) {

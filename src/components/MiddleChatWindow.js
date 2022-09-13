@@ -16,10 +16,9 @@ function MiddleChatWindow({ currentUser, messages, screenBottom }) {
         <div ref={screenBottom}></div>
         {/* renders message */}
         {messages.map((message) => {
-          const name = `${message.name.split(" ")[0]} ${
-            message.name.split(" ")[1][0]
-          }.`
-
+          const name = message.name.includes("@")
+            ? message.email
+            : `${message.name.split(" ")[0]} ${message.name.split(" ")[1][0]}.`
           return (
             <div
               key={message.id}
@@ -33,7 +32,7 @@ function MiddleChatWindow({ currentUser, messages, screenBottom }) {
               <img
                 className='user-image'
                 // Conditional statement for profile image
-                src={message ? message.profilePicUrl : UserLogo}
+                src={message.profilePicUrl ? message.profilePicUrl : UserLogo}
                 width='75'
                 alt='profile pic'
               />
