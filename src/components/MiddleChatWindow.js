@@ -1,68 +1,10 @@
-import { db } from "../config/fire-config"
-import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
-import { useState, useEffect, useContext, useRef, useMemo } from "react"
+import { useContext } from "react"
 import "./MiddleChatWindow.css"
 import { ThemeContext } from "../context.js"
 import UserLogo from "../assets/sparrow-user-profile.svg"
 
-function MiddleChatWindow({ currentUser }) {
-  const [messages, setMessages] = useState([])
-  const messagesCollectionRef = collection(db, "messages")
-  const queryMessages = query(
-    messagesCollectionRef,
-    orderBy("timestamp", "desc")
-  )
+function MiddleChatWindow({ currentUser, messages, screenBottom }) {
   const { theme } = useContext(ThemeContext)
-  const screenBottom = useRef(null)
-  const lastMessageIsInViewport = useIsInViewport(screenBottom)
-
-  // captures data
-  const getMessages = () => {
-    onSnapshot(queryMessages, (snapshot) => {
-      setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    })
-  }
-
-  function useIsInViewport(ref) {
-    const [isIntersecting, setIsIntersecting] = useState(false)
-
-    const observer = useMemo(
-      () =>
-        new IntersectionObserver(
-          ([entry]) => {
-            setIsIntersecting(entry.isIntersecting)
-          },
-          {
-            rootMargin: "20px",
-          }
-        ),
-      []
-    )
-
-    useEffect(() => {
-      observer.observe(ref.current)
-
-      return () => {
-        observer.disconnect()
-      }
-    }, [ref, observer])
-
-    return isIntersecting
-  }
-
-  const scrollToBottom = () => {
-    screenBottom.current?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  useEffect(() => {
-    if (lastMessageIsInViewport) {
-      scrollToBottom()
-    }
-  }, [messages])
-
-  useEffect(() => {
-    getMessages()
-  }, [])
 
   return (
     <>
@@ -91,7 +33,7 @@ function MiddleChatWindow({ currentUser }) {
               <img
                 className='user-image'
                 // Conditional statement for profile image
-                src={message ? message.profilePicUrl : ""}
+                src={message ? message.profilePicUrl : UserLogo}
                 width='75'
                 alt='profile pic'
               />

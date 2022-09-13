@@ -5,7 +5,7 @@
   align-items: center;
   flex-grow: 1;
   flex-shrink: 1;
-  max-width: 750px;
+  max-width: 850px;
 }
 
 /* styling for the input field */
@@ -16,7 +16,7 @@
   /* margin-right: 15px; */
   border-radius: 10px !important;
   font-size: 20px;
-  width: 95%;
+  width: 90%;
 }
 
 .container-bottom-input-form {
@@ -32,7 +32,16 @@
   pointer-events: none;
 }
 
-/* styling for removing bootstrap default box shadow */
+/* styling for removing bootstrap default box shadow for sound button */
 .btn-sound-toogle {
   --bs-btn-focus-box-shadow: 0 !important;
+}
+
+.btn-scroll {
+  display: none;
+}
+
+/* styling for scroll-down button */
+.btn-scroll-down {
+  padding: 5px 10px;
 }
