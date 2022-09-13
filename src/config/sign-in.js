@@ -6,6 +6,7 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth"
 import {
   addDoc,
@@ -55,7 +56,7 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
         })
       }
       // Information about the user based on who signed in
-      console.log(result.user)
+      // console.log(result.user)
     })
     .catch((error) => {
       console.log(error)
@@ -69,6 +70,10 @@ export const createEmail = (name, email, password) => {
     (userCredential) => {
       // Signed in
       const user = userCredential.user
+      // Adds user name
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      })
       //adds user
       setDoc(doc(db, "users", user.uid), {
         email: user.email,
@@ -89,15 +94,17 @@ export const signInEmail = (email, password) => {
       )
       const user = userDocs.docs.map((doc) => doc.data())
       if (!user.length) {
+        console.log(auth.currentUser)
+        console.log(result.user)
         addDoc(usersCollectionRef, {
-          name: result.user.name,
+          name: result.user.displayName,
           email: result.user.email,
-          photoURL: result.user.photoURL,
+          photoURL: "",
           timestamp: serverTimestamp(),
         })
       }
       // Information about the user based on who signed in
-      console.log(result.user)
+      // console.log(result.user)
     })
     .catch((error) => {
       console.log(error)
