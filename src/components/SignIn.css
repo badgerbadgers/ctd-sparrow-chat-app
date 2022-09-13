@@ -15,6 +15,13 @@
   padding: 15px;
   width: 100%;
 }
-.sign-in-text {
+.sign-in-text, .sign-in-text:hover {
   color: #fff;
+  text-decoration: none;
+}
+.submit-btn {
+  margin-bottom: 20px;
+}
+.google-btn {
+  margin-bottom: 10px;
 }

@@ -92,23 +92,26 @@ function SignIn({
                     className='mb-3'
                     controlId='formBasicCheckbox'
                   ></Form.Group>
-                  <Button variant='info' type='submit'>
+                  <Button
+                    variant='info'
+                    type='submit'
+                    className='w-100 rounded-pill submit-btn'
+                  >
                     Submit
                   </Button>
                   <br />
                   <Button
-                    variant='light'
+                    variant='info'
                     onClick={() => {
                       handleIsLoadingStateChange(true)
                       signInWithGoogle(handleIsLoadingStateChange)
                     }}
-                    className='px-4 rounded-pill bg-info'
+                    className='px-4 rounded-pill bg-info w-100 google-btn'
                   >
                     Sign in with <i className='bi bi-google'></i>
                   </Button>
-                  <p>Don't Have An Account?</p>
-                  <Link to='/SignUp' style={{ color: theme.light }}>
-                    Sign Up With Email
+                  <Link to='/SignUp' className='sign-in-text'>
+                    <p>Don't Have An Account? Sign Up With Email</p>
                   </Link>
                 </Form>
               </div>

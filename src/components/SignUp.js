@@ -75,12 +75,16 @@ function SignUp() {
             className='mb-3'
             controlId='formBasicCheckbox'
           ></Form.Group>
-          <Button disabled={loading} variant='primary' type='submit'>
+          <Button
+            disabled={loading}
+            variant='info'
+            type='submit'
+            className='rounded-pill w-100'
+          >
             Sign Up
           </Button>
-          <Link to='/'>
-            <p className='sign-up-text'>Have an account?</p>
-            <p className='sign-in-text'>Sign in</p>
+          <Link to='/' className='link-section'>
+            <p className='sign-up-text'>Have an account? Sign in</p>
           </Link>
         </Form>
       </div>
