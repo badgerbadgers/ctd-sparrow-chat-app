@@ -41,14 +41,6 @@ function SignIn({
   return (
     <div>
       <div className='min-vh-100 d-flex justify-content-center align-items-center flex-column border border-dark mx-auto w-50 bg-primary'>
-        {/* <img
-          src={logo}
-          className='filterYellow'
-          style={{ height: 75, width: 75 }}
-          alt='Sparrow Logo'
-        />
-        <h1 className='h6 text-warning'>sparrow</h1> */}
-
         {isLoading ? (
           <>
             <img

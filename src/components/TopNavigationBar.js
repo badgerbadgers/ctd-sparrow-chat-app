@@ -21,9 +21,6 @@ function TopNavigationBar({ currentUser }) {
     removeUser(currentUser)
     signOutUser()
   }
-  const name = currentUser.displayName
-    ? currentUser.displayName
-    : currentUser.email
   return (
     <div>
       <Navbar bg='primary navbar-dark' className='pt-2' fixed='top'>
@@ -39,8 +36,7 @@ function TopNavigationBar({ currentUser }) {
             <p className='h6 text-warning ms-3'>sparrow</p>
           </Navbar.Brand>
           <span className='fs-5 text-white ms-auto me-2'>
-            {/* {currentUser.name ? currentUser.displayName : currentUser.email} */}
-            {name}
+            {currentUser ? currentUser.displayName : ""}
           </span>
           <Image
             // Conditional statement for profile image

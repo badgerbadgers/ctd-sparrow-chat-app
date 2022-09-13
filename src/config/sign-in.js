@@ -100,7 +100,7 @@ export const signInEmail = (email, password) => {
       const user = userDocs.docs.map((doc) => doc.data())
       if (!user.length) {
         addDoc(usersCollectionRef, {
-          name: result.user.name,
+          name: result.user.email,
           email: result.user.email,
           photoURL: result.user.photoURL,
           timestamp: serverTimestamp(),
