@@ -12,8 +12,14 @@ import buttonSound from "../sounds/stories_sounds_boop.mp3"
 import { TbMusicOff } from "react-icons/tb"
 import { BsMusicNoteBeamed } from "react-icons/bs"
 import { useSoundHook } from "../hooks/useSoundHook"
+import { TbArrowBigDown } from "react-icons/tb"
 
-function BottomInputComponent({ currentUser, isFocused }) {
+function BottomInputComponent({
+  currentUser,
+  isFocused,
+  scrollToBottom,
+  lastMessageIsInViewport,
+}) {
   const [message, setMessage] = useState("")
   const { theme } = useContext(ThemeContext)
   const { changeSoundBool, sound, turnSoundOnOff } = useSoundHook()
@@ -34,10 +40,10 @@ function BottomInputComponent({ currentUser, isFocused }) {
     // Add a new message entry to the Firebase database.
     try {
       await addDoc(messagesCollectionRef, {
-        name: currentUser.displayName,
+        name: currentUser.displayName || currentUser.email,
         email: currentUser.email,
         text: messageText,
-        profilePicUrl: currentUser.photoURL,
+        profilePicUrl: currentUser.photoURL || "",
         timestamp: serverTimestamp(),
       })
     } catch (error) {
@@ -123,11 +129,11 @@ function BottomInputComponent({ currentUser, isFocused }) {
             )}
             <Button
               onClick={handleSoundButton}
-              className='ms-1 bg-info rounded-pill btn-sound-toogle'
+              className='ms-3 bg-info rounded btn-sound-toogle'
             >
               {sound ? (
                 <>
-                  <TbMusicOff title='Sound off' className='text-primary ' />
+                  <TbMusicOff title='Sound off' className='text-primary' />
                 </>
               ) : (
                 <>
@@ -139,6 +145,15 @@ function BottomInputComponent({ currentUser, isFocused }) {
               )}
             </Button>
           </form>
+          <button
+            className={`${
+              lastMessageIsInViewport ? "btn-scroll" : ""
+            } bg-info rounded btn-scroll-down`}
+            onClick={scrollToBottom}
+            title='Scroll to last message'
+          >
+            <TbArrowBigDown />
+          </button>
         </Container>
       </Navbar>
     </>
