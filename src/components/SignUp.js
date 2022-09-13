@@ -41,7 +41,7 @@ function SignUp() {
         <Form onSubmit={handleSubmit}>
           <h2 className='sign-up-text'>Sign Up</h2>
           <Form.Group className='mb-3' controlId='formBasicName'>
-            <Form.Label className='sign-up-text'>First Name</Form.Label>
+            <Form.Label className='sign-up-text'>Enter Name</Form.Label>
             <Form.Control
               value={user.firstName}
               type='name'
@@ -83,8 +83,8 @@ function SignUp() {
           >
             Sign Up
           </Button>
-          <Link to='/' className='link-section'>
-            <p className='sign-up-text'>Have an account? Sign in</p>
+          <Link to='/'>
+            <p className='sign-up-text link-text'>Have an account? Sign in</p>
           </Link>
         </Form>
       </div>

@@ -110,7 +110,7 @@ function SignIn({
                   >
                     Sign in with <i className='bi bi-google'></i>
                   </Button>
-                  <Link to='/SignUp' className='sign-in-text'>
+                  <Link to='/SignUp' className='sign-in-text link-text'>
                     <p>Don't Have An Account? Sign Up With Email</p>
                   </Link>
                 </Form>
