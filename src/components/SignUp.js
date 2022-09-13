@@ -1,7 +1,6 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
-import { ThemeContext } from "../context.js"
 import { Container } from "react-bootstrap"
 import "./SignUp.css"
 import { createEmail } from "../config/sign-in.js"
