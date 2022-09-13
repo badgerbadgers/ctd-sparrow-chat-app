@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap"
 import "./SignUp.css"
 import { createEmail } from "../config/sign-in.js"
 import { useNavigate, Link } from "react-router-dom"
+import logo from "../assets/sparrow-logo.svg"
 
 function SignUp() {
   const [user, setUser] = useState({ name: "", email: "", password: "" })
@@ -25,16 +26,22 @@ function SignUp() {
       alert("Error")
     }
     setLoading(false)
-    navigate("/")
   }
 
   return (
     <Container className='sign-up-container' fluid>
-      <div className='sign-up-form-section'>
+      <div className='sign-up-form-section bg-primary min-vh-100'>
+        <img
+          src={logo}
+          className='filterYellow'
+          style={{ height: 75, width: 75 }}
+          alt='Sparrow Logo'
+        />
+        <h1 className='h6 text-warning'>sparrow</h1>
         <Form onSubmit={handleSubmit}>
-          <h2 style={{ color: theme.dark }}>Sign Up</h2>
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label style={{ color: theme.dark }}>First Name</Form.Label>
+          <h2 className='sign-up-text'>Sign Up</h2>
+          <Form.Group className='mb-3' controlId='formBasicName'>
+            <Form.Label className='sign-up-text'>First Name</Form.Label>
             <Form.Control
               value={user.firstName}
               type='name'
@@ -44,7 +51,7 @@ function SignUp() {
             />
           </Form.Group>
           <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label style={{ color: theme.dark }}>Email address</Form.Label>
+            <Form.Label className='sign-up-text'>Email address</Form.Label>
             <Form.Control
               value={user.email}
               type='email'
@@ -55,7 +62,7 @@ function SignUp() {
           </Form.Group>
 
           <Form.Group className='mb-3' controlId='formBasicPassword'>
-            <Form.Label style={{ color: theme.dark }}>Password</Form.Label>
+            <Form.Label className='sign-up-text'>Password</Form.Label>
             <Form.Control
               value={user.password}
               type='password'
@@ -72,8 +79,8 @@ function SignUp() {
             Sign Up
           </Button>
           <Link to='/'>
-            <p>Have an account?</p>
-            <p>Sign in</p>
+            <p className='sign-up-text'>Have an account?</p>
+            <p className='sign-in-text'>Sign in</p>
           </Link>
         </Form>
       </div>

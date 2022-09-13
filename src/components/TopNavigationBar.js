@@ -16,6 +16,7 @@ import themeIcon from "../assets/theme-icon.svg"
 function TopNavigationBar({ currentUser }) {
   const { toggle } = useContext(ThemeContext)
   const [toggleSfx] = useSound(toggleSound)
+
   // When signing out removes user from 'users' collection and signs out user.
   const handleSignOutUser = () => {
     removeUser(currentUser)

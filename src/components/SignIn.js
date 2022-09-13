@@ -69,7 +69,7 @@ function SignIn({
                 <h2 style={{ color: theme.light }}>Sign In</h2>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group className='mb-3' controlId='formBasicEmail'>
-                    <Form.Label style={{ color: theme.dark }}>
+                    <Form.Label className='sign-in-text'>
                       Email address
                     </Form.Label>
                     <Form.Control
@@ -80,9 +80,7 @@ function SignIn({
                     />
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='formBasicPassword'>
-                    <Form.Label style={{ color: theme.dark }}>
-                      Password
-                    </Form.Label>
+                    <Form.Label className='sign-in-text'>Password</Form.Label>
                     <Form.Control
                       type='password'
                       placeholder='Password'

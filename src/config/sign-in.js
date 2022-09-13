@@ -65,11 +65,10 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
 
 /* function to create user using email  */
 export const createEmail = (name, email, password) => {
-  createUserWithEmailAndPassword(auth, email, password).then(
+  createUserWithEmailAndPassword(auth, email, password, name).then(
     (userCredential) => {
       // Signed in
       const user = userCredential.user
-      console.log("createEmail user", user)
       //adds user
       setDoc(doc(db, "users", user.uid), {
         email: user.email,
@@ -100,7 +99,7 @@ export const signInEmail = (email, password) => {
       const user = userDocs.docs.map((doc) => doc.data())
       if (!user.length) {
         addDoc(usersCollectionRef, {
-          name: result.user.email,
+          name: result.user.name,
           email: result.user.email,
           photoURL: result.user.photoURL,
           timestamp: serverTimestamp(),
