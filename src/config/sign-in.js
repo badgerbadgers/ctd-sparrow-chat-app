@@ -55,7 +55,7 @@ export const signInWithGoogle = (handleIsLoadingStateChange) => {
         })
       }
       // Information about the user based on who signed in
-      console.log(result.user)
+      // console.log(result.user)
     })
     .catch((error) => {
       console.log(error)
