@@ -27,7 +27,7 @@ function SignUp() {
 
   return (
     <Container className='sign-up-container' fluid>
-      <div className='sign-up-form-section bg-primary min-vh-100'>
+      <div className='sign-up-form-section bg-primary'>
         <img
           src={logo}
           className='filterYellow'

@@ -10,16 +10,14 @@
   justify-content: center;
 }
 .sign-up-form-section {
-  /* border: 1px solid white; */
   padding: 15px;
   width: 50%;
-  /* background-color: #fff; */
   color: #202020;
   display: flex;
-  /* margin: 0 auto; */
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  /* align-items: center; */
+  justify-content: center;
+  align-content: center;
   flex-direction: column;
 }
 /* styling for form text */
