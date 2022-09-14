@@ -3,10 +3,12 @@
 }
 /* sign in container */
 .sign-in-container {
-  /* width: 50%; */
-  /* margin: 0 auto; */
-  height: 100vh;
+  min-height: 100vh;
+  width: 50%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .sign-in-form-section {
@@ -34,3 +36,9 @@
   font-weight: 700;
   padding: 20px 0 15px 0;
 }
+/* media queries */
+@media (max-width: 768px) {
+  .sign-in-container {
+    width: 100%;
+  }
+ }
