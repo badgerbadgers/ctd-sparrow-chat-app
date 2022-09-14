@@ -35,3 +35,9 @@
   font-weight: 700;
   padding: 20px 0 15px 0;
 }
+/* media queries */
+@media (max-width: 576px) {
+  .sign-up-form-section {
+    width: 100%;
+  }
+ }

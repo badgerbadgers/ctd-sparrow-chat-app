@@ -37,7 +37,7 @@
   padding: 20px 0 15px 0;
 }
 /* media queries */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .sign-in-container {
     width: 100%;
   }

@@ -43,8 +43,6 @@ function SignIn({
       minBreakpoint='xxs'
     >
       <div>
-        {/* min-vh-100 d-flex justify-content-center align-items-center flex-column
-      border border-dark mx-auto w-50 */}
         <div className='bg-primary sign-in-container'>
           {isLoading ? (
             <>
