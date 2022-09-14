@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { signInWithGoogle, auth, signInError } from "../config/sign-in"
+import { signInWithGoogle, auth } from "../config/sign-in"
 import { onAuthStateChanged } from "firebase/auth"
 import logo from "../assets/sparrow-logo.svg"
 import spinner from "../assets/loading_spinner_icon_yellow.png"

@@ -1,3 +1,4 @@
+/* color applied to sparrow logo */
 .filterYellow {
   filter: invert(84%) sepia(81%) saturate(2592%) hue-rotate(323deg) brightness(101%) contrast(94%);
 }
