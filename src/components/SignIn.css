@@ -3,16 +3,14 @@
 }
 /* sign in container */
 .sign-in-container {
-  /* border: 1px solid red; */
-  width: 50%;
-  margin: 0 auto;
+  /* width: 50%; */
+  /* margin: 0 auto; */
   height: 100vh;
   display: flex;
   align-items: center;
 }
 .sign-in-form-section {
-  /* border: 1px solid white; */
-  padding: 15px;
+  /* padding: 15px; */
   width: 100%;
 }
 .sign-in-text, .sign-in-text:hover {
@@ -20,11 +18,12 @@
   text-decoration: none;
 }
 .submit-btn {
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 /* styling for google button */
 .google-btn {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 /* section that links user to sign up for account */
 .link-text {
@@ -33,4 +32,5 @@
 /* applies bold font weight */
 .font-weight-bold {
   font-weight: 700;
+  padding: 20px 0 15px 0;
 }

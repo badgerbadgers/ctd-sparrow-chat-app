@@ -24,10 +24,13 @@
 .sign-up-text {
   color: #fff;
 }
+/* styling for text linking to sign in page */
 .link-text {
   padding-top: 10px;
   text-align: center;
 }
+/* styling for header */
 .font-weight-bold {
   font-weight: 700;
+  padding: 20px 0 15px 0;
 }

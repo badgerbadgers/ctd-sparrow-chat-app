@@ -76,7 +76,7 @@ function SignUp() {
             disabled={loading}
             variant='info'
             type='submit'
-            className='rounded-pill w-100'
+            className='rounded-pill w-100 sign-up-btn'
           >
             Sign Up
           </Button>

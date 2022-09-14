@@ -61,7 +61,7 @@ function SignIn({
               <div className='sign-in-form-section'>
                 <img
                   src={logo}
-                  className='filterYellow'
+                  className='filterYellow bird-logo'
                   style={{ height: 75, width: 75 }}
                   alt='Sparrow Logo'
                 />
