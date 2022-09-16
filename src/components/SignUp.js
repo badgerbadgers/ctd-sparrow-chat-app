@@ -12,17 +12,16 @@ function SignUp() {
   const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
+    if (e.target.value === " ") {
+      setUser({ ...user, [e.target.name]: undefined })
+    } else {
+      setUser({ ...user, [e.target.name]: e.target.value })
+    }
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    try {
-      await createEmail(user.name, user.email, user.password)
-    } catch {
-      alert("Error")
-    }
-    setLoading(false)
+    await createEmail(user.name, user.email, user.password)
   }
 
   return (
@@ -30,64 +29,73 @@ function SignUp() {
       breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
       minBreakpoint='xxs'
     >
-      <Container className='sign-up-container' fluid>
-        <div className='sign-up-form-section bg-primary'>
+      <Container className='bg-secondary'>
+        <div className='bg-primary sign-up-container'>
           <img
             src={logo}
-            className='filterYellow'
-            style={{ height: 75, width: 75 }}
+            className='filter-yellow'
+            style={{ height: 55, width: 55 }}
             alt='Sparrow Logo'
           />
-          <h1 className='h6 text-warning'>sparrow</h1>
-          <Form onSubmit={handleSubmit}>
-            <h2 className='sign-up-text font-weight-bold'>Sign Up</h2>
-            <Form.Group className='mb-3' controlId='formBasicName'>
-              <Form.Label className='sign-up-text'>Enter Name</Form.Label>
-              <Form.Control
-                value={user.firstName}
-                type='name'
-                name='name'
-                placeholder='Enter name'
-                onChange={handleChange}
-              />
-            </Form.Group>
-            <Form.Group className='mb-3' controlId='formBasicEmail'>
-              <Form.Label className='sign-up-text'>Email address</Form.Label>
-              <Form.Control
-                value={user.email}
-                type='email'
-                name='email'
-                placeholder='Enter email'
-                onChange={handleChange}
-              />
-            </Form.Group>
+          <h1 className='h6 text-warning ms-2 pb-4'>sparrow</h1>
+          <div className='sign-up-form-section'>
+            <Form onSubmit={handleSubmit}>
+              <h2 className='sign-up-text font-weight-bold'>Sign Up</h2>
+              <Form.Group className='mb-3' controlId='formBasicName'>
+                <Form.Label className='sign-up-text'>Name</Form.Label>
+                <Form.Control
+                  value={user.firstName}
+                  type='name'
+                  name='name'
+                  placeholder='Enter name'
+                  onChange={handleChange}
+                  required	
+                  pattern="[^' ']+"	
+                  minLength='1'
+                />
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formBasicEmail'>
+                <Form.Label className='sign-up-text'>Email</Form.Label>
+                <Form.Control
+                  value={user.email}
+                  type='email'
+                  name='email'
+                  placeholder='Enter email'
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group className='mb-3' controlId='formBasicPassword'>
+                <Form.Label className='sign-up-text'>Password</Form.Label>
+                <Form.Control
+                  value={user.password}
+                  type='password'
+                  name='password'
+                  placeholder='Password'
+                  onChange={handleChange}
+                  minLength='6'	
+                  required
+                />
+              </Form.Group>
 
-            <Form.Group className='mb-3' controlId='formBasicPassword'>
-              <Form.Label className='sign-up-text'>Password</Form.Label>
-              <Form.Control
-                value={user.password}
-                type='password'
-                name='password'
-                placeholder='Password'
-                onChange={handleChange}
-              />
-            </Form.Group>
-            <Form.Group
-              className='mb-3'
-              controlId='formBasicCheckbox'
-            ></Form.Group>
-            <Button
-              disabled={loading}
-              variant='info'
-              type='submit'
-              className='rounded-pill w-100 sign-up-btn'
-            >
-              Sign Up
-            </Button>
-            <Link to='/'>
-              <p className='sign-up-text link-text'>Have an account? Sign in</p>
-            </Link>
-          </Form>
+              <Button
+                disabled={loading}
+                variant='light'
+                type='submit'
+                className='bg-info rounded-pill w-100 sign-up-btn'
+              >
+                Sign Up
+              </Button>
+
+              <p className='sign-up-text'>
+                Have an account?
+                <Link to='/' className='link-text text-warning'>
+                  {" "}
+                  Sign In
+                </Link>
+              </p>
+            </Form>
+          </div>
         </div>
       </Container>
     </ThemeProvider>

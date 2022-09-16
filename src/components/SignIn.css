@@ -1,25 +1,27 @@
-/* color applied to sparrow logo */
-.filterYellow {
+/* outline color applied to sparrow logo */
+.filter-yellow {
   filter: invert(84%) sepia(81%) saturate(2592%) hue-rotate(323deg) brightness(101%) contrast(94%);
 }
 /* sign in container */
 .sign-in-container {
   min-height: 100vh;
-  width: 50%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
+  width: 40%;
 }
+
 .sign-in-form-section {
-  /* padding: 15px; */
-  width: 100%;
+  width: 60%;
 }
 .sign-in-text, .sign-in-text:hover {
   color: #fff;
-  text-decoration: none;
+  text-align: center;
+  margin-bottom: 2px;
 }
+
 .submit-btn {
   margin-top: 10px;
   margin-bottom: 25px;
@@ -30,7 +32,7 @@
 }
 /* section that links user to sign up for account */
 .link-text {
-  text-align: center;
+  text-decoration: none;
 }
 /* applies bold font weight */
 .font-weight-bold {
@@ -38,8 +40,37 @@
   padding: 20px 0 15px 0;
 }
 /* media queries */
-@media (max-width: 576px) {
+@media (max-width: 1370px) {
+  .sign-up-form-section {
+    width: 100%;
+  }
+}
+
+ @media (max-width: 1215px) {
   .sign-in-container {
+    width: 50%;
+  }
+  .sign-up-form-section {
+    width: 100%;
+   }
+ }
+
+ @media (max-width: 900px) {
+   .sign-in-container {
+     width: 60%;
+   }
+
+   .sign-up-form-section {
+     width: 100%;
+   }
+ }
+
+ @media (max-width: 700px) {
+  .sign-in-container {
+    width: 100%;
+   }
+  .sign-up-form-section {
     width: 100%;
   }
  }
+
