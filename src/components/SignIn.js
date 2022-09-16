@@ -81,6 +81,7 @@ function SignIn({
                         placeholder='Enter email'
                         value={email}
                         onChange={onEmailChange}
+                        required
                       />
                     </Form.Group>
                     <Form.Group className='mb-3' controlId='formBasicPassword'>
@@ -90,6 +91,7 @@ function SignIn({
                         placeholder='Password'
                         value={password}
                         onChange={onPasswordChange}
+                        required
                       />
                     </Form.Group>
                     <Form.Group
