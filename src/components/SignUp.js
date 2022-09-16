@@ -12,7 +12,11 @@ function SignUp() {
   const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
+    if (e.target.value === " ") {
+      setUser({ ...user, [e.target.name]: undefined })
+    } else {
+      setUser({ ...user, [e.target.name]: e.target.value })
+    }
   }
 
   const handleSubmit = async (event) => {
@@ -45,6 +49,8 @@ function SignUp() {
                 placeholder='Enter name'
                 onChange={handleChange}
                 required
+                pattern="[^' ']+"
+                minLength='1'
               />
             </Form.Group>
             <Form.Group className='mb-3' controlId='formBasicEmail'>

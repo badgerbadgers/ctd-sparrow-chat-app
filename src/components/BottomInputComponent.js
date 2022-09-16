@@ -123,6 +123,7 @@ function BottomInputComponent({
                   marginLeft: "-42px",
                   border: "1px solid #fff",
                   borderRadius: "0 10px 10px 0",
+                  backgroundColor: "#fff",
                 }}
                 title='Send message'
               />
