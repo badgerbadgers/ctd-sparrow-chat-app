@@ -12,17 +12,16 @@ function SignUp() {
   const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value })
+    if (e.target.value === " ") {
+      setUser({ ...user, [e.target.name]: undefined })
+    } else {
+      setUser({ ...user, [e.target.name]: e.target.value })
+    }
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    try {
-      await createEmail(user.name, user.email, user.password)
-    } catch {
-      alert("Error")
-    }
-    setLoading(false)
+    await createEmail(user.name, user.email, user.password)
   }
 
   return (
@@ -50,6 +49,9 @@ function SignUp() {
                   name='name'
                   placeholder='Enter name'
                   onChange={handleChange}
+                  required	
+                  pattern="[^' ']+"	
+                  minLength='1'
                 />
               </Form.Group>
               <Form.Group className='mb-3' controlId='formBasicEmail'>
@@ -60,6 +62,7 @@ function SignUp() {
                   name='email'
                   placeholder='Enter email'
                   onChange={handleChange}
+                  required
                 />
               </Form.Group>
               <Form.Group className='mb-3' controlId='formBasicPassword'>
@@ -70,6 +73,8 @@ function SignUp() {
                   name='password'
                   placeholder='Password'
                   onChange={handleChange}
+                  minLength='6'	
+                  required
                 />
               </Form.Group>
 
