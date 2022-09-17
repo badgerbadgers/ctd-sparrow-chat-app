@@ -63,7 +63,7 @@ function SignIn({
                       placeholder='Enter email'
                       value={email}
                       onChange={onEmailChange}
-                      rerquired
+                      required
                     />
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='formBasicPassword'>
