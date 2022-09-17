@@ -141,7 +141,7 @@ function BottomInputComponent({
                 </>
               ) : (
                 <>
-                  <TbMusicOff title='Sound on' className='text-primary' />
+                  <TbMusicOff title='Turn sound on' className='text-primary' />
                 </>
               )}
             </Button>
