@@ -4,7 +4,7 @@ import "./index.css"
 import App from "./App"
 import "./custom.scss"
 import { BrowserRouter } from "react-router-dom"
-import { ThemeContextProvider } from "./context.js"
+import { ThemeContextProvider } from "./themeContext.js"
 // import reportWebVitals from "./reportWebVitals"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
