@@ -135,7 +135,7 @@ function BottomInputComponent({
               {sound ? (
                 <>
                   <BsMusicNoteBeamed
-                    title='Sound off'
+                    title='Turn sound off'
                     className='text-primary'
                   />
                 </>
