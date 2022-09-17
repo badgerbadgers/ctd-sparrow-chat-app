@@ -11,11 +11,13 @@
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
+  max-width: 900px;
 }
 /* sign up form */
 .sign-up-form-section {
-  width: 65%;
+  width: 75%;
+  max-width: 500px;
 }
 /* styling for form text */
 .sign-up-text {
