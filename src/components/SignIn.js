@@ -44,7 +44,7 @@ function SignIn({
           breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
           minBreakpoint='xxs'
         >
-          <div className='bg-secondary'>
+          <Container className='bg-secondary' fluid>
             <div className='sign-in-container bg-primary'>
               <img
                 src={logo}
@@ -106,10 +106,10 @@ function SignIn({
                 </Form>
               </div>
             </div>
-          </div>
+          </Container>
         </ThemeProvider>
       ) : (
-        <div className='bg-secondary'>
+        <Container className='bg-secondary' fluid>
           <div className='sign-in-container bg-primary'>
             <img
               src={logo}
@@ -124,7 +124,7 @@ function SignIn({
               alt='Loading Spinner'
             />
           </div>
-        </div>
+        </Container>
       )}
     </div>
   )

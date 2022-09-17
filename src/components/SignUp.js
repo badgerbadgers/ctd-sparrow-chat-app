@@ -29,8 +29,8 @@ function SignUp() {
       breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
       minBreakpoint='xxs'
     >
-      <Container className='bg-secondary'>
-        <div className='bg-primary sign-up-container'>
+      <Container className='bg-secondary' fluid>
+        <div className='sign-up-container bg-primary'>
           <img
             src={logo}
             className='filter-yellow'
