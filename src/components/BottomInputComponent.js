@@ -6,7 +6,7 @@ import { BsFillArrowUpSquareFill } from "react-icons/bs"
 import Container from "react-bootstrap/Container"
 import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button"
-import { ThemeContext } from "../context.js"
+import { ThemeContext } from "../themeContext.js"
 import useSound from "use-sound"
 import buttonSound from "../sounds/stories_sounds_boop.mp3"
 import { TbMusicOff } from "react-icons/tb"
@@ -135,13 +135,13 @@ function BottomInputComponent({
               {sound ? (
                 <>
                   <BsMusicNoteBeamed
-                    title='Sound on'
+                    title='Turn sound off'
                     className='text-primary'
                   />
                 </>
               ) : (
                 <>
-                  <TbMusicOff title='Sound off' className='text-primary' />
+                  <TbMusicOff title='Turn sound on' className='text-primary' />
                 </>
               )}
             </Button>

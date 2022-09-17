@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState, useEffect, useContext } from "react"
 import { Container } from "react-bootstrap"
 import "./App.css"
-import { ThemeContext } from "./context.js"
+import { ThemeContext } from "./themeContext.js"
 import SignUp from "./components/SignUp"
 
 function App() {

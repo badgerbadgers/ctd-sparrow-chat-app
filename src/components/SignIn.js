@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import Button from "react-bootstrap/Button"
 import "./SignIn.css"
 import { useContext, useState } from "react"
-import { ThemeContext } from "../context.js"
+import { ThemeContext } from "../themeContext.js"
 import Form from "react-bootstrap/Form"
 import { Container, ThemeProvider } from "react-bootstrap"
 import { signInEmail } from "../config/sign-in"
@@ -63,7 +63,7 @@ function SignIn({
                       placeholder='Enter email'
                       value={email}
                       onChange={onEmailChange}
-                      rerquired
+                      required
                     />
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='formBasicPassword'>
