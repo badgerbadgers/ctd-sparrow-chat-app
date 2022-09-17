@@ -6,7 +6,7 @@ import { db } from "../config/fire-config"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
 import { useEffect, useContext, useState, useRef, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
-import { ThemeContext } from "../context.js"
+import { ThemeContext } from "../context/themeContext.js"
 import { SoundProvider } from "../context/SoundContext"
 
 function Chat({ currentUser }) {

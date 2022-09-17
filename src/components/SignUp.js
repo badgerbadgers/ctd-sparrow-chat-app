@@ -49,8 +49,8 @@ function SignUp() {
                   name='name'
                   placeholder='Enter name'
                   onChange={handleChange}
-                  required	
-                  pattern="[^' ']+"	
+                  required
+                  pattern='^(?!\s*$|\s).*$'
                   minLength='1'
                 />
               </Form.Group>
@@ -73,7 +73,7 @@ function SignUp() {
                   name='password'
                   placeholder='Password'
                   onChange={handleChange}
-                  minLength='6'	
+                  minLength='6'
                   required
                 />
               </Form.Group>
