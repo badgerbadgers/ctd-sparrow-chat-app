@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom"
 import { useState, useEffect, useContext } from "react"
 import { Container } from "react-bootstrap"
 import "./App.css"
-import { ThemeContext } from "./themeContext.js"
+import { ThemeContext } from "./context/themeContext.js"
 import SignUp from "./components/SignUp"
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
   }, [authState])
 
   return (
-    <Container fluid style={{ backgroundColor: theme.primary }}>
+    <Container fluid style={{ backgroundColor: theme.secondary }}>
       <Routes>
         <Route
           path='/'

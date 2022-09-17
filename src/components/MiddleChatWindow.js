@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import "./MiddleChatWindow.css"
-import { ThemeContext } from "../themeContext.js"
+import { ThemeContext } from "../context/themeContext.js"
 import UserLogo from "../assets/sparrow-user-profile.svg"
 
 function MiddleChatWindow({ currentUser, messages, screenBottom }) {
@@ -15,10 +15,21 @@ function MiddleChatWindow({ currentUser, messages, screenBottom }) {
         {/* div to check if last message is in viewport */}
         <div ref={screenBottom}></div>
         {/* renders message */}
+
         {messages.map((message) => {
-          const name = message.name.includes("@")
-            ? message.email
-            : `${message.name.split(" ")[0]} ${message.name.split(" ")[1][0]}.`
+          let name
+          //if username contains @ symbol then return the text before @
+          if (message.name.includes("@")) {
+            name = `${message.name.split("@")[0]}`
+            //if username contains a space then format second text with period if there is more than one character or just return the second character with no period
+          } else if (message.name.includes(" ")) {
+            name = `${message.name.split(" ")[0]} ${
+              message.name.split(" ")[1]
+            }.`
+            //by default return user name
+          } else {
+            name = message.name
+          }
           return (
             <div
               key={message.id}

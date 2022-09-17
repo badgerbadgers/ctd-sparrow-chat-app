@@ -10,7 +10,7 @@ import { useState, useEffect } from "react"
 import "./LeftSideComponent.css"
 import Offcanvas from "react-bootstrap/Offcanvas"
 import { BsFillPeopleFill } from "react-icons/bs"
-import { ThemeContext } from "../themeContext.js"
+import { ThemeContext } from "../context/themeContext.js"
 import { useContext } from "react"
 
 // Component renders list on currently logged in users in application

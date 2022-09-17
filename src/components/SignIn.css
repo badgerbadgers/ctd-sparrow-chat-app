@@ -10,11 +10,12 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 40%;
+  max-width: 900px;
 }
 
 .sign-in-form-section {
-  width: 60%;
+  width: 75%;
+  max-width: 500px;
 }
 .sign-in-text, .sign-in-text:hover {
   color: #fff;
@@ -40,37 +41,15 @@
   padding: 20px 0 15px 0;
 }
 /* media queries */
-@media (max-width: 1370px) {
-  .sign-up-form-section {
-    width: 100%;
-  }
-}
-
- @media (max-width: 1215px) {
+@media (max-width: 1000px) {
   .sign-in-container {
-    width: 50%;
+    width: 75%;
   }
-  .sign-up-form-section {
-    width: 100%;
-   }
  }
 
- @media (max-width: 900px) {
+ @media (max-width: 770px) {
    .sign-in-container {
-     width: 60%;
-   }
-
-   .sign-up-form-section {
      width: 100%;
    }
- }
-
- @media (max-width: 700px) {
-  .sign-in-container {
-    width: 100%;
-   }
-  .sign-up-form-section {
-    width: 100%;
-  }
  }
 
