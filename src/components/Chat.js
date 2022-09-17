@@ -23,7 +23,9 @@ function Chat({ currentUser }) {
 
   const getMessages = () => {
     onSnapshot(queryMessages, (snapshot) => {
-      setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      if (!snapshot.metadata.hasPendingWrites) {
+        setMessages(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+      }
     })
   }
 
