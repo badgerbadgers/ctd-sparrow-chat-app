@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import "./MiddleChatWindow.css"
 import { ThemeContext } from "../context/themeContext.js"
-import UserLogo from "../assets/sparrow-user-profile.svg"
+import UserLogo from "../assets/user-profile.png"
 
 function MiddleChatWindow({ currentUser, messages, screenBottom }) {
   const { theme } = useContext(ThemeContext)
