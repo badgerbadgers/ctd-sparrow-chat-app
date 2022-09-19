@@ -14,9 +14,18 @@ function Message({ name, text, timestamp, email, profilePicUrl, currentUser }) {
     () => new TimeAgo("en-US").format(timestamp.toDate()),
     [timestamp]
   )
-  const username = name.includes("@")
-    ? email
-    : `${name.split(" ")[0]} ${name.split(" ")[1][0]}.`
+
+  let username
+  //if username contains @ symbol then return the text before @
+  if (name.includes("@")) {
+    username = `${name.split("@")[0]}`
+    //if username contains a space then format second text with period if there is more than one character or just return the second character with no period
+  } else if (name.includes(" ")) {
+    username = `${name.split(" ")[0]} ${name.split(" ")[1][0]}.`
+    //by default return user name
+  } else {
+    username = name
+  }
 
   return (
     <div
