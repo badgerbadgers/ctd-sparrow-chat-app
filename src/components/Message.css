@@ -40,4 +40,9 @@
   border-bottom: 1px solid rgba(99, 96, 96, 0.367) !important;
 }
 
-
+/* media queries */
+@media (max-width: 500px) {
+  .user-image {
+    width: 35px;
+  }
+}
