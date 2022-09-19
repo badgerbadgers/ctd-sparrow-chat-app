@@ -15,6 +15,7 @@ function MiddleChatWindow({ messages, screenBottom, currentUser }) {
         {/* div to check if last message is in viewport */}
         <div className='refDiv' ref={screenBottom}></div>
         {/* renders message */}
+
         {messages.map((message) => {
           return (
             <Message key={message.id} {...message} currentUser={currentUser} />

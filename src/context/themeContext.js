@@ -4,7 +4,7 @@ import { createContext, useState } from "react"
 //theme object
 const themes = {
   light: {
-    primary: "#f5f5f5",
+    primary: "#FFF",
     secondary: "#1A2930",
     dark: "#F2F2F2",
     light: "#2B2B2B",

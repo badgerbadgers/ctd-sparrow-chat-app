@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Button from "react-bootstrap/Button"
 import Image from "react-bootstrap/Image"
 import "./TopNavigationBar.css"
-import { ThemeContext } from "../themeContext.js"
+import { ThemeContext } from "../context/themeContext.js"
 import { useContext } from "react"
 import UserLogo from "../assets/sparrow-user-profile.svg"
 import useSound from "use-sound"
@@ -18,8 +18,8 @@ function TopNavigationBar({ currentUser }) {
   const [toggleSfx] = useSound(toggleSound)
 
   // When signing out removes user from 'users' collection and signs out user.
-  const handleSignOutUser = () => {
-    removeUser(currentUser)
+  const handleSignOutUser = async () => {
+    await removeUser(currentUser)
     signOutUser()
   }
   return (
