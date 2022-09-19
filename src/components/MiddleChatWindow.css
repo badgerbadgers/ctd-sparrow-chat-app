@@ -12,3 +12,16 @@
 .refDiv {
   height: 1px;
 }
+
+/* adds padding to user name */
+/* .list-item-name {
+  padding-right: 30px; 
+} */
+
+/* media queries */
+ @media (max-width: 500px) {
+  .user-image {
+    width: 35px;
+  }
+ }
+
