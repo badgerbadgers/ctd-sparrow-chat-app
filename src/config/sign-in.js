@@ -94,7 +94,6 @@ export const signInEmail = (email, password) => {
       )
       const user = userDocs.docs.map((doc) => doc.data())
       if (!user.length) {
-        console.log(auth.currentUser)
         addDoc(usersCollectionRef, {
           name: result.user.displayName,
           email: result.user.email,
