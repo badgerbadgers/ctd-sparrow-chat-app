@@ -3,7 +3,7 @@ import TimeAgo from "javascript-time-ago"
 import en from "javascript-time-ago/locale/en"
 import "./Message.css"
 import UserLogo from "../assets/sparrow-user-profile.svg"
-import { ThemeContext } from "../themeContext.js"
+import { ThemeContext } from "../context/themeContext.js"
 
 TimeAgo.addLocale(en)
 

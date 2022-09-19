@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import "./MiddleChatWindow.css"
-import { ThemeContext } from "../themeContext.js"
+import { ThemeContext } from "../context/themeContext.js"
 import Message from "./Message"
 
 function MiddleChatWindow({ messages, screenBottom, currentUser }) {
