@@ -3,8 +3,7 @@ import "./MiddleChatWindow.css"
 import { ThemeContext } from "../themeContext.js"
 import Message from "./Message"
 
-
-function MiddleChatWindow({ messages, screenBottom }) {
+function MiddleChatWindow({ messages, screenBottom, currentUser }) {
   const { theme } = useContext(ThemeContext)
 
   return (
@@ -14,15 +13,12 @@ function MiddleChatWindow({ messages, screenBottom }) {
         style={{ backgroundColor: theme.primary }}
       >
         {/* div to check if last message is in viewport */}
-        <div ref={screenBottom}></div>
+        <div className='refDiv' ref={screenBottom}></div>
         {/* renders message */}
         {messages.map((message) => {
-         
-          //   ? message.email
-     
-
-          return <Message key={message.id} {...message} />
-       
+          return (
+            <Message key={message.id} {...message} currentUser={currentUser} />
+          )
         })}
       </ul>
     </>

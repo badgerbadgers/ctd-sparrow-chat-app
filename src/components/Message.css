@@ -5,7 +5,7 @@
   border-radius:10px;
   background-color: #e9ecef;
   max-width: 25em;
-  padding: .4em 1em;
+  padding: .1em .5em;
   overflow-wrap: break-word;
   border: 1px solid #a6a5a2;
   
@@ -26,7 +26,7 @@
 
 /* styling for the profile pic */
 .user-image {
-  border-radius:10px;
+  border-radius: 10px;
   width: 3.6em;
   margin: 0.4em; 
 }
