@@ -2,7 +2,7 @@ import { useMemo, useContext } from "react"
 import TimeAgo from "javascript-time-ago"
 import en from "javascript-time-ago/locale/en"
 import "./Message.css"
-import UserLogo from "../assets/sparrow-user-profile.svg"
+import UserLogo from "../assets/user-profile.png"
 import { ThemeContext } from "../context/themeContext.js"
 
 TimeAgo.addLocale(en)
