@@ -1,8 +1,8 @@
 
 /* styling for each message displayed in chat window */
 .list-item {
-  margin:0.8em; 
-  border-radius:10px;
+  margin:0.4em; 
+  border-radius: 10px;
   background-color: #e9ecef;
   max-width: 25em;
   padding: .1em .5em;
