@@ -30,7 +30,7 @@ Below is a look at our chat app built and deployed in a span of 8 weeks:
 
 <p align="center">
   <picture>
-    <img alt="Demo Sparrow Chat Photo" src="./src/assets/sparrow-chat-app.png" width="75%" height="75%" />
+    <img alt="Demo Sparrow Chat Photo" src="./src/assets/chat-app.png" width="95%" height="75%" />
   </picture>
 </p>
 
@@ -69,6 +69,7 @@ We want to extend our thanks to Code the Dream - Mary Alice Moore, Lori Khamala,
 
 React Mentors:
 
+- Justin Kong
 - Jared Siirila
 - Elijah Bernstein-Cooper
 - Karson Kalt
