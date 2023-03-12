@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.0",
     "firebase": "^9.9.1",
-    "javascript-time-ago": "^2.5.7",
+    "javascript-time-ago": "^2.5.9",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
