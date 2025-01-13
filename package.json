@@ -17,7 +17,7 @@
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
     "use-sound": "^4.0.3",
-    "web-vitals": "^3.5.2"
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
